@@ -1,21 +1,140 @@
 /**index.wxss**/
-.userinfo {
+page,.index {
+  height: 100%
+}
+.index {
+  background-color: #010714;
+}
+.index-header {
+  background-color: #191E2A;
+}
+.index-header .header-img image {
+  width: 100%;
+  height: 300rpx;
+  display: block;
+  z-index: 1;
+}
+
+.index-score {
+  width: 100%;
+  background-color: #191E2A;
+}
+.index-score .score-date {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  padding: 20rpx 40rpx 0 40rpx;
+}
+.index-score .score-date swiper {
+  width: 410rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size:44rpx;
+  color: #fff;
+  text-align: center;
+}
+.index-score .score-date .date-left,.index-score .score-date .date-right {
+  display: flex;
   align-items: center;
+  justify-content: center; 
+}
+.index-score .score-date .date-left image,.index-score .score-date .date-right image{
+  width: 64rpx;
+  height: 64rpx; 
+  display: block;
+}
+.index-score .score-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+}
+.index-score .score-info .left-team,.index-score .score-info .right-team{
+  text-align: center;
+}
+.index-score .score-info .left-team image,.index-score .score-info .right-team image{
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+}
+.index-score .score-info .left-team text,.index-score .score-info .right-team text{
+  color: #fff;
+  font-size: 32rpx;
+}
+.index-score .score-info .mid-line {
+  font-size: 120rpx;
+  line-height: 45rpx;
+  text-align: center;
+  margin-top:30rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx; 
+  width: 50rpx;
+  height: 40rpx;
+  color: #5D6169;
+}
+.index-score .score-info .left-grade,.index-score .score-info .right-grade {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  font-size: 60rpx;
+  color: #5d6169;
+  text-align: center;
+}
+.index-score .score-info .left-grade.on, .index-score .score-info .right-grade.on {
+  color: #DFDFE1;
+}
+.index-news {
+  margin-top: 30rpx;
+  color: #7C7F86;
+  background-color: #191E2A;
+}
+.index-news .news-title{
+  padding: 20rpx;
+  font-size: 36rpx;
+  color: #DFDFE1;
+  border-bottom:1px solid #272C37;
+}
+.index-news .news-list{
+  padding: 20rpx 20rpx 0 20rpx;
+}
+.index-news .news-list .list-item {
+  display: flex;
+  height: 180rpx;
+  margin-bottom: 30rpx;
+  border-bottom:1px solid #272C37;
+}
+.index-news .news-list .list-item .item-title {
+  width: 400rpx;
+  font-size:32rpx;
+  color:#ffffff;
+}
+.index-news .news-list .list-item .item-title text {
+  display: -webkit-box !important;
+  text-overflow:ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+}
+.index-news .news-list .list-item .item-title .title-from{
+  font-size:28rpx;
+  color: #272C37;
+}
+.index-news .news-list .list-item .item-title .title-from text{
+  margin-top: 16rpx;
+}
+.index-news .news-list .list-item image{
+  width: 290rpx;
+  height: 150rpx;
+  margin-left: 20rpx;
+  display: block;
+}
+.index-news .no-more{
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.index-news .no-more.hide{
+  display: none;
+  font-size: 28rpx;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
 
-.userinfo-nickname {
-  color: #aaa;
-}
 
-.usermotto {
-  margin-top: 200px;
-}

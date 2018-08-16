@@ -1,13 +1,61 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view class='index'>
+   <view class='index-header'>
+     <view class='header-img'>
+       <image src='../../images/1.jpg'></image>
+     </view>
+   </view>
+   <view class='index-score'>
+     <view class='score-date'>
+       <view class='date-left' bindtap='turnleft'>
+         <image src="{{showLeft?'../../images/left.png':'../../images/left1.png'}}"></image>
+       </view>
+       <swiper autoplay='{{autoplay}}' current='{{current}}' interval='{{interval}}' bindchange='swiperchange'>
+         <block wx:for='{{date}}' wx:key="{{index}}">
+           <swiper-item>
+             <text class='item'>{{item.time}}</text>
+           </swiper-item>
+         </block>
+       </swiper>
+       <view class='date-right' bindtap='turnright'>
+         <image src="{{showRight?'../../images/right.png':'../../images/right1.png'}}"></image>
+       </view>
+     </view>
+     <view class='score-info'>
+         <view class='left-team'>
+           <image src='{{agenda.leftteam}}'></image>
+           <text>{{agenda.leftname}}</text>
+         </view>
+         <view class="left-grade {{light==1?'on':''}}">{{agenda.leftgrade}}</view>
+         <view class='mid-line'>-</view>
+         <view class="right-grade {{light==1?'':'on'}}">{{agenda.rightgrade}}</view>
+         <view class='right-team'>
+           <image src='{{agenda.rightteam}}'></image>
+           <text>{{agenda.rightname}}</text>
+         </view>
+     </view>
+   </view>
+   <view class='index-news'>
+     <view class='news-title'>
+       <text>热门新闻</text>
+     </view>
+     <scroll-view scroll-y="true" bindscrolltolower="loadMore">
+       <view class='news-list'>
+         <navigator wx:for="{{news}}" wx:key="{{item.contentId}}"  url='/pages/news/news?id={{item.contentId}}&title={{item.title}}&from={{item.from}}&image={{item.image}}&content={{item.content}}'>
+           <view class="list-item">
+             <view class='item-title'>
+               <text>{{item.title}}</text>
+               <view class='title-from'>
+                 <text>{{item.from}}</text>
+               </view>
+             </view>
+             <image class='content-img' src='{{item.image}}'></image>
+           </view>
+         </navigator>
+       </view>
+       <view class="no-more {{hide?'hide':''}}">
+         <text>暂无更多新闻了哦</text>
+       </view>
+     </scroll-view>
+   </view>
 </view>

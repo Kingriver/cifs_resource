@@ -14,6 +14,25 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const util = {
+  request(opt) {
+    let options = Object.assign({}, opt);
+    let { url, data } = options;
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url,
+        data,
+        success(res) {
+          resolve(res.data)
+        },
+        fail(res) {
+          reject(err)
+        }
+      })
+    })
+  }
+}
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  util: util
 }

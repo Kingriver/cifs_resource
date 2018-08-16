@@ -1,0 +1,24 @@
+<!--pages/news/news.wxml-->
+<view class='news'>
+  <scroll-view class="news-scroll" scroll-y="true" scroll-top="{{ scrollTop }}" enable-back-to-top="true">
+    <view class='scroll-main'>
+      <view class="news-title">{{ news.title }}</view>
+      <view class="news-from">
+        <text>{{ news.from }}</text>
+      </view>
+      <view class="news-content">
+        <image class="image" src="{{news.image}}"></image>
+        <view class="desc">
+          <text decode="{{true}}" space="{{true}}">{{news.content}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="news-handle">
+     <view class='handle-content'>
+        <view class="back" bindtap="back"></view>
+        <view class="next" bindtap="next">下一篇</view>
+        <view class='share'><button open-type="share"></button></view>
+     </view>
+  </view>
+</view>
