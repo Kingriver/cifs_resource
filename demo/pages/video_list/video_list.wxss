@@ -1,4 +1,4 @@
-/* pages/video/video.wxss */
+/* pages/video/video_list.wxss */
 page{
   background-color:  #191E2A;
 }
@@ -27,7 +27,6 @@ page{
   background-repeat: no-repeat;
   background-position: center;
 }
-
 .video-box .video-btn {
   width: 55rpx;
   height: 55rpx;
@@ -35,7 +34,6 @@ page{
   background-image:url(http://i.gtimg.cn/qqlive/images/20150911/i1441959133_1.jpg);
   background-repeat: no-repeat; 
 }
-
 .video-title{
   margin-left: 15rpx;
   font-size: 15px;
@@ -49,4 +47,4 @@ page{
   -webkit-box-orient: vertical;
   height: 100rpx;
   width: 300rpx;
-}
+} 

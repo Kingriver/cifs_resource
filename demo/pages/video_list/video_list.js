@@ -1,4 +1,4 @@
-// pages/video/video.js
+// pages/video/video_list.js
 const app = getApp();
 import { baseUrl } from '../../api/api.js';
 Page({

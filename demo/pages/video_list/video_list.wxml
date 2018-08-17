@@ -1,7 +1,7 @@
-<!--pages/video/video.wxml-->
+<!--pages/video/video_list.wxml-->
 <view class='video'>
    <view class='video-list'>
-    <navigator class="video-detail" wx:for="{{videos}}" wx:key="{{item.id}}" url="/pages/videoinf/videoinf?id={{item.id}}&url={{item.url}}&title={{item.title}}&num={{item.num}}}}"   >
+    <navigator class="video-detail" wx:for="{{videos}}" wx:key="{{item.id}}" url="/pages/video_detail/video_detail?id={{item.id}}&url={{item.url}}&title={{item.title}}&num={{item.num}}}}"   >
       <view class="video-box" style="background-image:url({{item.bgimg}})">
         <view class="video-btn"></view>
       </view>

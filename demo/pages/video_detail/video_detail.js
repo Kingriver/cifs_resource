@@ -1,4 +1,4 @@
-// pages/player/player.js
+// pages/video_detail/video_detail.js
 const app = getApp();
 import { baseUrl } from '../../api/api.js';
 Page({
@@ -7,59 +7,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-    canshow: true,
-    canshow2: true,
-    playernum: 5,
-    playernum2: 5,
-    player1: [],
-    player2: [],
-    player3: [],
-    player4: [],
-    player5: []
+    id: '',
+    url: null,
+    title: '',
+    videos: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      video: {
+        id: decodeURIComponent(options.id),
+        url: decodeURIComponent(options.url),
+        title: decodeURIComponent(options.title),
+        num: decodeURIComponent(options.num)
+      }
+    })
+    wx.setNavigationBarTitle({ // 设置当前标题
+      title: decodeURIComponent(options.title)
+    })
     wx.request({
       url: baseUrl,
       success: (res) => {
         this.setData({
-          player1: res.data.data.player1,
-          player2: res.data.data.player2
+          videos: res.data.data.videos,
         })
       }
     })
   },
-  showmore: function (e) {
-    let canshow = this.data.canshow;
-    if (canshow) {
-      this.setData({
-        canshow: false,
-        playernum: 10,
-      })
-    } else {
-      this.setData({
-        canshow: true,
-        playernum: 5,
-      })
-    }
-  },
-  showmore2: function (e) {
-    let canshow = this.data.canshow2;
-    if (canshow) {
-      this.setData({
-        canshow2: false,
-        playernum2: 10,
-      })
-    } else {
-      this.setData({
-        canshow2: true,
-        playernum2: 5,
-      })
-    }
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

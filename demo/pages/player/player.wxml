@@ -1,2 +1,53 @@
 <!--pages/player/player.wxml-->
-<text>pages/player/player.wxml</text>
+<view class="player">
+    <view class='player-info'>
+       <view class="player-title">
+         <text>得分榜</text>
+         <text>场均得分</text>
+       </view>
+       <scroll-view scroll-y="true">
+        <view class="player-score">
+            <view class="score-item" wx:if="{{index<playernum}}" wx:for="{{player1}}"  wx:key="{{item.name}}" >
+                <view class='num'>{{item.num}}</view>
+                <view class='avator'>
+                  <image src="{{item.image}}"></image>
+                </view>
+                <view class='name'>{{item.name}}</view>
+                <view class='logo'>  
+                  <image src="{{item.imgteam}}"></image>
+                </view>
+                <view class='team'>{{item.team}}</view>
+                <view class='score'>{{item.score}}</view>
+            </view>
+            <view class="score-more" bindtap="showmore">
+                <text>{{canshow?'完整得分榜∨':'收起∧'}}</text>
+            </view>
+        </view>
+       </scroll-view>
+    </view>
+    <view class='player-info'>
+       <view class="player-title">
+         <text>得分榜</text>
+         <text>场均得分</text>
+       </view>
+       <scroll-view scroll-y="true">
+        <view class="player-score">
+            <view class="score-item" wx:for="{{player1}}" wx:if="{{index<playernum}}"  wx:key="{{item.name}}" >
+                <view class='num'>{{item.num}}</view>
+                <view class='avator'>
+                  <image src="{{item.image}}"></image>
+                </view>
+                <view class='name'>{{item.name}}</view>
+                <view class='logo'>  
+                  <image src="{{item.imgteam}}"></image>
+                </view>
+                <view class='team'>{{item.team}}</view>
+                <view class='score'>{{item.score}}</view>
+            </view>
+            <view class="score-more" bindtap="showmore">
+                <text>{{canshow?'完整得分榜∨':'收起∧'}}</text>
+            </view>
+        </view>
+       </scroll-view>
+    </view>
+</view>
