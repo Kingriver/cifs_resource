@@ -1,0 +1,77 @@
+
+
+<!-- 浮动工具栏 -->
+<div class="side-nav hidden-xs">
+    <ul class="clean">
+        <li title="扫描二维码，微信联系客服" class="show-qrcode">
+            <a href="javascript:void(0)"><i class="icon-shixian-service" style="color: #03a3fc"></i></a>
+            <span> 联系客服</span>
+            <div class="service-qrcode">
+                <img alt="联系实现网客服"
+                     src="https://cdn.shixian.com/assets/helper_shixianteam3-bd67759765ae191ca1f181ecbf49db9125ce430ed553bc359a46d248ed0ad976.jpg"/>
+            </div>
+        </li>
+        <!-- <li title="意见反馈">
+            <a href="https://shixian.com/projects/27" target="_blank"><i class="icon-shixian-proposal"></i></a>
+        </li> -->
+        <li title="回到顶部" class="go-top">
+            <a href="javascript:void(0)"><i class="icon-shixian-go-top"></i></a>
+            <span >回到顶部</span>
+        </li>
+    </ul>
+</div>
+<script type="text/javascript">
+    // 返回顶部
+    (function ($win, $by) {
+        var $go = $(".side-nav").find('.go-top');
+
+        function show() {
+            if ($win.scrollTop() > 250) {
+                $go.show();
+            }
+            else {
+                $go.hide();
+            }
+        }
+
+        $go.on('click', function () {
+            $by.animate({
+                scrollTop: 0
+            });
+        });
+        show();
+        $win.on('resize scroll', show);
+    })($(window), $("html body"));
+</script>
+
+<!-- 页脚 -->
+<div class="clearfix"></div>
+<div class="empty-row"></div>
+<footer class="footer wrapper">
+    <div class="container">
+        <div class="copy-right">
+            <!-- 微博 -->
+            <dl>
+                <dd><i class="icon-shixian-wechat" id="wx-activity-popover" style="color: #3BAF33;"></i></dd>
+                <dd><a class="fa fa-weibo footer-link" target="_blank" href="http://weibo.com/synatmall"
+                       data-toggle="tooltip" data-placement="top" title="进入微博" style="color: #E01919;"></a></dd>
+            </dl>
+            <!-- copy -->
+            <p class="text-muted">2014-2018 &copy; shixian.com <a href="#">京备14024552</a></p>
+        </div>
+        <div class="footer-link hidden-xs hidden-sm">
+            <a target="_blank" href="/consultants">技术顾问</a>
+            <a target="_blank" href="/jobs">兼职需求</a>
+            <a target="_blank" href="/services">标准服务</a>
+            <a target="_blank" href="/projects">实现社区</a>
+            <a target="_blank" href="/protocol">实现协议</a>
+            <a target="_blank" href="/faq-us">常见问题</a>
+            <a target="_blank" href="/projects/27">意见反馈</a>
+            <a target="_blank" href="/about">关于我们</a>
+            <a target="_blank" href="/friends">友情链接</a>
+            <a target="_blank" href="/partners">合作伙伴</a>
+            <a target="_blank" href="/media_reports">媒体报道</a>
+            <a target="_blank" href="/cases">成功案例</a>
+        </div>
+    </div>
+</footer>

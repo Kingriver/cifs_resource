@@ -1,0 +1,178 @@
+<!-- layouts/common_layout_header -->
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" media="screen"
+          href="css/next_layout-7937d384d420297c7fac6f5b0d5ba8e3afa90f0ea1d4a58db247537058e7495f.css"/>
+          <script src="js/jquery-2.1.3.min-110fa8fd9cb93b29de53d0dca46855f92f1ffa69885d6a883aebad2a5b0d5b56.js"></script>
+    <script src="js/next_layout-b7ed6dc1eb402a1fa7a5192ff92f059f7c2e86bfb606a2e62bfc83ab7a104888.js"></script>
+  
+    <title>登录 - 实现网</title>
+
+
+
+</head>
+<body>
+
+<!--放一个id为header的div,把header.html加载到这块-->
+<div id="header"></div>
+
+
+<!--放一个id为header的div,把nav.html加载到这块-->
+<div id="nav"></div>
+
+
+<!-- commons/alert_or_notice -->
+<div class="alert alert-warning fade in text-center">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <span>继续此操作需要您先注册或者登录.</span>
+
+</div>
+
+
+<div class="empty-line"></div>
+
+<div class="col-md-6 col-md-offset-3">
+    <legend>请先登录</legend>
+
+
+    <div class="empty-row"></div>
+
+    <div class="text-center">
+        <a rel="nofollow" class="btn btn-lg btn-default btn-on-dark wechat_login btn-block wechat_login"
+           style="color: #3BAF33;" href="/users/auth/open_wechat">
+            <i class="fa fa-weixin"></i>&nbsp; 微信登录
+        </a>
+
+        <div class="empty-row"></div>
+
+        <a rel="nofollow" class="btn btn-lg btn-default btn-on-dark btn-block weibo_login" style="color: #E01919"
+           href="/users/auth/weibo">
+            <i class="fa fa-weibo"></i> 微博登录
+        </a>
+
+        <div class="empty-row"></div>
+
+        <a rel="nofollow" class="btn btn-lg btn-default btn-on-dark btn-block github_login" style="color: #333"
+           href="/users/auth/github">
+            <i class="fa fa-github"></i> GitHub登录
+        </a>
+    </div>
+
+    <div class="empty-row"></div>
+
+    <script src="js/programmers-ff3d878d5478eb9d984f95975af3f64493f6e84cf46839f198f93cb18350ab97.js"></script>
+
+    <script>
+        function is_weixin() {
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                $(".wechat_login").attr("href", "https://shixian.com/users/auth/wechat");
+                $("#auth_weibo").hide();
+                $("#auth_github").hide();
+            } else {
+                $(".wechat_login").attr("href", "https://shixian.com/users/auth/open_wechat")
+            }
+        }
+
+        is_weixin();
+    </script>
+
+
+</div>
+
+
+
+
+<!--放一个id为footer的div,把footer.html加载到这块-->
+<div id="footer"></div>
+
+
+<script>
+    $(function() {
+        $('#header').load('header.html');
+        $('#nav').load('nav.html');
+        $('#footer').load('footer.html');
+    })
+</script>
+
+
+
+<!-- 未登录，登录弹窗 -->
+<div class="modal fade" id="weixin_login_modal" tabindex="-1" role="dialog" tabindex="-1"
+     aria-labelledby="weixin_login_modal_label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="weixin_login_modal_label">请先登录</h4>
+            </div>
+            <div class="modal-body">
+                <a class="btn btn-default btn-inverse wechat_login" style="color: #3BAF33;" rel="nofollow" title="微信登录"
+                   href="https://shixian.com/users/auth/open_wechat">
+                    <i class="fa fa-weixin"></i>&nbsp; 微信登录
+                </a>
+                <a class="btn btn-default weibo_login" style="color: #E01919;" rel="nofollow" title="微博登录"
+                   href="https://shixian.com/users/auth/weibo">
+                    <i class="fa fa-weibo"></i>&nbsp; 微博登录
+                </a>
+                <a class="btn btn-default github_login" style="color: #333;" rel="nofollow" title="GitHub登录"
+                   href="https://shixian.com/users/auth/github">
+                    <i class="fa fa-github"></i>&nbsp; GitHub登录
+                </a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    is_weixin();
+
+    function is_weixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            $(".wechat_login").attr("href", "https://shixian.com/users/auth/wechat");
+            $(".weibo_login").hide();
+            $(".github_login").hide();
+        } else {
+            $(".wechat_login").attr("href", "https://shixian.com/users/auth/open_wechat")
+        }
+    }
+</script>
+
+<script src="js/wx-activity-popover-ee5a2e9688b1344f6f815e8c9c83f9def559b8db0b6b3545136d2356967170db.js"></script>
+
+<!-- layouts/common_layout_footer -->
+
+
+<!-- 百度统计等 -->
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F25e3b17ddf2b132427768bfebf751a76' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<!-- growingio -->
+<script type='text/javascript'>
+    var _vds = _vds || [];
+    window._vds = _vds;
+    (function () {
+        _vds.push(['setAccountId', 'acf6ac3446a1dcb0']);
+        (function () {
+            var vds = document.createElement('script');
+            vds.type = 'text/javascript';
+            vds.async = true;
+            vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(vds, s);
+        })();
+    })();
+</script>
+
+</body>
+</html>
+

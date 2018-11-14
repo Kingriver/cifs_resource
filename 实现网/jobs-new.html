@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+  
+
+ 
+    <link rel="stylesheet" media="screen"
+          href="css/form-13f774b61605cfd6dad2820fbf58b04a7f311de7fc23886320a79972e4636299.css"/>
+
+
+<script src="js/jquery-2.1.3.min-110fa8fd9cb93b29de53d0dca46855f92f1ffa69885d6a883aebad2a5b0d5b56.js"></script>
+    <script src="js/form-54bbfcf6877f65cb6e262264141d4dededefc2ef7e83197745cf4d890ec80394.js"></script>
+
+
+
+    <!-- layouts/meta_tags -->
+    <title>发布兼职需求 - 实现网</title>
+
+
+
+</head>
+<body>
+
+<!--放一个id为header的div,把header.html加载到这块-->
+<div id="header"></div>
+
+
+<!--放一个id为header的div,把nav.html加载到这块-->
+<div id="nav"></div>
+
+
+<div class="empty-line"></div>
+
+<div class="container">
+
+
+    <div class="with-white-background-color hiden-sm hidden-xs with-box-shadow jobs clearfix">
+        <div class="empty-row clearfix"></div>
+
+        <div class="col-md-2 col-md-offset-1">
+            <img alt="发布用人需求"
+                 src="https://cdn.shixian.com/assets/jobs/publish-job-guide-686dfa24c83450285819e28a01253cf64ce851d4ef58074683fe01c24e9f7a47.png"/>
+        </div>
+
+        <div class="col-md-8 guide col-md-offset-1">
+            <h1>
+                发布用人需求
+            </h1>
+
+            <p class="text-muted">
+                需求发布后，我们将在工作时间的12小时内，
+                <br>
+                推荐来自知名互联网公司的技术人才到您的团队坐班兼职。
+            </p>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="empty-row"></div>
+    </div>
+
+    <div class="empty-line hidden-xs"></div>
+
+    <div class="jobs visible-xs">
+        <ol class="breadcrumb">
+            <li><a target="_blank" href="/jobs">兼职需求</a></li>
+            <li class="active">发布用人需求</li>
+        </ol>
+    </div>
+
+    <div class="with-white-background-color jobs with-box-shadow">
+        <div class="empty-norm"></div>
+        <div class="empty-norm"></div>
+
+        <div class="col-md-10 new-update col-md-offset-2">
+            <div class="empty-line"></div>
+
+            <form class="new_job" id="new_job" action="/jobs" accept-charset="UTF-8" method="post"><input name="utf8"
+                                                                                                          type="hidden"
+                                                                                                          value="&#x2713;"/><input
+                    type="hidden" name="authenticity_token"
+                    value="w7jMCdWXaI9FSSOdx+H8FibqyghZVXWqgbRa30eidNhIw7ZEHfF02Fu4/Kpdqbh3fzjijgqeT533fotET8RHSw=="/>
+
+
+                <p class="explain">
+                    这是您第一次发布用户需求，请先完善您的个人信息
+                </p>
+
+                <div class="empty-small-line hidden-xs"></div>
+
+
+                <div class="row">
+                    <div class="form-group col-md-4 clearfix">
+                        <label class="control-label" for="job_employer_name">
+                            您的真实姓名 <span class="red">*</span>
+                        </label>
+                        <div class="">
+                            <input required="required" placeholder="方便沟通及订单处理" class="form-control" type="text"
+                                   name="job[employer][name]" id="job_employer_name"/>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group col-md-4 clearfix col-md-offset-1">
+                        <label class="control-label" for="job_employer_email">
+                            您的邮箱 <span class="red">*</span>
+                        </label>
+                        <div class="">
+                            <input required="required" class="form-control" type="text" name="job[employer][email]"
+                                   id="job_employer_email"/>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row clearfix">
+                    <div class="form-group col-md-4 clearfix">
+
+                        <div class="empty-line visible-xs"></div>
+
+                        <label class="control-label" for="job_employer_telphone">
+                            您的手机号 <span class="red">*</span>
+                        </label>
+                        <div class="">
+                            <input required="required" placeholder="方便运营人员及时联系您"
+                                   class="form-control input-with-addon inline-block" data-is-phone-checked="false"
+                                   type="text" name="job[employer][telphone]" id="job_employer_telphone"/>
+
+                            <button name="button" type="submit" class="btn btn-default block-inline get-v-code"
+                                    id="get-v-code">获取验证码
+                            </button>
+
+                            <p class="notice hidden">
+                                <i class="icon-shixian-warning text-danger"></i>
+                                &nbsp;
+                                <span>请输入手机号</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-4 clearfix col-md-offset-1">
+                        <label class="control-label" for="token_code">
+                            验证码 <span class="red">*</span>
+                        </label>
+                        <div class="inline-block you-are-right hidden" id="for-token_code">
+                            <i class="fa fa-check-circle-o"></i>
+                        </div>
+
+                        <div class="">
+                            <input type="text" name="token_code" id="token_code" disabled="disabled" required="required"
+                                   placeholder="请输入短信验证码" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+
+
+                <hr>
+
+                <div class="empty-line"></div>
+
+                <div class="form-group row clearfix">
+                    <label class="control-label col-md-11" for="job_territory">
+                        <div class="label-group-addon hidden-xs badge">1</div>
+
+                        选择您的用人类别 <span class="red">*</span>
+                    </label>
+                    <div class="col-md-9">
+                        <select required="required" class="col-md-6 form-control" name="job[territory]"
+                                id="job_territory">
+                            <option value="">选择人才类别</option>
+                            <option value="ios">iOS工程师</option>
+                            <option value="android">Android工程师</option>
+                            <option value="ui">UI设计师</option>
+                            <option value="frontend">前端工程师</option>
+                            <option value="backend">后端工程师</option>
+                            <option value="pm">产品经理</option>
+                            <option value="operator">运营/编辑</option>
+                            <option value="tester">测试</option>
+                            <option value="full_stack">全栈</option>
+                            <option value="others">其它</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row clearfix">
+                    <label class="control-label col-md-11" for="job_project_type">
+                        <div class="label-group-addon hidden-xs badge">2</div>
+                        请选择您的项目类别 <span class="red">*</span>
+                    </label>
+                    <div class="col-md-9">
+                        <select required="required" disabled="disabled" class="col-md-6 form-control"
+                                name="job[project_type]" id="job_project_type">
+                            <option value="">请选择您的项目类别</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row clearfix">
+                    <label class="control-label col-md-11" for="job_title">
+                        <div class="label-group-addon hidden-xs badge">3</div>
+                        项目名称 <span class="red">*</span>
+                    </label>
+                    <div class="col-md-9">
+                        <input required="required" class="form-control" type="text" name="job[title]" id="job_title"/>
+                    </div>
+                </div>
+
+                <div class="form-group row clearfix">
+                    <div class="col-md-9 clearfix">
+                        <label class="control-label" for="job_description">
+                            <div class="label-group-addon hidden-xs badge">4</div>
+                            项目描述 <span class="red">*</span>
+                        </label>
+                        <div class="job-description-placeholder-hint pull-right">
+      <span class="job-example">
+        <a data-toggle="collapse" id="description-example-collapse" href="#description-example">
+            展开范例&nbsp;<i class='fa fa-angle-double-down'></i>
+</a>      </span>
+                        </div>
+                    </div>
+
+                    <div class="collapse col-md-9 col-xs-12 description-example" id="description-example">
+                        <div class="well text-muted">
+                            <div>
+                                <p>
+                                    一、需求描述
+                                </p>
+                                <p>
+                                    产品类别：电商
+                                    <br>
+                                    开发进度：已经有原型、UI图，需要技术开发。
+                                    <br>
+                                    功能：实现电商平台的商品推荐功能。包含用户浏览记录采集、数据存储、用户行为判断、信息推送、数据统计。
+                                    <br>
+                                    技术：使用PHP语言、ecshop框架，其他不限。
+                                </p>
+                            </div>
+
+                            <div>
+                                <p>
+                                    二、参考产品
+                                </p>
+
+                                <p>
+                                    第五大道奢侈品（5lux.com）
+                                    <br>
+                                    珍品网（zhen.com）
+                                </p>
+                            </div>
+
+                            <div>
+                                <p>
+                                    三、人才要求
+                                </p>
+
+                                <p>
+                                    3 年以上PHP开发经验，精通MySQL数据，有电商系统开发经验。
+                                </p>
+                            </div>
+
+                            <div>
+                                <p>
+                                    四、其他要求
+                                </p>
+
+                                <p>
+                                    坐班要求：可以每周坐班一次，其他时间可以远程。
+                                    <br>
+                                    项目周期：总周期约30天。
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 clearfix">
+    <textarea required="required" placeholder="    请条理清晰地列出兼职岗位职责，以及兼职要求。不少于100字
+
+    一、需求描述
+    二、参考产品
+    三、人才要求
+    四、 其他要求
+" class="col-xs-12 col-md-12" rows="10" minlength="100" name="job[description]" id="job_description">
+</textarea>
+
+                        <div class="pull-right placeholder-hint" id="pte-hint">
+                            <span>0</span>字，请不要少于100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row clearfix">
+                    <label class="control-label col-md-11" for="job_skill_tags">
+                        <div class="label-group-addon hidden-xs badge">5</div>
+                        填写所需技能
+                    </label>
+                    <div class="col-md-9">
+
+
+                        <div class="input-group">
+                            <input class="form-control" placeholder="请输入职位所需要的技能" maxlength="18" size="18" type="text"
+                                   name="job[skill_tags]" id="job_skill_tags"/>
+
+                            <span class="input-group-btn">
+        <button name="button" type="submit" class="btn-add-skill btn btn-default" id="btn-add-skill">添加</button>
+      </span>
+                        </div>
+
+                        <input type="hidden" name="job[skill]" id="job_skill"/>
+
+                        <div class="tag-list">
+                            <ol>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row clearfix">
+                    <label class="control-label col-md-11" for="job_pay_type">
+                        <div class="label-group-addon hidden-xs badge">6</div>
+                        请选择您期望的付款方式 <span class="red">*</span>
+                    </label>
+                    <div class="col-md-9">
+                        <div class="col-md-2 radio-group-wrapper no-padding-left">
+                            <label class="radio-group">
+                                <input required="required" class="pay-type" type="radio" value="project_mode"
+                                       name="job[pay_type]" id="job_pay_type_project_mode"/>
+                                &nbsp;
+                                项目制
+                            </label>
+                        </div>
+                        <div class="col-md-2 radio-group-wrapper no-padding-left">
+                            <label class="radio-group">
+                                <input required="required" class="pay-type" type="radio" value="daily_wage_mode"
+                                       name="job[pay_type]" id="job_pay_type_daily_wage_mode"/>
+                                &nbsp;
+                                日薪制
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 项目制 -->
+                <div class="form-group row clearfix hidden" id="salary-range-field">
+                    <label class="control-label col-md-11" for="job_salary_range">
+                        项目总预算 <span class="red">*</span>
+
+                        <span class="placeholder-hint">（请不要将金额设置过低）</span>
+                    </label>
+                    <div class="col-md-9">
+                        <input class="form-control" min="1000" max="1000000" type="number" name="job[salary_range]"
+                               id="job_salary_range"/>
+                    </div>
+                </div>
+
+                <!-- 项目制 -->
+                <div class="form-group row clearfix hidden" id="work-duration-field">
+                    <label class="control-label col-md-11" for="job_work_duration">
+                        工作时长 <span class="red">*</span>
+
+                        <span class="placeholder-hint">（天）</span>
+                    </label>
+                    <div class="col-md-9">
+                        <input class="form-control" min="1" max="100" type="number" name="job[work_duration]"
+                               id="job_work_duration"/>
+
+                        <div class="form-control-static md-no-padding-left">
+                            <span>平均日薪 <i id="pre_day_money_hint" class="red"> 0 </i> 元</span>
+
+                            <span class="placeholder-hint">（最低为500元/天）</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 日薪制 -->
+                <div class="form-group row clearfix hidden" id="how-money-field">
+                    <label class="control-label col-md-11" for="job_how_money">
+                        愿付日薪 <span class="red">*</span>
+
+                        <span class="placeholder-hint">（每工作8小时计为一天）</span>
+                    </label>
+                    <div class="col-md-9">
+                        <select class="form-control" name="job[how_money]" id="job_how_money">
+                            <option value="300">300</option>
+                            <option value="400">400</option>
+                            <option value="500">500</option>
+                            <option value="600">600</option>
+                            <option value="700">700</option>
+                            <option value="800">800</option>
+                            <option selected="selected" value="900">900</option>
+                            <option value="1000">1000</option>
+                            <option value="1100">1100</option>
+                            <option value="1200">1200</option>
+                            <option value="1300">1300</option>
+                            <option value="1400">1400</option>
+                            <option value="1500">1500</option>
+                            <option value="1600">1600</option>
+                            <option value="1700">1700</option>
+                            <option value="1800">1800</option>
+                            <option value="1900">1900</option>
+                            <option value="2000">2000</option>
+                            <option value="2100">2100</option>
+                            <option value="2200">2200</option>
+                            <option value="2300">2300</option>
+                            <option value="2400">2400</option>
+                            <option value="2500">2500</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 日薪制 -->
+                <div class="form-group row clearfix hidden" id="number-of-day-field">
+                    <label class="control-label col-md-11" for="job_number_of_day">
+                        预估工期 <span class="red">*</span>
+
+                        <span class="placeholder-hint">（天）</span>
+                    </label>
+                    <div class="col-md-9">
+                        <select required="required" class="form-control" name="job[number_of_day]"
+                                id="job_number_of_day">
+                            <option value=""></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                        </select>
+
+                        <div class="form-control-static md-no-padding-left">
+                            <span>预计总金额 <i id="job_total_amount_hint">  </i> 元</span><br/>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group row clearfix">
+                    <label class="control-label col-md-11" for="job_way_to_work">
+                        <div class="label-group-addon hidden-xs badge">7</div>
+                        请选择您希望的工作方式 <span class="red">*</span>
+                    </label>
+                    <div class="col-md-9">
+                        <select class="form-control" name="job[way_to_work]" id="job_way_to_work">
+                            <option value="like_office_worker">全程坐班</option>
+                            <option value="like_scheduled">定期坐班</option>
+                            <option value="like_soho">远程</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="form-group row clearfix" , id="city-region-address-field">
+                    <label class="control-label col-md-11" for="job_city">
+                        个人所在地或工作地点 <span class="red">*</span>
+                    </label>
+                    <br>
+
+                    <div class="col-md-2 col-lg-2">
+                        <select name="job[city]" id="job_city" required="required" class="form-control">
+                            <option selected="selected" value="beijing">北京</option>
+                            <option value="shanghai">上海</option>
+                            <option value="shenzhen">深圳</option>
+                            <option value="hangzhou">杭州</option>
+                            <option value="guangzhou">广州</option>
+                            <option value="chengdu">成都</option>
+                            <option disabled="disabled" value="----">----</option>
+                            <option value="nanjing">南京</option>
+                            <option value="xian">西安</option>
+                            <option value="hubei">湖北</option>
+                            <option value="xiamen">厦门</option>
+                            <option value="shandong">山东</option>
+                            <option value="suzhou">苏州</option>
+                            <option value="zhengzhou">郑州</option>
+                            <option value="fuzhou">福州</option>
+                            <option value="changsha">长沙</option>
+                            <option value="chongqing">重庆</option>
+                            <option value="tianjin">天津</option>
+                            <option value="ningbo">宁波</option>
+                            <option disabled="disabled" value="----">----</option>
+                            <option value="qita">其它</option>
+                        </select>
+                    </div>
+
+                    <div class="clearfix visible-xs visible-sm"></div>
+                    <div class="empty-small-line visible-xs visible-sm"></div>
+
+                    <div class="col-md-2 col-lg-2 md-no-padding-left">
+                        <select class="form-control" style="margin-left: 0%;" name="job[region]" id="job_region">
+                            <option value="海淀">海淀</option>
+                            <option value="昌平">昌平</option>
+                            <option value="朝阳">朝阳</option>
+                            <option value="东城">东城</option>
+                            <option value="西城">西城</option>
+                            <option value="石景山">石景山</option>
+                            <option value="通州">通州</option>
+                            <option value="丰台">丰台</option>
+                        </select>
+                    </div>
+
+                    <div class="clearfix visible-xs visible-sm"></div>
+                    <div class="empty-small-line visible-xs visible-sm"></div>
+
+                    <div class="col-md-5 md-no-padding-left">
+                        <input required="required" placeholder="个人所在地或工作地点，请尽量填写具体地址" class="form-control" type="text"
+                               name="job[address]" id="job_address"/>
+                    </div>
+                </div>
+
+
+                <div class="form-group row clearfix">
+                    <label class="control-label col-md-11" for="job_beginning_work_date">
+                        <div class="label-group-addon hidden-xs badge">8</div>
+                        期望开始工作日期 <span class="red">*</span>
+                    </label>
+                    <div class="col-md-9">
+                        <input required="required" class="form-control" type="text" name="job[beginning_work_date]"
+                               id="job_beginning_work_date"/>
+                    </div>
+                </div>
+
+
+                <div class="form-group row clearfix">
+                    <label class="control-label col-md-11" for="job_employer_company_name">
+                        <div class="label-group-addon hidden-xs badge">9</div>
+                        公司名称 <span class="red">*</span>
+                    </label>
+                    <div class="col-md-9">
+                        <input required="required" class="form-control" type="text" name="job[employer][company_name]"
+                               id="job_employer_company_name"/>
+                    </div>
+                </div>
+
+                <div class="hidden">
+                    <select name="" id="ios-options">
+                        <option value="">选择项目类别</option>
+                        <option value="APP开发">APP开发</option>
+                        <option value="游戏开发">游戏开发</option>
+                        <option value="性能优化/Bug修复">性能优化/Bug修复</option>
+                        <option value="其他">其他</option>
+                    </select>
+                    <select name="" id="android-options">
+                        <option value="">选择项目类别</option>
+                        <option value="APP开发">APP开发</option>
+                        <option value="游戏开发">游戏开发</option>
+                        <option value="性能优化/Bug修复">性能优化/Bug修复</option>
+                        <option value="其他">其他</option>
+                    </select>
+                    <select name="" id="ui-options">
+                        <option value="">选择项目类别</option>
+                        <option value="平面设计">平面设计</option>
+                        <option value="APP/Web UI设计">APP/Web UI设计</option>
+                        <option value="VI设计">VI设计</option>
+                        <option value="插画设计">插画设计</option>
+                        <option value="动画设计">动画设计</option>
+                        <option value="其他">其他</option>
+                    </select>
+                    <select name="" id="frontend-options">
+                        <option value="">选择项目类别</option>
+                        <option value="微信/H5开发">微信/H5开发</option>
+                        <option value="Web开发">Web开发</option>
+                        <option value="H5游戏开发">H5游戏开发</option>
+                        <option value="其他">其他</option>
+                    </select>
+                    <select name="" id="backend-options">
+                        <option value="">选择项目类别</option>
+                        <option value="网站开发">网站开发</option>
+                        <option value="Api接口开发">Api接口开发</option>
+                        <option value="微信开发">微信开发</option>
+                        <option value="数据挖掘/爬虫">数据挖掘/爬虫</option>
+                        <option value="部署/运维">部署/运维</option>
+                        <option value="其他">其他</option>
+                    </select>
+                    <select name="" id="pm-options">
+                        <option value="">选择项目类别</option>
+                        <option value="产品咨询">产品咨询</option>
+                        <option value="原型设计">原型设计</option>
+                        <option value="游戏策划">游戏策划</option>
+                        <option value="其他">其他</option>
+                    </select>
+                    <select name="" id="operator-options">
+                        <option value="">选择项目类别</option>
+                        <option value="产品运营">产品运营</option>
+                        <option value="内容运营">内容运营</option>
+                        <option value="活动策划">活动策划</option>
+                        <option value="文案策划">文案策划</option>
+                        <option value="网站SEO">网站SEO</option>
+                        <option value="其他">其他</option>
+                    </select>
+                    <select name="" id="tester-options">
+                        <option value="">选择项目类别</option>
+                        <option value="功能测试">功能测试</option>
+                        <option value="性能测试">性能测试</option>
+                        <option value="安全测试">安全测试</option>
+                        <option value="测试开发">测试开发</option>
+                        <option value="其他">其他</option>
+                    </select>
+                    <select name="" id="full_stack-options">
+                        <option value="不用选择">不用选择</option>
+                    </select>
+                    <select name="" id="others-options">
+                        <option value="不用选择">不用选择</option>
+                    </select>
+                </div>
+
+
+                <div class="empty-line"></div>
+
+                <div class="col-sm-12 no-padding-left xs-no-padding">
+                    <input type="submit" name="commit" value="发布需求"
+                           class="btn btn-primary submit-job-button xs-full-width" data-disable-with="发布需求"/>
+                </div>
+
+                <div class="empty-row"></div>
+                <div class="empty-row"></div>
+            </form>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="empty-row"></div>
+    </div>
+
+
+</div>
+
+
+<!--放一个id为footer的div,把footer.html加载到这块-->
+<div id="footer"></div>
+
+
+<script>
+    $(function() {
+        $('#header').load('header.html');
+        $('#nav').load('nav.html');
+        $('#footer').load('footer.html');
+    })
+</script>
+
+
+<!-- 已登录，消息提醒 -->
+<script src="js/pull_notices-430ba62a3b9fea9a5f9b6d44cea543c066fdca4eec1615ecc7adeef1feee89c7.js"></script>
+
+<script type="text/javascript">
+    is_weixin();
+
+    function is_weixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            $(".wechat_login").attr("href", "https://shixian.com/users/auth/wechat");
+            $(".weibo_login").hide();
+            $(".github_login").hide();
+        } else {
+            $(".wechat_login").attr("href", "https://shixian.com/users/auth/open_wechat")
+        }
+    }
+</script>
+
+<script src="js/wx-activity-popover-ee5a2e9688b1344f6f815e8c9c83f9def559b8db0b6b3545136d2356967170db.js"></script>
+
+
+<script>
+    function set_job_skill(tag_list) {
+        var job_skill = []
+
+        $.each(tag_list, function (index, value) {
+            var _skill = $(value).text().trim();
+
+            job_skill.push(_skill)
+
+            console.log(job_skill)
+        });
+
+        $("#job_skill").val(job_skill.join(','))
+    }
+
+    $("#btn-add-skill").on("click", function (e) {
+        e.preventDefault();
+
+        var value = $("#job_skill_tags").val().trim()
+        var size = $(".tag-list li").size()
+
+        if (!(value.length > 0) || size >= 5) {
+            $.scojs_message('标签个数不能大于5个', $.scojs_message.TYPE_ALERT);
+            return
+        }
+
+        var s = "<li class='tag'> "
+        s += value
+        s += " &nbsp; <i class='icon-shixian-close remove-skill'></i> </li>"
+
+        $(".tag-list ol").append(s)
+
+        $("#job_skill_tags").val("")
+
+        set_job_skill($(".tag-list li"))
+    })
+
+    $(document).on("click", ".remove-skill", function () {
+        $(this).parent('.tag').remove();
+
+        set_job_skill($(".tag-list li"))
+    })
+
+    $(document).on('input propertychange', '#job_description', function () {
+        var pte_length = $(this).val().trim().length;
+
+        if (pte_length <= 0) {
+            $("#pte-hint").hide();
+        } else {
+            $("#pte-hint").show();
+            $("#pte-hint span").text(pte_length);
+        }
+        ;
+    });
+</script>
+
+<script src="js/employer_apply-9bcc5480ca13e3278ac7b5f63eeebdedaba8b4bfb86be81f412a3bae4da75491.js"></script>
+
+<script type="text/javascript">
+    $(document).on("change", "#job_city", function () {
+        var value = $(this).val();
+        var url = "/programmers/get_its_regions/" + value
+
+        if (value == "remote") {
+            $("#job_address").prop('required', false);
+        } else {
+            $("#job_address").prop('required', true);
+        }
+
+        $.ajax({
+            url: url,
+            dataType: "text"
+        }).done(function (data) {
+            $("#job_region").html(data);
+        });
+
+        $("#job_region").prop('disabled', false);
+        $("#job_address").prop('disabled', false);
+    });
+
+    $(document).on("change", "#job_number_of_day", function () {
+        var how_money = $("#job_how_money").val();
+        var number_of_day = $(this).val();
+
+        var job_total_amount = how_money * number_of_day
+        $("#job_total_amount_hint").text(job_total_amount)
+    })
+
+    $(document).on("change", "#job_how_money", function () {
+        var how_money = $("#job_number_of_day").val();
+        var number_of_day = $(this).val();
+
+        var job_total_amount = how_money * number_of_day
+        $("#job_total_amount_hint").text(job_total_amount)
+    })
+
+    // 上面是日薪制，下面这是项目制度
+
+    $(document).on("change", "#job_salary_range", function () {
+        var job_work_duration = $("#job_work_duration").val();
+        var job_salary_range = $(this).val();
+
+        if (job_work_duration.length > 0 && job_salary_range.length > 0) {
+            var per_day_money = Math.round(job_salary_range / job_work_duration)
+        } else {
+            return
+        }
+
+        $("#pre_day_money_hint").text(per_day_money)
+
+        if (per_day_money < 500) {
+            $("#low_per_day_money_notice").removeClass('hidden')
+        } else {
+            $("#low_per_day_money_notice").addClass('hidden')
+        }
+    })
+
+    $(document).on("change", "#job_work_duration", function () {
+        var job_salary_range = $("#job_salary_range").val();
+        var job_work_duration = $(this).val();
+
+        if (job_work_duration.length > 0 && job_salary_range.length > 0) {
+            var per_day_money = Math.round(job_salary_range / job_work_duration)
+        } else {
+            return
+        }
+
+        $("#pre_day_money_hint").text(per_day_money)
+
+        if (per_day_money < 500) {
+            $("#low_per_day_money_notice").removeClass('hidden')
+        } else {
+            $("#low_per_day_money_notice").addClass('hidden')
+        }
+    })
+
+    $('#job_beginning_work_date').datepicker({
+        format: 'yyyy-mm-dd',
+        startDate: '2018-11-13',
+        endDate: '2018-11-27',
+        defaultViewDate: "2018-11-13",
+        language: "zh-CN",
+        autoclose: true,
+        todayHighlight: true
+    });
+
+    function double_up() {
+        $(this).html("收起范例&nbsp;<i class='fa fa-angle-double-up'></i>")
+        $(this).one("click", double_down);
+    }
+
+    function double_down() {
+        $(this).html("展开范例&nbsp;<i class='fa fa-angle-double-down'></i>")
+        $(this).one("click", double_up);
+    }
+
+    $("#description-example-collapse").one("click", double_up);
+
+    //
+
+    $("#job_territory").on("change", function () {
+        var territory = $(this).val()
+
+        var options_ele = "#" + territory + "-options"
+
+        // <option value="">选择人才类别</option>
+
+        var options = $(options_ele).html()
+
+        if ((territory == "full_stack") || (territory == "others")) {
+            $("#job_project_type").prop('disabled', true).html(options)
+        } else {
+            $("#job_project_type").prop('disabled', false).html(options)
+        }
+    })
+
+
+    $("input[name='job[pay_type]']").on("change", function () {
+        var pay_type = $(this).val();
+
+        if (pay_type == 'project_mode') {
+            $("#salary-range-field").removeClass('hidden');
+            $("#work-duration-field").removeClass('hidden');
+
+            $("#how-money-field").addClass('hidden');
+            $("#number-of-day-field").addClass('hidden');
+        } else if (pay_type == 'daily_wage_mode') {
+            $("#salary-range-field").addClass('hidden');
+            $("#work-duration-field").addClass('hidden');
+
+            $("#how-money-field").removeClass('hidden');
+            $("#number-of-day-field").removeClass('hidden');
+        } else {
+            //
+        }
+    })
+</script>
+
+
+<!-- 百度统计等 -->
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F25e3b17ddf2b132427768bfebf751a76' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<!-- growingio -->
+<script type='text/javascript'>
+    var _vds = _vds || [];
+    window._vds = _vds;
+    (function () {
+        _vds.push(['setAccountId', 'acf6ac3446a1dcb0']);
+        (function () {
+            var vds = document.createElement('script');
+            vds.type = 'text/javascript';
+            vds.async = true;
+            vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(vds, s);
+        })();
+    })();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,868 @@
+<!-- layouts/common_layout_header -->
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <link rel="stylesheet" media="screen"
+          href="css/next_layout-7937d384d420297c7fac6f5b0d5ba8e3afa90f0ea1d4a58db247537058e7495f.css"/>
+
+<script src="js/jquery-2.1.3.min-110fa8fd9cb93b29de53d0dca46855f92f1ffa69885d6a883aebad2a5b0d5b56.js"></script>
+
+    <link rel="stylesheet" media="screen"
+          href="css/services-3d539b7dc536ac5564b4e759477c050613a8ff1256939951cd2b5bd5f0269240.css"/>
+
+
+    <script src="/js/next_layout-b7ed6dc1eb402a1fa7a5192ff92f059f7c2e86bfb606a2e62bfc83ab7a104888.js"></script>
+
+    <title>入驻标准服务 - 实现网</title>
+
+
+
+</head>
+<body>
+
+
+<!--放一个id为header的div,把header.html加载到这块-->
+<div id="header"></div>
+
+
+<!--放一个id为header的div,把nav.html加载到这块-->
+<div id="nav"></div>
+
+
+<div class="empty-line"></div>
+
+<div class="container">
+    <div class="col-md-12 service-edit with-white-background-color">
+        <div class="col-md-10 col-md-offset-1 xs-no-padding">
+            <div class="content-box">
+                <div class="media">
+                    <div class="media-left media-middle hidden-xs">
+                        <img class="media-object service-head-cover" alt="入驻标准服务"
+                             src="https://cdn.shixian.com/assets/services/service-edit-e798e84d536136d25dfcde226209b5c186e625b7f69e9aa032cca046593c2961.png"/>
+                    </div>
+
+                    <div class="media-body intro-content media-middle xs-no-padding-left">
+                        <h1 class="media-heading">
+                            入驻标准服务
+                        </h1>
+
+                        <section class="text-muted welcome">
+                            把你最擅长的技能打包成服务，售买出去。
+                            <br>
+                            填写服务介绍、指明交付标准，让聘用方无需反复比价，轻松下单付款。
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="empty-line"></div>
+
+<div class="container">
+    <div class="col-md-12 service-edit with-white-background-color">
+        <div class="col-md-10 col-md-offset-1 xs-no-padding">
+            <div class="content-box">
+                <form class="form-with-validate" id="new_service" enctype="multipart/form-data" action="/services"
+                      accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input
+                        type="hidden" name="authenticity_token"
+                        value="mpIfD1AoiKdzs/ZqIAZjF+cNa/NTOnj0PJPvmG0cbTQR6WVCmE6U8G1CKV26Tid2vt9DdQDxQsNKWT4DZXpepw=="/>
+                    <div class="form-group">
+                        <label for="service_title">
+                            服务名称
+                            <small class="text-muted">*</small>
+
+                            <br>
+                            <small class="text-muted">
+                                如您可提供多个服务，请分开填写
+                            </small>
+                        </label>
+                        <input class="form-control" required="required" placeholder="擅长的技能或可交付的作品（20字以内）" minlength="2"
+                               type="text" name="service[title]" id="service_title"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service_category_slug">
+                            所属类别
+                            <small class="text-muted">*</small>
+                        </label>
+                        <select class="form-control" required="required" data-msg-required="请选择所属类别"
+                                name="service[category_slug]" id="service_category_slug">
+                            <option value="">请选择所属类别</option>
+                            <option value="jishu">技术</option>
+                            <option value="chanpin">产品</option>
+                            <option value="sheji">设计</option>
+                            <option value="yunying">运营</option>
+                            <option value="zixun">咨询</option>
+                            <option value="others">其他</option>
+                        </select>
+                    </div>
+
+
+                    <select class="form-control hidden" name="service[jishu]" id="service_jishu">
+                        <option value="">请选择子分类</option>
+                        <option value="qian-duan-kai-fa">前端开发</option>
+                        <option value="hou-duan-kai-fa">后端开发</option>
+                        <option value="ios-android">iOS/Android</option>
+                        <option value="wei-xin-kai-fa">微信开发</option>
+                        <option value="zhi-bo-xiao-shi-pin">直播/小视频</option>
+                        <option value="pa-chong">爬虫</option>
+                        <option value="seo-aso">SEO/ASO</option>
+                        <option value="cha-jian-kai-fa">插件开发</option>
+                        <option value="xing-neng-you-hua">性能优化</option>
+                        <option value="qi-ta">其他</option>
+                    </select>
+
+                    <select class="form-control hidden" name="service[chanpin]" id="service_chanpin">
+                        <option value="">请选择子分类</option>
+                        <option value="chan-pin-yuan-xing">产品原型</option>
+                        <option value="jing-pin-fen-xi">竞品分析</option>
+                        <option value="yong-hu-ti-yan">用户体验</option>
+                        <option value="qi-ta">其他</option>
+                    </select>
+
+                    <select class="form-control hidden" name="service[sheji]" id="service_sheji">
+                        <option value="">请选择子分类</option>
+                        <option value="logo">Logo</option>
+                        <option value="hai-bao-xuan-chuan-ce-ppt">海报/宣传册/PPT</option>
+                        <option value="ui-she-ji">UI设计</option>
+                        <option value="jiao-hu-she-ji">交互设计</option>
+                        <option value="huo-dong-ye">活动页</option>
+                        <option value="shi-pin-zhi-zuo">视频制作</option>
+                        <option value="qi-ta">其他</option>
+                    </select>
+
+                    <select class="form-control hidden" name="service[yunying]" id="service_yunying">
+                        <option value="">请选择子分类</option>
+                        <option value="wen-zhang-xie-zuo">文章写作</option>
+                        <option value="yong-hu-yun-ying">用户运营</option>
+                        <option value="huo-dong-ce-hua">活动策划</option>
+                        <option value="chan-pin-tui-guang">产品推广</option>
+                        <option value="qi-ta">其他</option>
+                    </select>
+
+                    <select class="form-control hidden" name="service[zixun]" id="service_zixun">
+                        <option value="">请选择子分类</option>
+                        <option value="chuang-ye-fang-fa">创业方法</option>
+                        <option value="tuan-dui-pei-xun">团队培训</option>
+                        <option value="xing-ye-jing-yan">行业经验</option>
+                        <option value="rong-zi">融资</option>
+                        <option value="tuan-dui-da-jian">团队搭建</option>
+                        <option value="qi-ta">其他</option>
+                    </select>
+
+                    <div class="form-group sub-category-slug-box hidden">
+                        <label for="service_sub_category_slug">
+                            子分类
+                            <small class="text-muted">*</small>
+                        </label>
+                        <select class="form-control hidden" required="required" data-msg-required="请选择子分类"
+                                name="service[sub_category_slug]" id="service_sub_category_slug">
+                            <option value="">请选择子分类</option>
+                        </select>
+
+                        <input class="form-control hidden" placeholder="请填写子分类" required="required"
+                               data-msg-required="请填写子分类（10字以内）" type="text" name="service[sub_category_cn]"
+                               id="service_sub_category_cn"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service_cover">服务封面图</label>
+                        <br>
+                        <img style="width: 100%; max-width: 768px; max-height: 356px;" id="upload-your-cover"
+                             src="https://cdn.shixian.com/images/papers.jpg" alt="Papers"/>
+                        <input class="hidden" type="file" name="service[cover]" id="service_cover"/>
+                        <input type="hidden" name="service[cover_cache]" id="service_cover_cache"/>
+                    </div>
+
+                    <div class="form-group description-group">
+                        <label for="service_description">
+                            服务介绍
+                            <small class="text-muted">
+                                (&ge;140字)
+                            </small>
+                            <br>
+                            <small class="text-muted">
+                                填写服务介绍，向买家售卖你的技能和服务
+                            </small>
+                        </label>
+                        <small class="pull-right text-muted">
+                            <a class="" role="button" data-toggle="collapse" href="#service-description-collapse"
+                               aria-expanded="false" aria-controls="service-description-collapse">
+                                格式参考
+                                <i class="fa fa-angle-double-down"></i>
+                            </a>
+                        </small>
+
+                        <div class="collapse" id="service-description-collapse">
+                            <div class="well">
+                                <p>
+                                    1、我的优势
+                                    <br>
+                                    我目前从事xxx工作已经有x年，参与xxx行业app、xxx网站的开发工作。对xxx行业有多年实践经验，可以帮助你开发实现xxx等功能，并且避免在本行业内的一些坑。
+                                </p>
+
+                                <p>
+                                    2、本次服务
+                                    <br>
+                                    我可以提供包含x次修改、x个版本、免费培训指导、加急交付等服务。最终提交全部源文件以及配套素材，并提供免费的沟通、指导。
+                                </p>
+
+                                <p>
+                                    3、说明
+                                    <br>
+                                    本服务包含xxx，不包含xxx；后期维护价格为x%项目总金额/月。
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <textarea rows="11" class="form-control" required="required" placeholder="
+    明确的交付产品能促使买家下单。
+
+    良好范例，如：
+    1、微信聊天机器人开发
+    2、网站SEO优化咨询
+
+    不合适的范例，如：
+    1、 仿京东的分销、多商户、pc、手机网站（不明确，买家无法下单）
+    2、 PHP后端开发（不够具体的交付物）
+    3、 原型图/UI设计/开发测试（非明确的服务）
+  " name="service[description]" id="service_description">
+</textarea>
+                    </div>
+
+                    <div class="form-group description-group">
+                        <label for="service_employer_provider">
+                            雇主需要提供的材料
+                            <small class="text-muted">
+                                (&ge;20字)
+                            </small>
+                            <br>
+                            <small class="text-muted">
+                                提前说明您需要雇主提供什么材料，提高沟通效率
+                            </small>
+                        </label> <textarea rows="5" class="form-control" required="required"
+                                           placeholder="如：详细的需求文档、功能列表、流程图，可参考的App或网站。"
+                                           data-msg-required="请补充说明您需要雇主提供什么材料" name="service[employer_provider]"
+                                           id="service_employer_provider">
+</textarea>
+                    </div>
+
+                    <div class="empty-norm"></div>
+
+                    <div id="table" class="table-editable" data-min-visible-ele="2">
+                        <table class="table">
+                            <label for="service_service_details">
+                                服务交付清单
+                                <small class="text-muted">
+                                    (&ge;2项)
+                                </small>
+                                <br>
+                                <small class="text-muted">
+                                    可交付的具体事项及标准（请包含单位，以方便计价）
+                                </small>
+                            </label>
+                            <tbody>
+
+
+                            <tr class="visible-ele">
+                                <td class="no-padding-left xs-no-padding-right">
+                                    <input required="required" minlength="2" placeholder="如：交付时间" class="full-width"
+                                           data-msg-required="请填写交付事项" data-msg-minlength="交付事项格式不对" type="text"
+                                           name="service[service_details_attributes][0][name]"
+                                           id="service_service_details_attributes_0_name"/>
+                                </td>
+
+                                <td>
+                                    <input required="required" minlength="2" placeholder="10 天" class="full-width"
+                                           data-msg-required="交付标准（含单位）" data-msg-minlength="请包含单位" type="text"
+                                           name="service[service_details_attributes][0][detail]"
+                                           id="service_service_details_attributes_0_detail"/>
+                                </td>
+
+                                <td class="text-right">
+                                    <input type="hidden" value="false"
+                                           name="service[service_details_attributes][0][_destroy]"
+                                           id="service_service_details_attributes_0__destroy"/>
+                                    <span class="table-remove icon-shixian-close"></span>
+                                </td>
+                            </tr>
+
+
+                            <tr class="visible-ele">
+                                <td class="no-padding-left xs-no-padding-right">
+                                    <input required="required" minlength="2" placeholder="如：修改次数" class="full-width"
+                                           data-msg-required="请填写交付事项" data-msg-minlength="交付事项格式不对" type="text"
+                                           name="service[service_details_attributes][1][name]"
+                                           id="service_service_details_attributes_1_name"/>
+                                </td>
+
+                                <td>
+                                    <input required="required" minlength="2" placeholder="3 次" class="full-width"
+                                           data-msg-required="交付标准（含单位）" data-msg-minlength="请包含单位" type="text"
+                                           name="service[service_details_attributes][1][detail]"
+                                           id="service_service_details_attributes_1_detail"/>
+                                </td>
+
+                                <td class="text-right">
+                                    <input type="hidden" value="false"
+                                           name="service[service_details_attributes][1][_destroy]"
+                                           id="service_service_details_attributes_1__destroy"/>
+                                    <span class="table-remove icon-shixian-close"></span>
+                                </td>
+                            </tr>
+
+
+                            <tr class="visible-ele">
+                                <td class="no-padding-left xs-no-padding-right">
+                                    <input required="required" minlength="2" placeholder="如：包含字数" class="full-width"
+                                           data-msg-required="请填写交付事项" data-msg-minlength="交付事项格式不对" type="text"
+                                           name="service[service_details_attributes][2][name]"
+                                           id="service_service_details_attributes_2_name"/>
+                                </td>
+
+                                <td>
+                                    <input required="required" minlength="2" placeholder="2500字" class="full-width"
+                                           data-msg-required="交付标准（含单位）" data-msg-minlength="请包含单位" type="text"
+                                           name="service[service_details_attributes][2][detail]"
+                                           id="service_service_details_attributes_2_detail"/>
+                                </td>
+
+                                <td class="text-right">
+                                    <input type="hidden" value="false"
+                                           name="service[service_details_attributes][2][_destroy]"
+                                           id="service_service_details_attributes_2__destroy"/>
+                                    <span class="table-remove icon-shixian-close"></span>
+                                </td>
+                            </tr>
+
+
+                            <!-- This is our clonable table line -->
+                            <tr class="hide">
+                                <td class="no-padding-left xs-no-padding-right">
+                                    <input type="text" name="service[service_details_attributes][0000000000000][name]"
+                                           id="service_service_details_attributes_0000000000000_name" size="20"
+                                           placeholder="交付事项" class="full-width" data-should-required="true"
+                                           data-msg-required="请填写交付事项"/>
+                                </td>
+
+                                <td>
+                                    <input type="text" name="service[service_details_attributes][0000000000000][detail]"
+                                           id="service_service_details_attributes_0000000000000_detail" size="20"
+                                           placeholder="交付标准（含单位）" class="full-width" data-should-required="true"
+                                           data-msg-required="交付标准（含单位）"/>
+                                </td>
+
+                                <td class="text-right">
+                                    <span class="table-remove icon-shixian-close"></span>
+                                </td>
+                            </tr>
+                            </tbody>
+
+                            <tfoot>
+                            <tr>
+                                <td class="no-padding-left">
+                                    <a class="table-add" href="javascript:void(0)">
+                                        <i class="icon-shixian-plus"></i>
+                                        添加事项
+                                    </a></td>
+                                <td id="visible-ele-notice" class="red" style="display: none;">
+                                    可交付的具体标准应该不小于2项
+                                </td>
+                                <td></td>
+                            </tr>
+                            </tfoot>
+
+                        </table>
+                    </div>
+
+                    <div class="price-block">
+
+                        <div class="empty-norm"></div>
+
+
+                        <div class="form-group">
+                            <label class="main-price-label" for="service_main_price">
+                                基础服务单价
+                                <input class="form-control inline-block text-center main-price" required="required"
+                                       type="number" name="service[main_price]" id="service_main_price"/>
+                                元
+                            </label></div>
+
+                        <div class="form-group main-price-form-group">
+                            <label class="main-price-label" for="service_unit">
+                                服务计量单位
+                                <input class="form-control inline-block text-center main-price" required="required"
+                                       placeholder="套、次、页等" maxlength="5" data-msg-required="请填写计量单位，方便计算价格"
+                                       data-msg-maxlength="计量单位字数超过限制" size="5" type="text" name="service[unit]"
+                                       id="service_unit"/>
+                            </label>
+                            <p class="help-block">
+                                <i class="icon-shixian-start"></i> 建议设置标准价格时考虑市场行情，酌情设置
+                            </p>
+                        </div>
+
+                        <div id="table" class="table-editable" data-min-visible-ele="0">
+                            <table class="table">
+                                <label for="service_expand_services">
+                                    增值服务
+                                    <br>
+                                    <small class="text-muted">
+                                        更多服务事项（请包含单位，以方便计价）
+                                    </small>
+                                </label>
+                                <tbody>
+
+
+                                <tr class="visible-ele">
+                                    <td class="no-padding-left xs-no-padding-right">
+                                        <input required="required" minlength="2" placeholder="服务名称（/次）"
+                                               class="full-width" data-msg-required="请填写服务名称"
+                                               data-msg-minlength="服务名称格式不对" type="text"
+                                               name="service[expand_services_attributes][0][title]"
+                                               id="service_expand_services_attributes_0_title"/>
+                                    </td>
+
+                                    <td>
+                                        <input required="required" class="full-width" placeholder="+金额（元）"
+                                               data-rule-min="50" data-msg-min="金额请不要小于50" data-rule-max="100000"
+                                               data-msg-max="金额请不要大于100000" data-rule-step="50"
+                                               data-msg-step="金额请使用50的整数倍" data-msg-required="请填写金额" type="number"
+                                               name="service[expand_services_attributes][0][price]"
+                                               id="service_expand_services_attributes_0_price"/>
+                                    </td>
+
+                                    <td class="text-right">
+                                        <input type="hidden" value="false"
+                                               name="service[expand_services_attributes][0][_destroy]"
+                                               id="service_expand_services_attributes_0__destroy"/>
+                                        <span class="table-remove icon-shixian-close"></span>
+                                    </td>
+                                </tr>
+
+
+                                <!-- This is our clonable table line -->
+                                <tr class="hide">
+                                    <td class="no-padding-left xs-no-padding-right">
+                                        <input type="text"
+                                               name="service[expand_services_attributes][0000000000000][title]"
+                                               id="service_expand_services_attributes_0000000000000_title" size="20"
+                                               placeholder="服务名称（单位）" class="full-width" data-should-required="true"
+                                               data-msg-required="如：增加细节调整（次）"/>
+                                    </td>
+
+                                    <td>
+                                        <input type="number"
+                                               name="service[expand_services_attributes][0000000000000][price]"
+                                               id="service_expand_services_attributes_0000000000000_price" size="20"
+                                               placeholder="+金额（元）" class="full-width" data-should-required="true"
+                                               data-rule-min="50" data-msg-min="金额请不要小于50" data-rule-max="100000"
+                                               data-msg-max="金额请不要大于100000" data-rule-step="50"
+                                               data-msg-step="金额请使用50的整数倍" data-msg-required="请填写金额"/>
+                                    </td>
+
+                                    <td class="text-right">
+                                        <span class="table-remove icon-shixian-close"></span>
+                                    </td>
+                                </tr>
+                                </tbody>
+
+                                <tfoot>
+                                <tr>
+                                    <td class="no-padding-left">
+                                        <a class="table-add" href="javascript:void(0)">
+                                            <i class="icon-shixian-plus"></i>
+                                            添加事项
+                                        </a></td>
+                                    <td id="visible-ele-notice" class="red" style="display: none;">
+                                        增值服务应该不小于1项
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tfoot>
+
+                            </table>
+                        </div>
+
+                        <!-- <div class="empty-norm"></div> -->
+
+                        <div class="checkbox">
+                            <label class="no-padding-left" style="padding-left: 0;font-size: 16px;"
+                                   for="service_accept_urgent">
+                                提供加急
+
+                                <input name="service[accept_urgent]" type="hidden" value="0"/><input
+                                    style="margin-left: 10px;position: inherit;" type="checkbox" value="1"
+                                    name="service[accept_urgent]" id="service_accept_urgent"/>
+                            </label></div>
+
+                        <div id="table" class="table-editable urgent-services" data-min-visible-ele="1"
+                             style="display: none;">
+                            <table class="table">
+                                <label for="service_urgent_service">
+                                    <small class="text-muted">
+                                        根据不同的进度要求，相应调整价格
+                                    </small>
+                                </label>
+                                <tbody>
+
+                                <tr class="visible-ele">
+                                    <td class="no-padding-left xs-no-padding-right">
+                                        <input required="required" minlength="2" placeholder="加急1天" class="full-width"
+                                               data-msg-required="如：加急1天" data-msg-minlength="格式如：加急1天" type="text"
+                                               name="service[urgent_service_attributes][title]"
+                                               id="service_urgent_service_attributes_title"/>
+                                    </td>
+
+                                    <td class="xs-no-padding-right">
+                                        <input required="required" class="full-width" placeholder="+金额（元）"
+                                               data-rule-min="50" data-msg-min="金额请不要小于50" data-rule-max="100000"
+                                               data-msg-max="金额请不要大于100000" data-rule-step="50"
+                                               data-msg-step="金额请使用50的整数倍" data-msg-required="请填写金额" type="number"
+                                               name="service[urgent_service_attributes][price]"
+                                               id="service_urgent_service_attributes_price"/>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                        <!-- <hr class="main-price-up"> -->
+
+                        <label for="" style="font-size: 16px;">
+                            购买方式
+                        </label>
+
+                        <div class="form-group booking-type-group">
+                            <label for="service_booking_type_contact_me_after_order_created">
+                                <input type="radio" value="contact_me_after_order_created" checked="checked"
+                                       name="service[booking_type]"
+                                       id="service_booking_type_contact_me_after_order_created"/>
+                                &nbsp;
+                                自助式购买
+                            </label>
+                            <br>
+
+                            <span class="notice">雇主下单后，可立即付款，之后双方可见联系方式。</span>
+                        </div>
+
+                        <div class="form-group booking-type-group">
+                            <label for="service_booking_type_contact_me_must_after_paid">
+                                <input type="radio" value="contact_me_must_after_paid" name="service[booking_type]"
+                                       id="service_booking_type_contact_me_must_after_paid"/>
+                                &nbsp;
+                                预约式购买
+                            </label>
+                            <br>
+
+                            <span class="notice">
+            雇主下单后，需经我同意才能付款，之后双方可见联系方式。
+          </span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- <hr class="case-up"> -->
+                    <div class="empty-norm"></div>
+                    <div class="empty-norm"></div>
+
+
+                    <div id="table" class="table-editable" data-min-visible-ele="1">
+                        <table class="table">
+                            <label for="service_service_cases">
+                                展示案例
+                                <small class="text-muted">
+                                    (&ge;1项)
+                                </small>
+
+                                <br>
+                                <small class="text-muted">
+                                    作品截图、文章截图、会议分享、PPT演示文稿、自己做的相关图表等。
+                                </small>
+                            </label>
+                            <tbody>
+
+                            <tr class="visible-ele">
+                                <td class="no-padding-left">
+                                    <input required="required" placeholder="案例名称" class="full-width" minlength="2"
+                                           data-msg-required="请填写案例名称" data-msg-minlength="字数过少" type="text"
+                                           name="service[service_cases_attributes][0][title]"
+                                           id="service_service_cases_attributes_0_title"/>
+                                </td>
+
+                                <td class="no-padding-left xs-no-padding-right">
+                                    <input placeholder="案例链接(可为空)" class="full-width" type="text"
+                                           name="service[service_cases_attributes][0][website]"
+                                           id="service_service_cases_attributes_0_website"/>
+                                </td>
+
+                                <td class="service-case-cover-box text-muted xs-text-center">
+                                    <label class="service-case-cover-label"
+                                           for="service_service_cases_attributes_0_cover">
+                                        <img class="service-case-cover" src="https://cdn.shixian.com/images/papers.jpg"
+                                             alt="Papers"/>
+                                        上传图片
+                                        <small class="text-muted">*</small>
+
+                                        <input class="no-shadow hidden" data-msg-required="请上传案例展示图片" type="file"
+                                               name="service[service_cases_attributes][0][cover]"
+                                               id="service_service_cases_attributes_0_cover"/>
+                                    </label>
+                                    <input type="hidden" name="service[service_cases_attributes][0][cover_cache]"
+                                           id="service_service_cases_attributes_0_cover_cache"/>
+                                </td>
+
+                                <td class="text-right">
+                                    <input type="hidden" name="service[service_cases_attributes][0][new_record_flag]"
+                                           id="service_service_cases_attributes_0_new_record_flag"/>
+                                    <input type="hidden" value="false"
+                                           name="service[service_cases_attributes][0][_destroy]"
+                                           id="service_service_cases_attributes_0__destroy"/>
+                                    <span class="table-remove icon-shixian-close"></span>
+                                </td>
+                            </tr>
+
+
+                            <tr class="visible-ele">
+                                <td class="no-padding-left">
+                                    <input required="required" placeholder="案例名称" class="full-width" minlength="2"
+                                           data-msg-required="请填写案例名称" data-msg-minlength="字数过少" type="text"
+                                           name="service[service_cases_attributes][1][title]"
+                                           id="service_service_cases_attributes_1_title"/>
+                                </td>
+
+                                <td class="no-padding-left xs-no-padding-right">
+                                    <input placeholder="案例链接(可为空)" class="full-width" type="text"
+                                           name="service[service_cases_attributes][1][website]"
+                                           id="service_service_cases_attributes_1_website"/>
+                                </td>
+
+                                <td class="service-case-cover-box text-muted xs-text-center">
+                                    <label class="service-case-cover-label"
+                                           for="service_service_cases_attributes_1_cover">
+                                        <img class="service-case-cover" src="https://cdn.shixian.com/images/papers.jpg"
+                                             alt="Papers"/>
+                                        上传图片
+                                        <small class="text-muted">*</small>
+
+                                        <input class="no-shadow hidden" data-msg-required="请上传案例展示图片" type="file"
+                                               name="service[service_cases_attributes][1][cover]"
+                                               id="service_service_cases_attributes_1_cover"/>
+                                    </label>
+                                    <input type="hidden" name="service[service_cases_attributes][1][cover_cache]"
+                                           id="service_service_cases_attributes_1_cover_cache"/>
+                                </td>
+
+                                <td class="text-right">
+                                    <input type="hidden" name="service[service_cases_attributes][1][new_record_flag]"
+                                           id="service_service_cases_attributes_1_new_record_flag"/>
+                                    <input type="hidden" value="false"
+                                           name="service[service_cases_attributes][1][_destroy]"
+                                           id="service_service_cases_attributes_1__destroy"/>
+                                    <span class="table-remove icon-shixian-close"></span>
+                                </td>
+                            </tr>
+
+
+                            <!-- This is our clonable table line -->
+                            <tr class="hide">
+                                <td class="no-padding-left">
+                                    <input type="text" name="service[service_cases_attributes][0000000000000][title]"
+                                           id="service_service_cases_attributes_0000000000000_title" size="20"
+                                           placeholder="案例名称" class="full-width" minlength="2"
+                                           data-should-required="true" data-msg-required="请填写案例名称"
+                                           data-msg-minlength="字数过少"/>
+                                </td>
+
+                                <td class="no-padding-left xs-no-padding-right">
+                                    <input type="text" name="service[service_cases_attributes][0000000000000][website]"
+                                           id="service_service_cases_attributes_0000000000000_website" size="20"
+                                           placeholder="案例链接" class="full-width"/>
+                                </td>
+
+                                <td class="service-case-cover-box text-muted xs-text-center">
+
+                                    <label class="service-case-cover-label"
+                                           for="service_service_cases_attributes_0000000000000_cover">
+                                        <img class="service-case-cover"
+                                             src="https://cdn.shixian.com/assets/services/add-95b4938214ff9a3b941d08da5fc5c32c2d6395e367dd7968d552c1ab11cd5337.png"
+                                             alt="Add"/>
+                                        上传图片
+                                        <small class="text-muted">*</small>
+
+                                        <input type="file"
+                                               name="service[service_cases_attributes][0000000000000][cover]"
+                                               id="service_service_cases_attributes_0000000000000_cover"
+                                               class="no-shadow hidden" data-should-required="true"
+                                               data-msg-required="请上传图片"/>
+                                    </label></td>
+
+                                <td class="text-right">
+                                    <span class="table-remove icon-shixian-close"></span>
+                                </td>
+                            </tr>
+                            </tbody>
+
+                            <tfoot>
+                            <tr>
+                                <td class="no-padding-left">
+                                    <a class="table-add" href="javascript:void(0)">
+                                        <i class="icon-shixian-plus"></i>
+                                        添加案例
+                                    </a></td>
+                                <td id="visible-ele-notice" class="red" style="display: none;">
+                                    展示案例应该不小于1项
+                                </td>
+                                <td id="should-upload-cover-notice" class="red" style="display: none;">
+                                    请上传图片以供案例展示
+                                </td>
+                                <td></td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <div class="empty-line"></div>
+
+                    <div class="form-actions">
+                        <input type="submit" name="commit" value="提交" class="btn btn-primary submit-service"
+                               data-disable-with="提交"/>
+
+                        <a class="btn btn-default back-btn" href="/services">取消</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- 未登录状态，弹出登录框 -->
+<script type="text/javascript">
+    var ua = navigator.userAgent.toLowerCase();
+    var is_micromessenger = ua.match(/MicroMessenger/i) == "micromessenger";
+
+    $('form input[type=text], textarea').focus(function () {
+        if (is_micromessenger) {
+            // 是微信浏览器，以拼接字符串的形式打开网站，使用服务号自动登录
+            var url = "https://shixian.com/users/auth/wechat"
+
+            //like if you click on a link (it will be saved in the session history,
+            //so the back button will work as expected)
+            // window.location.href = url;
+
+            //As an HTTP redirect (back button will not work )
+            window.location.replace(url);
+        } else {
+            var self;
+            self = this;
+            return setTimeout(function () {
+                $('#weixin_login_modal').modal('toggle');
+                return $(self).blur();
+            }, 1);
+        }
+        ;
+    });
+</script>
+
+
+<!--放一个id为footer的div,把footer.html加载到这块-->
+<div id="footer"></div>
+
+
+<script>
+    $(function() {
+        $('#header').load('header.html');
+        $('#nav').load('nav.html');
+        $('#footer').load('footer.html');
+    })
+</script>
+
+
+<!-- 未登录，登录弹窗 -->
+<div class="modal fade" id="weixin_login_modal" tabindex="-1" role="dialog" tabindex="-1"
+     aria-labelledby="weixin_login_modal_label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="weixin_login_modal_label">请先登录</h4>
+            </div>
+            <div class="modal-body">
+                <a class="btn btn-default btn-inverse wechat_login" style="color: #3BAF33;" rel="nofollow" title="微信登录"
+                   href="https://shixian.com/users/auth/open_wechat">
+                    <i class="fa fa-weixin"></i>&nbsp; 微信登录
+                </a>
+                <a class="btn btn-default weibo_login" style="color: #E01919;" rel="nofollow" title="微博登录"
+                   href="https://shixian.com/users/auth/weibo">
+                    <i class="fa fa-weibo"></i>&nbsp; 微博登录
+                </a>
+                <a class="btn btn-default github_login" style="color: #333;" rel="nofollow" title="GitHub登录"
+                   href="https://shixian.com/users/auth/github">
+                    <i class="fa fa-github"></i>&nbsp; GitHub登录
+                </a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    is_weixin();
+
+    function is_weixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            $(".wechat_login").attr("href", "https://shixian.com/users/auth/wechat");
+            $(".weibo_login").hide();
+            $(".github_login").hide();
+        } else {
+            $(".wechat_login").attr("href", "https://shixian.com/users/auth/open_wechat")
+        }
+    }
+</script>
+
+<script src="js/wx-activity-popover-ee5a2e9688b1344f6f815e8c9c83f9def559b8db0b6b3545136d2356967170db.js"></script>
+
+<!-- layouts/common_layout_footer -->
+
+<script src="js/services-29aed7b3156e1a0c0e004c0f70ef9fd0d84542873f3444a2935ffea9f9d9c22f.js"></script>
+<script src="js/form-d642e39921fbac14106288c84e2cd096b3ce244af9275f9ab2b81875df834bc6.js"></script>
+
+<!-- 百度统计等 -->
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F25e3b17ddf2b132427768bfebf751a76' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<!-- growingio -->
+<script type='text/javascript'>
+    var _vds = _vds || [];
+    window._vds = _vds;
+    (function () {
+        _vds.push(['setAccountId', 'acf6ac3446a1dcb0']);
+        (function () {
+            var vds = document.createElement('script');
+            vds.type = 'text/javascript';
+            vds.async = true;
+            vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(vds, s);
+        })();
+    })();
+</script>
+
+</body>
+</html>
+

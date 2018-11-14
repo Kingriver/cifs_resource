@@ -1,0 +1,711 @@
+<!-- layouts/common_layout_header -->
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+
+    <link rel="stylesheet" media="screen"
+          href="css/next_layout-7937d384d420297c7fac6f5b0d5ba8e3afa90f0ea1d4a58db247537058e7495f.css"/>
+
+    <link rel="stylesheet" media="screen"
+          href="css/index-9fca9221e40299906019c6fa63f8654bcd0eeccf8a6e81526f216327bcfc0e57.css"/>
+
+    <script src="js/jquery-2.1.3.min-110fa8fd9cb93b29de53d0dca46855f92f1ffa69885d6a883aebad2a5b0d5b56.js"></script>
+    <script src="js/next_layout-b7ed6dc1eb402a1fa7a5192ff92f059f7c2e86bfb606a2e62bfc83ab7a104888.js"></script>
+
+    <title>按需雇佣工程师设计师产品经理 - 实现网</title>
+
+</head>
+<body>
+
+<!--放一个id为header的div,把header.html加载到这块-->
+<div id="header"></div>
+
+
+<!--放一个id为header的div,把nav.html加载到这块-->
+<div id="nav"></div>
+
+<div class="empty-line"></div>
+
+
+<div class="container list">
+    <!-- 左侧 -->
+    <div class="left-side col-md-9">
+        <!-- 搜索 -->
+        <div class="index-search">
+            <form action="/consultants/search" accept-charset="UTF-8" method="get">
+                <input name="utf8" type="hidden" value="&#x2713;"/>
+                <i class="icon-shixian-search"></i>
+                <input type="text" name="query" id="query" placeholder="搜索技术顾问" class="index-search-value"/>
+                <button name="button" type="submit" class="index-search-btn shixian-blue-btn"> 搜索</button>
+            </form>
+        </div>
+        <!-- 筛选 -->
+        <div class="filter">
+            <dl class="clean main-filter">
+                <dd class="place">
+                    <span class="filter-title">
+                        <em>工作</em>地点 <i class="icon-shixian-drop-arrow"></i><i class="line"></i>
+                    </span>
+                    <div class="filter-context">
+                        <div class="first-select">
+                            <span class="more">更多<i class="icon-shixian-drop-arrow"></i></span>
+                            <!-- 所在区域 一级 start -->
+                            <!-- 因为这个不是hover 选择 所以选哪个 后端对应的打过来哪个城市的地址 -->
+                            <ul class="choice clean text-active">
+                                <li class="active">
+                                    <a href="/consultant/all">全国</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/beijing">北京</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/shanghai">上海</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/shenzhen">深圳</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/hangzhou">杭州</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/guangzhou">广州</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/chengdu">成都</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/nanjing">南京</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/xian">西安</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/hubei">湖北</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/xiamen">厦门</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/shandong">山东</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/suzhou">苏州</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/zhengzhou">郑州</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/fuzhou">福州</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/changsha">长沙</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/chongqing">重庆</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/tianjin">天津</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/ningbo">宁波</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/remote">远程</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/qita">其它</a>
+                                </li>
+                            </ul>
+                            <!-- 所在区域 start -->
+                        </div>
+                        <!-- 二级区域 start -->
+                        <!-- 二级区域 end -->
+                    </div>
+                </dd>
+                <dd class="role">
+                    <span class="filter-title">
+                        <em>顾问</em>角色 <i class="icon-shixian-drop-arrow"></i><i class="line"></i>
+                    </span>
+                    <div class="filter-context">
+                        <div class="second-select no-more">
+                            <!-- 顾问角色 start -->
+                            <ul class="choice clean area-active">
+                                <li class="active">
+                                    <a href="/consultant/all/all">不限</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/all/ios">iOS工程师</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/all/android">Android工程师</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/all/ui">UI设计师</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/all/frontend">前端工程师</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/all/backend">后端工程师</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/all/pm">产品经理</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/all/operator">运营/编辑</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/all/tester">测试</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/all/full_stack">全栈</a>
+                                </li>
+                                <li class="">
+                                    <a href="/consultant/all/others">其它</a>
+                                </li>
+                            </ul>
+                            <!-- 顾问角色 end -->
+                        </div>
+                    </div>
+                </dd>
+
+                <dd class="order-by">
+                    <span class="filter-title">
+                        排序<em>方式</em> <i class="icon-shixian-drop-arrow"></i><i class="line"></i>
+                    </span>
+                    <!-- <div class="filter-context"> -->
+                    <!-- </div> -->
+                </dd>
+
+                <dd class="experience">
+                    <span class="filter-title">筛选<em>条件</em> <i class="icon-shixian-drop-arrow"></i></span>
+                    <div class="filter-context">
+                        <div style="display: inline-block">
+                            <b>日薪</b>
+                            <div class="dropbox">
+                                <span class="salary-drop dropdown-toggle" data-toggle="dropdown">不限<i class="icon-shixian-drop-arrow"></i></span>
+                                <!-- 日期 start -->
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/consultant/all?how_money=all">不限</a>
+                                    </li>
+                                    <li>
+                                        <a href="/consultant/all?how_money=lte_seven">700及以下</a>
+                                    </li>
+                                    <li>
+                                        <a href="/consultant/all?how_money=eight_to_twelve">800-1200</a>
+                                    </li>
+                                    <li>
+                                        <a href="/consultant/all?how_money=thirteen_to_sixteen">1300-1600</a>
+                                    </li>
+                                    <li>
+                                        <a href="/consultant/all?how_money=seventeen_more">1700及以上</a>
+                                    </li>
+                                </ul>
+                                <!-- 日期 end -->
+                            </div>
+                        </div>
+                        <div style="display: inline-block">
+                            <b>经验</b>
+                            <div class="dropbox">
+                                <span class="experience-drop dropdown-toggle" data-toggle="dropdown">
+                                    不限
+                                    <i class="icon-shixian-drop-arrow"></i>
+                                </span>
+                                <!-- 工作经验 start -->
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/consultant/all?seniority=all">不限</a>
+                                    </li>
+                                    <li>
+                                        <a href="/consultant/all?seniority=lte_two">2年及以下</a>
+                                    </li>
+                                    <li>
+                                        <a href="/consultant/all?seniority=three_to_six">3-6年</a>
+                                    </li>
+                                    <li>
+                                        <a href="/consultant/all?seniority=seven_to_ten">7-10年</a>
+                                    </li>
+                                    <li>
+                                        <a href="/consultant/all?seniority=ten_more">10年以上</a>
+                                    </li>
+                                </ul>
+                                <!-- 工作经验 end -->
+                            </div>
+                        </div>
+                        <!-- <br/> -->
+                        <div style="display: inline-block">
+                            <b>评价</b>
+                            <div class="dropbox">
+                                <span class="experience-drop dropdown-toggle" data-toggle="dropdown">
+                                    不限
+                                    <i class="icon-shixian-drop-arrow"></i>
+                                </span>
+                                <!-- 评价 start -->
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/consultant/all?reviews_count=false">不限</a>
+                                    </li>
+                                    <li>
+                                        <a href="/consultant/all?reviews_count=true">优先</a>
+                                    </li>
+                                </ul>
+                                <!-- 评价 end -->
+                            </div>
+                        </div>
+                        <!-- <br/> -->
+                        <div style="display: inline-block">
+                            <b>自由职业者</b>
+                            <div class="dropbox">
+                                <span class="experience-drop dropdown-toggle" data-toggle="dropdown">
+                                    不限
+                                    <i class="icon-shixian-drop-arrow"></i>
+                                </span>
+
+                                <!-- 评价 start -->
+                                <ul class="dropdown-menu">
+                                    <li>
+
+                                        <a href="/consultant/all?freelancer=false">不限</a>
+
+                                    </li>
+                                    <li>
+
+                                        <a href="/freelancer/all">优先</a>
+
+                                    </li>
+                                </ul>
+                                <!-- 评价 end -->
+                            </div>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+
+            <div class="mobile-filter">
+                <div class="btn-box">
+                    <button>确定</button>
+                </div>
+            </div>
+            <hr class="for-famous">
+            <dl class="clean main-filter">
+                <dd class="role">
+                    <span class="filter-title">
+                    <em>知名</em>企业 <i class="icon-shixian-drop-arrow"></i><i class="line"></i>
+                    </span>
+                    <div class="filter-context">
+                        <div class="first-select famous-company">
+                            <span class="more">更多<i class="icon-shixian-drop-arrow"></i></span>
+                            <!-- 名企 start -->
+                            <ul class="choice clean area-active">
+
+                                <li class="active">
+                                    <a href="/consultants">不限</a>
+                                </li>
+
+
+                                <li class="">
+                                    <a href="/consultants/famous/baidu">百度</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/ali">阿里</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/tengxun">腾讯</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/xinlang">新浪</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/huawei">华为</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/jingdong">京东</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/xiaomi">小米</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/wangyi">网易</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/360">360</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/souhu">搜狐</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/meituan">美团</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/leshi">乐视</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/lianxiang">联想</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/weiruan">微软</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/IBM">IBM</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/weipinhui">唯品会</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/qunaer">去哪儿</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/xicheng">携程</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/58tongcheng">58同城</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/sougou">搜狗</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/youku">优酷</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/didi">滴滴</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/jumeiyoupin">聚美优品</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/dazhongdianping">大众点评</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/huanjushidai">欢聚时代</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/xibao">猎豹</a>
+                                </li>
+
+                                <li class="">
+                                    <a href="/consultants/famous/jinshan">金山</a>
+                                </li>
+                            </ul>
+                            <!-- 名企 end -->
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+            <script>
+                // $('input[type=radio][name=territory]').change(function() {
+                //   $(this).parents('form').submit();
+                // });
+
+                // $('input[type=radio][name=city]').change(function() {
+                //   $(this).parents('form').submit();
+                // });
+
+                // $('input[type=radio][name=region]').change(function() {
+                //   $(this).parents('form').submit();
+                // });
+
+                // $('input[type=radio][name=how_money]').change(function() {
+                //   $(this).parents('form').submit();
+                // });
+
+                // $('input[type=radio][name=seniority]').change(function() {
+                //   $(this).parents('form').submit();
+                // });
+
+                // $('input[type=radio][name=major]').change(function() {
+                //   $(this).parents('form').submit();
+                // });
+
+                // $('input[type=radio][name=like_full_time]').change(function() {
+                //   $(this).parents('form').submit();
+                // });
+
+                // $('input[type=radio][name=reviews_count]').change(function() {
+                //   $(this).parents('form').submit();
+                // });
+            </script>
+        </div>
+        <!-- 列表 start-->
+        <div class="engineer-list">
+
+            <!-- 攻城狮信息 start -->
+
+            <div class="engineer">
+                <div class="engineer-info no_underline">
+                    <a target="_blank" href="consultants-detail.html">
+                        <dl>
+                            <dd class="company" data-company="百度">
+                                <i class="icon-shixian-work"></i>
+                                <span class="company-tag normal">百度</span>
+                            </dd>
+                            <dd class="job">
+                                <i class="icon-shixian-job"></i>
+                                <b>高级工程师</b>
+                            </dd>
+
+                            <dd class="user-header">
+                                <img alt="tangmi" itemprop="image"
+                                     src="https://cdn.shixian.com/upload/user/avatar/79920/small_4e2c753bd6cede7258046de858e3d536.jpg"/>
+                            </dd>
+
+                            <dd class="date">
+                                <i class="icon-shixian-bag"></i>
+                                <b>6年</b>
+                            </dd>
+                        </dl>
+
+                        <h5>擅长技能</h5>
+
+                        <p class="limit-line-5">
+                            技术能力
+                            . 深厚的后端架构与开发经验；
+                            . 多年IOS&amp;Android开发经验；
+                            . PC&amp;Mobile前端开发经验；
+                            . 检索系统架构/策略的开发；
+                            . Spider系统开发经验；
+
+                            团队背景
+                            我们不是个人，我们是一个小创业团队。（也可以单接某项具体工作）
+                            团队成员均为在各大互联网公司有5年以上工作经验的开发者，具有多个上亿级移动互联网产品的研发经验。
+
+                            现阶段我们需要承接一些外包工作以维持团队的运转，我们可以提供从产品规划、需求分析、产品设计到前后端开发乃至部署维护的全流程服务。
+
+                            我们会尽最大努力确保以一个合理的价格，获得一个高质量能够在实际生产环境中持续交付的项目。
+                            北京、南京地区可以面见沟通，其他地区可先电话沟通。
+                        </p>
+                    </a></div>
+
+                <div class="about">
+                    <h4>
+                        <span>￥1500</span> / <i>8小时</i>
+                    </h4>
+
+
+                    <p>
+                        <span>可兼职时间</span>
+                        自由职业，时间充裕
+                    </p>
+
+                    <p>
+                        <span>可兼职地点</span>
+                        <b>海淀 </b>
+                    </p>
+
+
+                    <!-- 剩下的这是 default 状态 -->
+                    <a class="just shixian-anim check-appointment-programmer" id="check-appointment_programmer_27578"
+                       role="button" data-programmer-id="27578" href="javascript:void(0);">立即预约</a>
+
+                </div>
+            </div>
+
+            <!-- 攻城狮信息 end -->
+        </div>
+        <!-- 列表  end-->
+
+        <!-- 分页 -->
+        <div class="paging">
+            <ul class="pagination">
+
+
+                <li class='active'>
+                    <a remote="false">1</a>
+                </li>
+
+                <li>
+                    <a rel="next" href="/consultants?page=2">2</a>
+                </li>
+
+                <li>
+                    <a href="/consultants?page=3">3</a>
+                </li>
+
+                <li class='disabled'>
+                    <a>...</a>
+                </li>
+
+                <li>
+                    <a rel="next" href="/consultants?page=2">&rsaquo;</a>
+                </li>
+
+                <li>
+                    <a href="/consultants?page=100">&raquo;</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- 右侧 -->
+    <div class="right-side col-md-3">
+
+        <div id="side_action_span">
+            <div class="extension" id="">
+                <div class="apply">
+                    <p>我是技术人才<br>我在寻找兼职工作</p>
+                    <a class="shixian-anim" href="apply.html">申请成为技术顾问</a>
+                </div>
+
+                <div class="publish">
+                    <p>我是创业者<br>我在寻找技术人才</p>
+                    <a class="shixian-anim" href="jobs-new.html">发布用人需求</a>
+                </div>
+
+
+            </div>
+            <br>
+        </div>
+
+        <script type="text/javascript">
+            if ($("#side_action_span .extension>div").size() == 0) {
+                $("#side_action_span").remove()
+            }
+        </script>
+
+    </div>
+</div>
+
+
+<script type="application/ld+json">
+[{"@context":"http://schema.org","@type":"Product","description":"可负责iOS端的技术架构和功能实现。社交、o2o项目均有深入的开发经验。也自己做过工具类的产品，例如视频播放器产品。也做过硬件相结合的产品，例如使用海康威视SDK，可在iPad端实时查看录像。对客户端的埋点方案、路由方案、架构方案，有深刻的理解和实战经验。\r\n可研发微信小程序，做过展示类的微信小程序，也有社交和线下场景相结合的小程序开发经验。","name":"Aslantt","image":"https://cdn.shixian.com/upload/user/avatar/76857/117fa7c36a468672d65ab9c0930f8b37.jpeg","url":"https://shixian.com/consultants/25865"},{"@context":"http://schema.org","@type":"Product","description":"毕业于某985高效软件工程，后就职于百度负责安卓操作系统某模块；15年随团队创业一起在蜜芽负责跨境电商ERP和WMS相关事务；16年就职于优信集团某业务线产品Owner，负责定价、风控相关系统，同时负责人工智能方向的产品\r\n\r\n1.原型设计和流程工具（Axure和Visio等）；UML建模；思维导图；项目管理、甘特图和工作分解：project、WBS Schedule等；熟悉Scrum敏捷等软件开发过程；\r\n2. 熟悉二手车行业，C2B、B2C相关经验。善于梳理各业务线需求，搭建平台级产品，善于围绕业务对B端产品技术方案和人力进行整合；\r\n3. 电商产品和后台ERP、WMS系统，熟悉跨境电商和保税区相关业务和系统策略。对采销、下单、仓储、售后、工单等系统均有相关经验；\r\n4. 较强的书面表达能力、逻辑思维能力和沟通协作能力；\r\n5. 熟悉MySQL，了解数据库设计和基本的接口设计；\r\n","name":"LvMQi","image":"https://cdn.shixian.com/upload/user/avatar/75525/d67b3337b9e8746230c9ec3e1676e6a5.jpeg","url":"https://shixian.com/consultants/25184"},{"@context":"http://schema.org","@type":"Product","description":"本人毕业于985本科计算机院校，曾就职于爱奇艺技术研发部门工作1年半，\r\n1.精通HTML5/CSS3、HTML/XHTML、CSS等网页制作技术，熟悉页面架构和布局；\r\n2.精通jQuery，javascript原生；\r\n3.熟练用HTML5、bootstrap等前端框架搭建响应式网页，并支持 PC 机和移动设备(iPad、iPhone、Android)同时浏览；\r\n4.熟悉MVVM,MVC模块化开发；\r\n5.熟悉面向对象开发模式，了解设计模式的思想；\r\n6.熟悉angular.js, react.js,vue.js,backbone.js等等热门的前端框架；\r\n7.熟练运用Dreamweaver、Photoshop、flash多媒体软件，可以进行独立切图；\r\n8.熟悉inonic,Mui，了解Native app开发\r\n9.了解前端模块化，对前端架构也有了解。；\r\n10.了解webpack的抓包工具；\r\n11.Seo优化网站性能；","name":"0932。","image":"https://cdn.shixian.com/upload/user/avatar/64275/09ec69c88b9785f8fd8fbb181de6618c.jpeg","url":"https://shixian.com/consultants/18587"},{"@context":"http://schema.org","@type":"Product","description":"后端架构设计，优化\r\n基于spring,spring-boot 项目、产品开发\r\nmysql，redis, \r\n基于elasticsearch的系统开发\r\nhadoop spark 系列\r\n各种爬虫开发\r\n支付 及 电商订单等相关系统 开发\r\n善于后台各种系统开发\r\n开发时不坐班，以远程为主\r\n\r\n\r\n\r\n","name":"poppets","image":"https://shixian.com/upload/user/avatar/1356/1611e5ea2047bd6831251511b158ff6e","url":"https://shixian.com/consultants/1525"},{"@context":"http://schema.org","@type":"Product","description":"找找技术团队.\r\n\r\n[CTO]\r\n\r\n天津大学双学士学位.\r\n\r\n毕业后就职于华为技术有限公司运营商事业群, 负责运营商在线实时计费系统 (OCS) 和运营支持系统 (OSS) 的开发和维护.\r\n\r\n离职后创立深圳乐浓网络科技有限公司, 担任CTO, 设计和主导开发物联网实时通信平台xonnect.io, 以及无线物联网节点gloo.\r\n\r\n后参与创立北京趣找网络科技有限公司, 担任CTO, 负责整个系统的技术规划和后端系统的设计, 实现和部署运维.\r\n\r\n精通网络技术和各种协议, 高性能分布式系统和后端架构的设计与开发. 精通Python, C, Erlang/Elixir和Docker容器技术.\r\n\r\n精通react，熟悉react－native开发。\r\n\r\n连续创业者, 硬件极客, Github活跃用户, 非专业厨师.\r\n\r\n[前端主管]\r\n\r\n毕业于武汉理工大学.\r\n\r\n毕业后就职于宁波港信息通信有限公司, 负责堆场集装箱管理系统的前后端开发, 同时负责码头集装箱管理系统的升级和维护.\r\n\r\n后供职于北京筑梦园科技有限公司, 负责智能泊车系统的整个前端和核心计费模块的设计和开发.\r\n\r\n全栈工程师, 精通React, Redux, AngularJS, Node.js, Webpack, Stylus和Sass, 有超强的学习能力.\r\n\r\n[移动端主管]\r\n\r\n专注iOS开发, 专注iOS开发, 专注iOS开发...\r\n独立完成iOS应用开发、上线。\r\n掌握iOS开发前沿技术ReactiveCocoa、Autolayout（手写、xib）适配。\r\n掌握iOS各种知名三方库 SSKeychain、FMDB、ReactiveCocoa、SDWebImage、Masonry、Mantle、GPUImage、\r\n\r\n产品&amp;设计负责人\r\n\r\n毕业于内蒙古大学设计专业，2年日本的留学经验，对设计这块有自己较深刻的领悟。\r\n在海尔期间我主要负责制作移动端安卓和iOS和PC端的产品和设计，对移动端的规范和交互有较深的理解， 根据产品的需求设定产品风格和交互设计，产品以上线。独立制作界面设计，设定页面风格，使用墨刀和axture制作原型和交互设计。遵参与产品前期界面视觉用户研究、设计流行趋势分析，设定软件产品的整体视觉风格和UI设计，参与设计体验、流程的制定和规范。分享设计经验、推动提高团队的设计能力，参与产品规划构思和创意过程。\r\n","name":"九霄云外","image":"https://cdn.shixian.com/upload/user/avatar/42813/42babfebab63318f021e3b8109e3b60d.jpeg","url":"https://shixian.com/consultants/16182"},{"@context":"http://schema.org","@type":"Product","description":"热爱编程，喜欢分析和研究最前沿技术，从事两年 Android 开发工作，曾就职于 北京图为先，北京新东方迅程等公司，主要负责界面UI、逻辑处理和框架抽取，工作积极主动，充分利用番茄高效学习法，提高工作效率，在职期间被多次评委优秀员工。\r\n\r\n业余时间喜欢写 blog 和开源项目，已有集成AppIntro、Volley+okhttp、RxJava、Retrofit、otto、Butterknife等热门框架的app，并已收集很多优秀Demo代码，随时可用。\r\n\r\n个人网址：http://jungletian.github.io\r\ngithub：https://github.com/JungleTian\r\nblog：http://blog.csdn.net/smzhangyang","name":"JungleTian","image":"https://cdn.shixian.com/upload/user/avatar/33696/d84c65cdbe8c672f7da010fcb18f96e0.jpeg","url":"https://shixian.com/consultants/5076"},{"@context":"http://schema.org","@type":"Product","description":"1，喜欢创新，对设计有很强的敏感度。\r\n2，拥有4年ui/ux设计工作经验，包括移动端，web端及后台系统的设计。\r\n3，擅长从用户的角度思考产品的可行性及体验感。\r\n4，能跟随当前流行设计语言。\r\n5，目前就职于新浪海外分期，参与公司主要产品的ui界面设计。\r\n6，持续学习设计相关知识。","name":"极乐的李大白","image":"https://cdn.shixian.com/upload/user/avatar/81855/229620a9808e5489f7fedd8410fc6200.jpeg","url":"https://shixian.com/consultants/28942"},{"@context":"http://schema.org","@type":"Product","description":"毕业于211高校,硕士研究生. 在校期间专业成绩优秀，获得三等奖学金。\r\n毕业后在SAP/中科院参与过实习, 研究生期间一直在航天五院做项目, 熟练使用C/C++,MFC,QT等技术.\r\n在SAP期间接触前端开发自学html/css/js, 熟练使用jquery/bootstrap/angularjs等框架, 后端使用nodejs等开发过小运维项目, 自认为学习能力强.","name":"张涛-143ccdab","image":"https://cdn.shixian.com/upload/user/avatar/85361/e516caf377ab6a1ae73b5cb9c7001971.jpeg","url":"https://shixian.com/consultants/30353"},{"@context":"http://schema.org","@type":"Product","description":"2年+互联网产品经理工作经验，工科 信息与通信工程专业，硕士学历，具备数理分析能力与编程能力。\r\n擅于数据分析、输出中高保真需求原型方案，原型能力强。\r\n\r\n目前与互联网金融公司负责ToB产品\r\n曾经在魔漫相机从0-1参与构建魔漫定制电商，\r\n曾经在搜房网新房集团负责房天下APP新房板块，包括页面体验以及C端交易流程相关需求。\r\n\r\n对业务流程与逻辑感兴趣，擅于打磨产品及原型细节","name":"andy何","image":"https://cdn.shixian.com/upload/user/avatar/70770/1640b679876bb3fb50529800f0f193ce.jpeg","url":"https://shixian.com/consultants/22829"},{"@context":"http://schema.org","@type":"Product","description":"985高校软件工程专业毕业。\r\n\r\n毕业后就职于知名互联网公司，参与公司核心客户端的开发工作。负责了展示，特殊动画以及支付的核心业务。一年即评为高级iOS开发工程师。熟悉 iOS 平台上的视频，音频，图像处理，上传，展示等多媒体应用制作。\r\n\r\n在业余期间参与了开源项目开发，也做独立开发和兼职开发。\r\n\r\n熟悉Objective-C, swift.熟练使用苹果自带的库以及各种主流第三方框架。","name":"元清","image":"https://cdn.shixian.com/upload/user/avatar/29266/17ccb66a1f680e0368835cc3131762bb.jpeg","url":"https://shixian.com/consultants/1498"},{"@context":"http://schema.org","@type":"Product","description":"后端开发：\r\n熟练使用php、odp、mysql等。目前任职后端开发工程师，主要负责ar后端、地图相关业务后端开发工作，熟练使用php、mysql、redis、mongo等，熟悉CI框架、ap框架等。\r\n\r\nC驱动软件开发:\r\n主要负责开发气体报警控制器、气体检测仪、路由器功能测试板等设备的驱动开发，完成了单板在非操作系统下命令行处理功能，功能包括：tab自动补齐、问号联想、命令记忆等功能。","name":"棉花糖-76a2e518","image":"https://cdn.shixian.com/upload/user/avatar/76366/0aa3029498e80910c3ebfa832761fa57.jpeg","url":"https://shixian.com/consultants/25608"},{"@context":"http://schema.org","@type":"Product","description":"关于我\r\n\r\n1.喜欢挑战自我，善于创新，善于创造，追求极致的设计和用户体验！\r\n2.拥有五年的工作设计经验，包括移动端、Web端及后台系统设计。\r\n3.曾就职上海小莫网络科技有限公司，公司主要产品为健身运动型产品，主要负责移动端设计，及Web端设计。\r\n4.现就职东奥会计教育公司，全线负责移动端设计，同时参与Web端及后台系统设计。\r\n5.毕业于北京信息科技大学，工业设计专业\r\n\r\n提供的服务\r\n\r\n1.擅长App产品从0-1的风格设计及交互设计\r\n2.Web网站的整体设计\r\n3.Logo的整体定义及细节设计\r\n4.多种图标的风格设计\r\n5.动效设计","name":"Oceanx_l","image":"https://cdn.shixian.com/upload/user/avatar/70176/7a9b18f2196aef6e2b5399167ae9776d.jpg","url":"https://shixian.com/consultants/22537"},{"@context":"http://schema.org","@type":"Product","description":"1、拥有12年架构设计和大规模企业级平台软件架构设计经验，和分布式爬虫的开发管理经验\r\n2、精通JAVA，Scala，Python,Nodejs\r\n3、对Hadoop生态系统 MR / ZK/ Spark / Hive / Hbase / Kafka/  Sqoop )等且有丰富实战经验；\r\n4、精通常用的机器学习、深度学习原理，主要面向计算机视觉：卷积神经网络CNN,熟练掌握经典CNN模型（Alexnet，VGG16/19， ResNet50 ，Inception）和常用的目标识别模型（RCNN，fast RCNN，faster RCNN,YOLO,SDD）；\r\n\r\n可提供的咨询服务：\r\n\r\n1. 按需定制爬虫，数据抓取，数据清洗，数据分析 \r\n2. 大数据架构咨询，EDM 与 SMS 进行营销内容精准推送 \r\n3. 搭建竞品运营数据监测系统，数据指标预警系统，自定义BI数据可视化展现","name":"澹台恒涛","image":"https://cdn.shixian.com/upload/user/avatar/73062/d5141ea4b3577cc1ebb3d523fe57ca87.jpeg","url":"https://shixian.com/consultants/31577"},{"@context":"http://schema.org","@type":"Product","description":"5年java开发经验 java groovy python springmvc zookeeper dubbo\r\n17年在某互联网金融公司任职java开发\r\n16年在从事互联网医疗，创业一年\r\n14年8月被朋友拉倒他们公司从事在线教育系统的开发开始深入java开发\r\n12年在中国民航信息网络股份有限公司负责机票订票系统模块的开发\r\n\r\n擅长java开发，技术爱好者，爱学习爱看书\r\n\r\n喜欢关注硬件类科技产品，也经常逛一些论坛，喜欢小而美的产品\r\n\r\n热衷参加一些技术分享活动","name":"冬","image":"https://cdn.shixian.com/upload/user/avatar/31525/fee5669479d8ee9cb33cf2d6c7a5ab38.jpeg","url":"https://shixian.com/consultants/2145"},{"@context":"http://schema.org","@type":"Product","description":"2011年10月参加工作，5年多Android开发经验，熟悉Android API框架，熟悉CTS兼容性测试框架，擅长面向对象设计和开发，UI/UE开发、常用数据结构和算法、数据解析、多线程操作和网络交互等，对MVC 、MVP 、MVVM等常用的设计模式有一定的理解；\r\n\r\n3年Scrum敏捷开发经验，能迅速适应新的工作模式，善于把控工作节奏, 协调资源, 有效推动跨部门的任务计划； 善于尝试并推崇用更优雅的日常工具trello sketch slack等提高工作效率.\r\n\r\n＃采用DokuWiki部署了项目wiki平台，用于技术产品文档的保存索引和项目进度管理； \r\n＃采用Git+Gerrit+Gradle+Jenkins部署了持续构建和分渠道批量编译打包平台，便于产品QA日常测试和分发渠道包； \r\n #采用MonkeyRunner自动化测试工具对部分常见测试用例做了自动化测试脚本；","name":"方大象","image":"https://cdn.shixian.com/upload/user/avatar/27858/0d4947678278d8010b52490d75976175.jpeg","url":"https://shixian.com/consultants/2004"},{"@context":"http://schema.org","@type":"Product","description":"毕业于211高校软件工程系，曾获ACM奖项，在校期间曾担任校外培训讲师。\r\n\r\n先后就职去哪儿网、乐视等知名互联网公司，任职产品经理，负责PC、移动端产品需求规划、方案设计、项目上线。\r\n\r\n对垂搜、电商、智能硬件等方向B端、C端、联动端有深度了解。\r\n\r\n掌握成熟的互联网产品需求设计方法，熟悉高效的团队资源协作模型构建。","name":"Frank W","image":"https://cdn.shixian.com/upload/user/avatar/73664/184e76b7858cf797e2aed9540451a5dd.jpeg","url":"https://shixian.com/consultants/24290"},{"@context":"http://schema.org","@type":"Product","description":"毕业于首都师范大学美术学院，在校期间专业成绩优秀，获得校二等奖学金。毕业论文获得优秀。现中国人民大学设计艺术学专业在职研究生。\r\n毕业后就职于民生证券，现就职于中国工商银行研发部，参与公司主要产品UI交互设计工作。在职期间绩效良好，三级工程师职称。\r\n作品网址：http://www.zcool.com.cn/u/13159130\r\n1、熟练使用photoshop、 Illustrator、markman 、sketch、principle 、After Effect等软件，使用AE软件绘制动画效果、并能使用axsure软件绘制原型图、基础HTML、CSS代码编写，了解各类型移动端设计体系，并能与开发进行深度沟通。\r\n2、同时具有Web、Android、iOS三种平台UI设计经验，能够胜任移动端的界面设计工作及H5页面制作。具有良好的把握色彩、排版、页面架构和布局的能力，设计出简洁、精致的UI界面，提高产品易用性。\r\n3 曾做过电商、社交、工具类型的产品。熟悉多种产品类型设计模式。\r\n4 有1年的广告设计经验，4年移动端设计经验， 配合公司需要设计平面作品，包括易拉宝、名片、宣传单、海报等设计。\r\n\r\n","name":"张晗-c6e992fc","image":"https://cdn.shixian.com/upload/user/avatar/75751/e82ffba90dd21f177f8cd7996115a3d2.jpeg","url":"https://shixian.com/consultants/25291"},{"@context":"http://schema.org","@type":"Product","description":"6年工作经验负责过大型项目，带过团队，工作中可以根据业务提出合理的设计和技术实现方案； 对webapp有丰富经验。 \r\n熟练使用JQuery、Zepto和原声js实现常见动态效果和交互效果；\r\n熟练掌握webApp 和 hybridApp开发；\r\n熟练使用ES6+Webpack+Vue，通过vue-router、vue-resource、vuex等构建SPA应用；\r\n熟练使用React，可通过React+redux组件化思想构建页面；\r\n熟练使用bootstrap框架快速开发，SUI,MUI等第三方UI组件库，echars，highchar，Swiper，iscorll等插件；\r\n熟练使用NodeJs+Express+MongoDB开发后端应用；\r\n熟练使用node.js,MongoDB,MySql后台数据库以及php等后台编程语言；\r\n熟悉微信公众号、小程序开发\r\n精确页面还原，轻松写出内容结构清楚，维护方便的代码","name":"choose","image":"https://cdn.shixian.com/upload/user/avatar/75884/c844bcacdd78ed8e6048f1f426d0340e.jpeg","url":"https://shixian.com/consultants/25341"},{"@context":"http://schema.org","@type":"Product","description":"两年UI、平面设计师、网页设计丰富设计经验、海报、名片、拍摄、排版、包装、写作、手绘、剪辑、LOGO、VI、KT、调色等、艺术文字清新简约扁平风格\r\n以下凑字\r\n二和人很多三个都gas的gas都干撒的嘎的是gas大噶说到底gas感受到gas的阿诗丹顿过或军过军拖晕过扩扩扩扩付过军军过女扩灯火辉煌多军付扩过扩过扩过扩过扩过所付或或或或或","name":"余小艾","image":"https://cdn.shixian.com/upload/user/avatar/48303/1f11350ac662c5c5fac01295702bbf62.jpeg","url":"https://shixian.com/consultants/10239"},{"@context":"http://schema.org","@type":"Product","description":"技术能力\r\n● 深厚的后端架构与开发经验；\r\n● 多年IOS&amp;Android开发经验；\r\n● PC&amp;Mobile前端开发经验；\r\n● 检索系统架构/策略的开发；\r\n● Spider系统开发经验；\r\n\r\n团队背景\r\n我们不是个人，我们是一个小创业团队。（也可以单接某项具体工作）\r\n团队成员均为在各大互联网公司有5年以上工作经验的开发者，具有多个上亿级移动互联网产品的研发经验。\r\n\r\n现阶段我们需要承接一些外包工作以维持团队的运转，我们可以提供从产品规划、需求分析、产品设计到前后端开发乃至部署维护的全流程服务。 \r\n\r\n我们会尽最大努力确保以一个合理的价格，获得一个高质量能够在实际生产环境中持续交付的项目。 \r\n北京、南京地区可以面见沟通，其他地区可先电话沟通。","name":"tangmi","image":"https://cdn.shixian.com/upload/user/avatar/79920/4e2c753bd6cede7258046de858e3d536.jpg","url":"https://shixian.com/consultants/27578"}]
+
+</script>
+
+
+<script>
+    $(document).on('click', ".check-appointment-programmer", function () {
+        var url = "/consultants/check_appointment"
+        var programmer_id = $(this).data('programmer-id')
+
+        url = url + "?programmer_id=" + programmer_id;
+
+        $.ajax({
+            url: url,
+
+            dataType: 'script'
+        });
+    })
+</script>
+
+
+<!--放一个id为footer的div,把footer.html加载到这块-->
+<div id="footer"></div>
+
+
+<script>
+    $(function() {
+        $('#header').load('header.html');
+        $('#nav').load('nav.html');
+        $('#footer').load('footer.html');
+    })
+</script>
+
+
+<!-- 未登录，登录弹窗 -->
+<div class="modal fade" id="weixin_login_modal" tabindex="-1" role="dialog" tabindex="-1"
+     aria-labelledby="weixin_login_modal_label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="weixin_login_modal_label">请先登录</h4>
+            </div>
+            <div class="modal-body">
+                <a class="btn btn-default btn-inverse wechat_login" style="color: #3BAF33;" rel="nofollow" title="微信登录"
+                   href="https://shixian.com/users/auth/open_wechat">
+                    <i class="fa fa-weixin"></i>&nbsp; 微信登录
+                </a>
+                <a class="btn btn-default weibo_login" style="color: #E01919;" rel="nofollow" title="微博登录"
+                   href="https://shixian.com/users/auth/weibo">
+                    <i class="fa fa-weibo"></i>&nbsp; 微博登录
+                </a>
+                <a class="btn btn-default github_login" style="color: #333;" rel="nofollow" title="GitHub登录"
+                   href="https://shixian.com/users/auth/github">
+                    <i class="fa fa-github"></i>&nbsp; GitHub登录
+                </a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    is_weixin();
+
+    function is_weixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            $(".wechat_login").attr("href", "https://shixian.com/users/auth/wechat");
+            $(".weibo_login").hide();
+            $(".github_login").hide();
+        } else {
+            $(".wechat_login").attr("href", "https://shixian.com/users/auth/open_wechat")
+        }
+    }
+</script>
+
+<script src="js/wx-activity-popover-ee5a2e9688b1344f6f815e8c9c83f9def559b8db0b6b3545136d2356967170db.js"></script>
+
+<!-- layouts/common_layout_footer -->
+
+
+<!-- 百度统计等 -->
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F25e3b17ddf2b132427768bfebf751a76' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<!-- growingio -->
+<script type='text/javascript'>
+    var _vds = _vds || [];
+    window._vds = _vds;
+    (function () {
+        _vds.push(['setAccountId', 'acf6ac3446a1dcb0']);
+        (function () {
+            var vds = document.createElement('script');
+            vds.type = 'text/javascript';
+            vds.async = true;
+            vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(vds, s);
+        })();
+    })();
+</script>
+
+</body>
+</html>
+

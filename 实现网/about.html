@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>关于实现 - 实现网</title>
+    <script src="js/jquery-2.1.3.min-110fa8fd9cb93b29de53d0dca46855f92f1ffa69885d6a883aebad2a5b0d5b56.js"></script>
+</head>
+<body>
+<!--放一个id为header的div,把header.html加载到这块-->
+<div id="header"></div>
+
+
+<!--放一个id为header的div,把nav.html加载到这块-->
+<div id="nav"></div>
+
+
+<div class="empty-line"></div>
+<div class="container">
+    <div class="with-white-background-color with-box-shadow">
+        <div class="empty-line"></div>
+        <div class="col-md-9 col-md-offset-1 duty">
+            <h1 class="text-center">关于实现</h1>
+            <div class="empty-line"></div>
+            <div class="">
+                <h2>联系我们</h2>
+                <p>公司名称：北京实现与爱科技有限公司<br>总部地点：北京市 海淀区 中关村大街甲1号 鼎好大厦A座19层 SuperG 1922<br>联系电话：18519099030</p>
+                <h2>产品介绍</h2>
+                <p>北京实现与爱科技有限公司，是一个互联网工程师兼职平台。解决创业公司招人难、成本高的问题。</p>
+                <p>创业公司通过实现网可以快速预约知名互联网企业的工程师、设计师到自己的团队工作。上午预约工程师，最快晚上即可到班兼职。</p>
+                <p>互联网工程师可以在实现网注册成为技术顾问，利用业余时间助力创业公司，并且获得以时薪为单位的报酬。</p>
+                <p>目前已有9000+工程师或设计师可在线预约和支付，支付后工程师会到团队里坐班沟通，快速推进创业者的产品开发进度。</p>
+                <h2>产品优势</h2><h4>针对雇主方，实现网有3个产品优势：</h4>
+                <ol>
+                    <li>工程师质量保障。注册实现网的兼职工程师来自BAT等知名互联网企业，拥有多年工作经验。保证工作质量和效率。</li>
+                    <li>坐班兼职。实现网倡导坐班的兼职方式，工程师在雇主方团队坐班兼职，方便沟通交互。</li>
+                    <li>快速到班。实现网拥有一支迅速应答雇主需求的运营团队：上午12点之前提出需求，最快当天晚上工程师即可到你的团队坐班工作。工作后一小时内如不满意无条件退款，工程师所需款项由平台支付。</li>
+                </ol>
+                <h4>针对工程师方，实现网有4个产品优势：</h4>
+                <ol>
+                    <li>严格筛选的需求方。实现网运营团队筛选出拥有支付能力、项目需求合理的聘用方推荐给工程师。</li>
+                    <li>时薪支付。雇主在前期需求沟通、工作进行中、后期功能修改三个阶段都需要按时薪支付给工程师薪水。先支付后工作，保障工程师的合法权益。</li>
+                    <li>一对一对接需求。工程师在兼职中需要花费大量时间与聘用方商议需求，实现网专业的运营人员将对接双方需求，把沟通成本降低。</li>
+                    <li>个人信息、联系方式保护。在需求沟通过程中、雇主方付款前，工程师的联系方式绝对保密。工程师只会收到经过筛选并与自己匹配的雇主方需求。</li>
+                </ol>
+                <h2>其他保障</h2>
+                <p>除此之外实现网还将提供包含工程师、雇主方、实现网在内三方的第三方合同明确规定双方的权益。</p>
+                <p>由技术顾问（项目乙方）提供。如果技术顾问不能提供，可向实现网申请代办，相关税费由雇主或技术顾问承担。</p>
+                <p>支付担保，实现网作为第三方，担保交易的全过程。雇主方需将款额在线支付后工程师方可开始工作，未完工可无忧退款。</p>
+                <p>实现网基于共享经济理念，让在大公司的工程师和设计师共享自己的技能，利用业余时间帮助创业公司的发展。让创业公司可以按需购买人力资源。</p>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="empty-line"></div>
+        <div class="empty-small-line"></div>
+    </div>
+</div>
+
+
+<!--放一个id为footer的div,把footer.html加载到这块-->
+<div id="footer"></div>
+
+<script>
+    $(function() {
+        $('#header').load('header.html');
+        $('#nav').load('nav.html');
+        $('#footer').load('footer.html');
+    })
+</script>
+
+
+<!-- 未登录，登录弹窗 -->
+<div class="modal fade" id="weixin_login_modal" tabindex="-1" role="dialog" tabindex="-1"
+     aria-labelledby="weixin_login_modal_label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="weixin_login_modal_label">请先登录</h4>
+            </div>
+            <div class="modal-body">
+                <a class="btn btn-default btn-inverse wechat_login" style="color: #3BAF33;" rel="nofollow" title="微信登录"
+                   href="https://shixian.com/users/auth/open_wechat"><i class="fa fa-weixin"></i>&nbsp; 微信登录</a>
+                <a class="btn btn-default weibo_login" style="color: #E01919;" rel="nofollow" title="微博登录"
+                   href="https://shixian.com/users/auth/weibo"><i class="fa fa-weibo"></i>&nbsp; 微博登录</a>
+                <a class="btn btn-default github_login" style="color: #333;" rel="nofollow" title="GitHub登录"
+                   href="https://shixian.com/users/auth/github"><i class="fa fa-github"></i>&nbsp; GitHub登录</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    is_weixin();
+
+    function is_weixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            $(".wechat_login").attr("href", "https://shixian.com/users/auth/wechat");
+            $(".weibo_login").hide();
+            $(".github_login").hide();
+        } else {
+            $(".wechat_login").attr("href", "https://shixian.com/users/auth/open_wechat")
+        }
+    }
+</script>
+<script src="js/wx-activity-popover-ee5a2e9688b1344f6f815e8c9c83f9def559b8db0b6b3545136d2356967170db.js"></script>
+<!-- 百度统计等 -->
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F25e3b17ddf2b132427768bfebf751a76' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- growingio -->
+<script type='text/javascript'>
+    var _vds = _vds || [];
+    window._vds = _vds;
+    (function () {
+        _vds.push(['setAccountId', 'acf6ac3446a1dcb0']);
+        (function () {
+            var vds = document.createElement('script');
+            vds.type = 'text/javascript';
+            vds.async = true;
+            vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(vds, s);
+        })();
+    })();
+</script>
+</body>
+</html>
+

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>设置 - 实现网</title>
+    <meta name="robots" content="nofollow"/>
+
+    <!-- <meta name="apple-itunes-app" content="app-id=949862651"> -->
+
+    <meta name="csrf-param" content="authenticity_token"/>
+    <meta name="csrf-token"
+          content="c9ONKowg1Pk01JR9M1LWWq/eUGjjqxSxyRDWKa9Oazv4qPdnREbIriolS0qpGpI79gx47rBgLoa/2geypyhYqA=="/>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="/assets/html5shiv.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" media="all"
+          href="css/application-67b132c12337110feac0ecc1c9c2c6687b5796e9352f6219d7873338738324ff.css"/>
+
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <!-- favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' -->
+    <link rel="shortcut icon" type="image/x-icon"
+          href="/assets/favicon-d7e1bd3ff5eeeb7edaf14ccaa86e3c8146757bf9e0cf7b4fa729dc581d160096.ico"/>
+    <meta property="wb:webmaster" content="7cb966ae2a9fafdb"/>
+
+</head>
+
+<body class="users-ctrl edit-md">
+
+<!--[if lte IE 7]>
+<p class="chromeframe alert text-center">你似乎在使用一款 <strong>过时的</strong> 浏览器. 请 <a href="http://browsehappy.com/">更新它</a>
+    或是使用 <a href="http://www.google.com/chromeframe/?redirect=true">Chrome Frame</a> 来增强你的体验。</p>
+<![endif]-->
+<link rel="stylesheet" media="screen"
+      href="css/custom-font-awesome-38a9143609b5c7d4972dce38b5b1650f6f54a331fd744bdcbba5ab28f35004ec.css"/>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a style="padding: 10px;" class="brand" href="/feeds">
+                实现
+            </a>
+            <div class="pull-left" id="top-search-div">
+                <form class="navbar-search offset1" id="top-search-form">
+                    <input type="text" class="search-query span3" placeholder="搜索项目" id="top-search">
+                </form>
+            </div>
+
+            <div class="pull-right">
+                <ul class="nav">
+                    <li class="visible-desktop nav-fuhua nav-bar-item"><a target="_blank" href="/consultants">技术顾问</a>
+                    </li>
+                    <li class="visible-desktop nav-fuhua nav-bar-item"><a target="_blank" href="/jobs">兼职需求</a></li>
+                    <li class="visible-desktop nav-discover nav-bar-item"><a href="/projects">发现项目</a></li>
+                    <li class="visible-desktop nav-publish nav-bar-item"><a href="/projects-new">发布项目</a></li>
+                    <li class="dropdown message nav-notifications nav-bar-item">
+                        <a href="/notifications">消息<label class='label label-important'style='display: none'></label></a>
+                    </li>
+                    <!-- <li class="visible-desktop nav-mobile nav-bar-item"></li> -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle user-option nav-me" data-toggle="dropdown" href="#" title="个人主页">
+                            <img class="tiny-avatar avatar"
+                                 src="https://cdn.shixian.com/upload/user/avatar/96281/tiny_5d25c121fb22fbb610914d4229c6f370.jpeg"
+                                 alt="Tiny 5d25c121fb22fbb610914d4229c6f370"/>
+                            <span class="headerTinymanName">淡然，坦然，安然， <b class="caret"></b></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/dan-ran-tan-ran-an-ran">个人主页</a></li>
+                            <li><a href="/dan-ran-tan-ran-an-ran-edit">设置</a></li>
+
+                            </li>
+                            <li class="divider"></li>
+                            <li><a rel="nofollow" data-method="delete" href="/sign_out">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- end container -->
+        </div>
+    </div>
+</div>
+
+<script>
+    var addClassSelected = function (element) {
+        if (element) {
+            document.querySelectorAll(element)[0].classList.add('selected');
+        }
+        ;
+    };
+    if (window.location.href.match(/projects\/?$/)) {
+        addClassSelected('.nav-discover');
+    } else if (window.location.href.match(/notifications/)) {
+        addClassSelected('.nav-notifications');
+    } else if (window.location.href.match(/boot/)) {
+        addClassSelected('.nav-boot');
+    } else if (window.location.href.match(/projects\/new/)) {
+        addClassSelected('.nav-publish');
+    }
+    ;
+
+    var adjustTopInputWhenResize = function () {
+        if (window.innerWidth <= 1204) {
+            document.querySelectorAll('#top-search-form')[0].classList.remove('offset1');
+        }
+        ;
+    };
+    adjustTopInputWhenResize();
+    window.addEventListener('resize', adjustTopInputWhenResize, false);
+</script>
+
+
+<div id="shareWeibo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="shareWeiboLabel"
+     aria-hidden="true">
+    <form action="/share_weibo" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input
+            type="hidden" name="authenticity_token"
+            value="K04pEthJQLZ8vMde5B6eaOnjUtNorqefsMZe/NxnJbmgNVNfEC9c4WJNGGl+VtoJsDF6VTtlnajGDI9n1AEWKg=="/>
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="shareWeiboLabel">分享到微博</h3>
+        </div>
+
+        <div class="modal-body">
+      <textarea name="content" id="content" class="full-width" rows="3">
+分享一个互联网产品孵化社区：实现 https://shixian.com</textarea>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="submit">分享</button>
+            <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+        </div>
+    </form>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="span8 offset2">
+
+            <form class="edit_user" id="edit_user_96281" enctype="multipart/form-data" action="/dan-ran-tan-ran-an-ran"
+                  accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input
+                    type="hidden" name="_method" value="patch"/><input type="hidden" name="authenticity_token"
+                                                                       value="SEPbOkPRg+NVHy841pykyW8lebiJ6GspY0T38szNfHLDOKF3i7eftEvu8A9M1OCoNvdRPtojUR4VjiZpxKtP4Q=="/>
+                <legend>设置</legend>
+
+                <div class="control-group">
+                    <img id="user-avatar-upload"
+                         src="https://cdn.shixian.com/upload/user/avatar/96281/small_5d25c121fb22fbb610914d4229c6f370.jpeg"
+                         alt="Small 5d25c121fb22fbb610914d4229c6f370"/>
+                    <div class="controls">
+                        <input type="file" name="user[avatar]" id="user_avatar"/>
+                    </div>
+                </div>
+
+                <div class="control-group">
+
+                    <label class="control-label" for="user_user_profile_attributes_profile_email">邮箱</label>
+                    <div class="controls">
+                        <input type="email" name="user[user_profile_attributes][profile_email]"
+                               id="user_user_profile_attributes_profile_email"/>
+                        <label class="checkbox inline" style="margin-left:20px;">
+                            <input name="user[email_unsubscribe]" type="hidden" value="0"/><input type="checkbox"
+                                                                                                  value="1"
+                                                                                                  name="user[email_unsubscribe]"
+                                                                                                  id="user_email_unsubscribe"/>
+                            不通知
+                        </label>
+                    </div>
+                    <input type="hidden" value="199011" name="user[user_profile_attributes][id]"
+                           id="user_user_profile_attributes_id"/></div>
+
+
+                <div class="control-group">
+                    <label class="control-label" for="user_user_profile_attributes_location">所在地</label>
+                    <div class="controls">
+                        <input type="text" name="user[user_profile_attributes][location]"
+                               id="user_user_profile_attributes_location"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="user_user_profile_attributes_gender">性别</label>
+                    <div class="controls">
+                        <label class="radio inline">
+                            <input type="radio" value="男" checked="checked" name="user[user_profile_attributes][gender]"
+                                   id="user_user_profile_attributes_gender_男"/> 男
+                        </label>
+                        <label class="radio inline">
+                            <input type="radio" value="女" name="user[user_profile_attributes][gender]"
+                                   id="user_user_profile_attributes_gender_女"/> 女
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="user_user_profile_attributes_birthday">生日</label>
+                    <div class="controls">
+                        <input type="text" name="user[user_profile_attributes][birthday]"
+                               id="user_user_profile_attributes_birthday"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="user_user_profile_attributes_website">个人主页</label>
+                    <div class="controls">
+                        <input type="text" name="user[user_profile_attributes][website]"
+                               id="user_user_profile_attributes_website"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="user_tag_list">技能</label>
+                    <div>
+                        <div class="skill-tags-container">
+                            <span class="skill-tag">产品经理</span>
+                            <span class="skill-tag">UI设计师</span>
+                            <span class="skill-tag">交互设计师</span>
+                            <span class="skill-tag">产品运营</span>
+                            <span class="skill-tag">内容运营</span>
+                            <span class="skill-tag">前端工程师</span>
+                            <span class="skill-tag">iOS工程师</span>
+                            <span class="skill-tag">Android工程师</span>
+                            <span class="skill-tag">PHP工程师</span>
+                            <span class="skill-tag">Java工程师</span>
+                            <span class="skill-tag">Python工程师</span>
+                            <span class="skill-tag">C/C++工程师</span>
+                            <span class="skill-tag">.NET工程师</span>
+                            <span class="skill-tag">Node.js工程师</span>
+                            <span class="skill-tag">Ruby工程师</span>
+                            <span class="skill-tag">后端工程师</span>
+                            <span class="skill-tag">硬件工程师</span>
+                            <span class="skill-tag">算法工程师</span>
+                            <span class="skill-tag">数据挖掘</span>
+                            <span class="skill-tag">机器学习</span>
+
+
+                            <span class="skill-tag">项目经理</span>
+                            <span class="skill-tag">SEO</span>
+                            <span class="skill-tag">平面设计师</span>
+                            <span class="skill-tag">游戏策划</span>
+                            <span class="skill-tag">游戏开发</span>
+                            <span class="skill-tag">数据库管理员</span>
+                            <span class="skill-tag">人工智能</span>
+                            <span class="skill-tag">Golang工程师</span>
+                            <span class="skill-tag">嵌入式工程师</span>
+                            <span class="skill-tag">投资人</span>
+                        </div>
+                    </div>
+                    <!-- <div class="controls" style="width:540px;">
+                    </div> -->
+                    <br>
+                </div>
+                <br>
+                <div class="control-group" style="padding-top:100px;">
+                    <label class="control-label" for="user_user_profile_attributes_description">简介</label>
+                    <div class="controls">
+      <textarea class="input-xxlarge" rows="5" name="user[user_profile_attributes][description]"
+                id="user_user_profile_attributes_description">
+</textarea>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <input type="submit" name="commit" value="保存设置" class="btn" data-disable-with="保存设置"/>
+                    </div>
+                </div>
+                <input type="hidden" value="199011" name="user[user_profile_attributes][id]"
+                       id="user_user_profile_attributes_id"/></form>
+
+        </div>
+    </div><!--/row-->
+</div> <!-- /container -->
+
+<div class="footer-faker-margin-row"></div>
+
+<div class="empty-row"></div>
+
+<footer class="footer">
+    <!-- <hr> -->
+    <br class="hidden-xs hidden-sm">
+    <div class="container text-center hidden-xs hidden-sm footer-col-md-1">
+        <!-- <div class="col-md-1 span1"> -->
+        <!-- </div> -->
+        <div class="col-md-1 span1" style="margin-left: 25px;">
+            <a target="_blank" class="footer-link footer-text" href="/consultants">技术顾问</a>
+        </div>
+        <div class="col-md-1 span1">
+            <a target="_blank" class="footer-link footer-text" href="/jobs">兼职需求</a>
+        </div>
+        <div class="col-md-1 span1">
+            <a target="_blank" class="footer-link footer-text" href="/services">标准服务</a>
+        </div>
+
+        <div class="col-md-1 span1">
+            <a target="_blank" class="footer-link footer-text" href="/projects">实现社区</a>
+        </div>
+        <div class="col-md-1 span1">
+            <a target="_blank" class="footer-link footer-text" href="/protocol">实现协议</a>
+        </div>
+
+        <div class="col-md-1 span1">
+            <a target="_blank" class="footer-link footer-text" href="/faq">常见问题</a>
+        </div>
+        <div class="col-md-1 span1">
+            <a target="_blank" class="footer-link footer-text" href="/projects/27">意见反馈</a>
+        </div>
+
+        <div class="col-md-1 span1">
+            <a target="_blank" class="footer-link footer-text" href="/about">关于我们</a>
+        </div>
+        <div class="col-md-1 span1">
+            <a target="_blank" class="footer-link footer-text" href="/friends">友情链接</a>
+        </div>
+        <div class="col-md-1 span1">
+            <a target="_blank" class="footer-link footer-text" href="/partners">合作伙伴</a>
+        </div>
+        <div class="col-md-1 span1">
+            <a target="_blank" class="footer-link footer-text" href="/cases">成果展示</a>
+        </div>
+    </div>
+
+    <br>
+    <div class="container">
+        <p class="text-center">
+            <span class="footer-text">2016 © 北京实现与爱科技有限公司</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <br class="visible-xs">
+            <a href="http://www.miibeian.gov.cn" rel="nofollow" class="footer-link footer-text" target="_blank">京ICP备14024552号</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="fa fa-wechat footer-link" target="_blank" id="wx-activity-popover"
+               href="http://dwz.cn/2aaSX6"></a>&nbsp;&nbsp;
+            <a class="fa fa-weibo footer-link" target="_blank" href="http://weibo.com/synatmall" data-toggle="tooltip"
+               data-placement="top" title="进入微博"></a>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <br class="visible-xs">
+
+            <a class="footer-link footer-text" href="/">首页</a>
+            &nbsp;&nbsp;
+            <a target="_blank" class="footer-link footer-text" href="/media_reports">媒体报道</a>
+            &nbsp;&nbsp;
+            <a target="_blank" rel="nofollow" class="footer-link footer-text"
+               href="http://mp.weixin.qq.com/s?__biz=MzA3NTczODYxNQ==&amp;mid=422599764&amp;idx=1&amp;sn=32fa44f9c82ea1067e67b5c23390538a&amp;scene=23&amp;srcid=0310Zk8j2FjIIEh3XiWdWJiL#rd">加入我们</a>
+        </p>
+    </div>
+</footer>
+
+
+<!-- Javascripts
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/assets/application-2bb7f13c6dfc889ef682faad3fc355d367c8cfce9e015aef294680ff525427b5.js"></script>
+
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-Token': $('meta[name="csrf-token]"]').attr('content')
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    $('<input type="hidden" name="user[tag_list]" value="" />').appendTo('.edit_user');
+    remove_item = function (arr, value) {
+        var b = '';
+        for (b in arr) {
+            if (arr[b] === value) {
+                arr.splice(b, 1);
+                break;
+            }
+        }
+        return arr;
+    }
+    var tag = [];
+    var listOfTags = document.querySelectorAll('.skill-tag');
+    for (var i = 0; i < listOfTags.length; i++) {
+        listOfTags[i].onclick = function () {
+            if (this.classList.contains('selected')) {
+                this.classList.remove('selected');
+                //tag = remove_item(tag,$(this).text());
+                // $("input[name='user[tag_list]']").val(tag.toString());
+            } else {
+                this.classList.add('selected');
+                //tag.push($(this).text());
+                // $("input[name='user[tag_list]']").val(tag.toString());
+            }
+            ;
+        };
+    }
+    ;
+    $(document).ready(function () {
+        $('ul.tagit').remove();
+    });
+    var t_s = "";
+    var t_list = t_s.split(",");
+    if (t_list.length >= 1 && t_list[0].length > 0) {
+        var listOfTags = document.querySelectorAll('.skill-tag');
+        for (var i = 0; i < listOfTags.length; i++) {
+            if ($.inArray($(listOfTags[i]).text(), t_list) != -1) {
+                listOfTags[i].classList.add('selected');
+            }
+            ;
+        }
+    }
+    ;
+    $(".edit_user").submit(function () {
+        for (var i = 0; i < listOfTags.length; i++) {
+            if (listOfTags[i].classList.contains('selected')) {
+                tag.push($(listOfTags[i]).text());
+            }
+        }
+        $("input[name='user[tag_list]']").val(tag.toString());
+    });
+</script>
+
+
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F25e3b17ddf2b132427768bfebf751a76' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<!-- growingio -->
+<script type='text/javascript'>
+    var _vds = _vds || [];
+    window._vds = _vds;
+    (function () {
+        _vds.push(['setAccountId', 'acf6ac3446a1dcb0']);
+        (function () {
+            var vds = document.createElement('script');
+            vds.type = 'text/javascript';
+            vds.async = true;
+            vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(vds, s);
+        })();
+    })();
+</script>
+
+</body>
+</html>

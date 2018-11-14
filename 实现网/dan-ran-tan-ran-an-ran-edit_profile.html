@@ -1,0 +1,159 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+
+      <link rel="stylesheet" media="screen" href="css/programmers-2176355d6c8f19d2508f14a4708acecbb1683b7eebd1f5239ca28391b6d0b905.css" />
+      <script src="js/jquery-2.1.3.min-110fa8fd9cb93b29de53d0dca46855f92f1ffa69885d6a883aebad2a5b0d5b56.js"></script>
+      <script src="js/programmers-ff3d878d5478eb9d984f95975af3f64493f6e84cf46839f198f93cb18350ab97.js"></script>
+
+
+      <title>修改个人资料 - 实现网</title>
+
+
+    
+
+  </head>
+    <body>
+
+
+<!--放一个id为header的div,把header.html加载到这块-->
+<div id="header"></div>
+
+
+<!--放一个id为header的div,把nav.html加载到这块-->
+<div id="nav"></div>
+
+
+
+
+
+
+
+<div class="empty-line"></div>
+
+<div class="container">
+  
+<div class="with-white-background-color with-box-shadow">
+  <div class="empty-row"></div>
+
+  
+
+
+
+
+  <div class="col-md-8 col-md-offset-2">
+    <legend>修改个人资料</legend>
+
+    <form class="edit_user" id="edit_user_96281" enctype="multipart/form-data" action="/dan-ran-tan-ran-an-ran/update_profile" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="jtcpPN1C9LBWkwOGpVWRFvqdqW8JegKHPz6LA6qdwXr808lsXDCmIPfZkY3exadZIoGc/LtEVUXKc+96LZrMsg==" />
+      <div class="form-inputs">
+  <div class="form-group string required user_username">
+    <label class="string required control-label" for="user_username">昵称</label>
+    <div class="controls">
+      <input required="required" placeholder="2到20个字符" type="text" value="淡然，坦然，安然，" name="user[username]" id="user_username" />
+    </div>
+  </div>
+
+  <div class="empty-small-line"></div>
+
+  <div class="form-group string required user_username">
+    <label class="string required control-label" for="user_username">微信号</label>
+    <div class="controls">
+      <input placeholder="仅用于运营人员联系您" type="text" name="user[wx_account]" id="user_wx_account" />
+    </div>
+  </div>
+
+  <div class="empty-small-line"></div>
+
+  <div class="form-group">
+    <img id="user-avatar-upload" class="small-avatar small-avatar-radius" src="https://cdn.shixian.com/upload/user/avatar/96281/small_5d25c121fb22fbb610914d4229c6f370.jpeg" alt="Small 5d25c121fb22fbb610914d4229c6f370" />
+    <div class="controls form-group">
+      <input type="file" name="user[avatar]" id="user_avatar" />
+    </div>
+  </div>
+
+</div>
+
+<div class="empty-small-line"></div>
+
+<div class="margin-top-20">
+  <input type="submit" name="commit" value="保存修改" class="btn btn-primary xs-full-width" data-disable-with="保存修改" />
+</div>
+
+</form>  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="empty-row"></div>
+  <div class="empty-row"></div>
+
+  <div class="clearfix"></div>
+</div>
+
+
+</div>
+
+<!--放一个id为footer的div,把footer.html加载到这块-->
+<div id="footer"></div>
+
+
+<script>
+    $(function() {
+        $('#header').load('header.html');
+        $('#nav').load('nav.html');
+        $('#footer').load('footer.html');
+    })
+</script>
+
+
+  <!-- 已登录，消息提醒 -->
+  <script src="js/pull_notices-430ba62a3b9fea9a5f9b6d44cea543c066fdca4eec1615ecc7adeef1feee89c7.js"></script>
+
+<script type="text/javascript">
+  is_weixin();
+  function is_weixin(){
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+      $(".wechat_login").attr("href", "https://shixian.com/users/auth/wechat");
+      $(".weibo_login").hide();
+      $(".github_login").hide();
+    } else {
+      $(".wechat_login").attr("href", "https://shixian.com/users/auth/open_wechat")
+    }
+  }
+</script>
+
+<script src="js/wx-activity-popover-ee5a2e9688b1344f6f815e8c9c83f9def559b8db0b6b3545136d2356967170db.js"></script>
+
+
+    
+    
+    <!-- 百度统计等 -->
+      <script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F25e3b17ddf2b132427768bfebf751a76' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+
+  <!-- growingio -->
+  <script type='text/javascript'>
+      var _vds = _vds || [];
+      window._vds = _vds;
+      (function(){
+        _vds.push(['setAccountId', 'acf6ac3446a1dcb0']);
+        (function() {
+          var vds = document.createElement('script');
+          vds.type='text/javascript';
+          vds.async = true;
+          vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(vds, s);
+        })();
+      })();
+  </script>
+
+  </body>
+</html>
+
