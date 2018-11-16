@@ -1,1 +1,0 @@
-$(function(){var n=function(){$.get("/notices/unread_count.json",{ts:+new Date},function(n){count=n.count,count?$(".navbar-fixed-top #message .label").html(count).css("display","inline"):$(".navbar-fixed-top #message .label").css("display","none")})};setInterval(n,15e4),n()});
