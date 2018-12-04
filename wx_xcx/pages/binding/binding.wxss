@@ -1,0 +1,25 @@
+/* pages/binding/binding.wxss */
+.binding{
+  padding: 40rpx 60rpx;
+}
+.binding .normal{
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  border-bottom:1px solid rgba(190, 190, 190, 0.986);
+
+}
+.binding .phone input{
+  flex: 1
+}
+.binding .phone .get_code{
+  width: 200rpx;
+  text-align: center;
+}
+.binding .sign_in{
+  margin-top: 40rpx;
+  background: rgba(190, 190, 190, 0.786)
+}
+.binding .protocol{
+  margin-top: 80rpx;
+}

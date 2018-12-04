@@ -1,0 +1,45 @@
+/**index.wxss**/
+
+.cifsLink{
+  display: inline;
+  text-decoration: underline;
+}
+.introduce{
+  padding: 20rpx;
+  text-indent: 2em;
+  font-size: 30rpx;
+}
+.introduce_detail{
+  padding: 20rpx 0;
+}
+
+
+
+
+
+
+
+
+
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+

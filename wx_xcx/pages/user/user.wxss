@@ -1,0 +1,18 @@
+/* pages/user/user.wxss */
+.user_header{
+  display: flex;
+  align-items: center;
+  height: 200rpx;
+  padding: 0 40rpx;
+  background: #ffffff;
+}
+.user_header .avator{
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 40rpx;
+  border-radius: 50%;
+  display: block;
+}
+.user_body{
+  padding: 20rpx;
+}

@@ -1,0 +1,14 @@
+<!--pages/user/user.wxml-->
+<view class='user'>
+   <view class='user_header'>
+    <image class='avator' src="{{state?'../../images/index-1.png':userInfo.avatarUrl}}"></image>
+    <view class='title' bindtap='toLogin'>{{state?'请点击登录':userInfo.nickName}}</view>
+   </view>
+   <!-- <view class='user_body'>
+
+    <view class='user_info' wx:else>
+      <view><navigator url='../../pages/infor/infor'>个人信息 -></navigator></view>
+    </view>
+   </view> -->
+  
+</view>

@@ -1,0 +1,17 @@
+/* pages/login/login.wxss */
+.login .login_img{
+  width: 100%;
+  height: 400rpx;
+}
+.login .login_handle{
+  padding: 20rpx 50rpx;
+}
+
+.login_handle .authorize{
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-bottom:20rpx;
+  font-size:28rpx;
+  color: #ffffff;
+  background: rgb(92, 201, 146);
+}

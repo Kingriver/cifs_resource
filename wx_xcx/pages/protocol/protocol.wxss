@@ -1,0 +1,9 @@
+/* pages/protocol/protocol.wxss */
+.protocol{
+  padding: 40rpx 20rpx;
+  text-indent: 2em;
+  font-size: 30rpx;
+}
+.protocol .item{
+  padding: 20rpx 0;
+}

@@ -1,0 +1,14 @@
+/**app.wxss**/
+page{
+  width: auto;
+  background: #f6f8fc;
+  font-family: '微软雅黑';
+  font-size: 32rpx;
+
+}
+.center{
+  text-align: center;
+}
+.navigator-hover{
+  color:blue;
+}
