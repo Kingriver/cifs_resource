@@ -1,13 +1,13 @@
 <!--pages/binding/binding.wxml-->
 <view class='binding'>
    <view class='normal phone'>
-    <input placeholder="请输入手机号" type='number' focus/>
-    <view class='get_code'>获取验证码</view>
+    <input placeholder="请输入手机号" type='number' focus maxlength="11" bindinput="phoneInput" />
+    <view class='get_code' style='color:{{textColor}}' bindtap='getCode'>获取验证码</view>
    </view>
    <view class='normal code'>
-    <input placeholder="请输入短信验证码" type='number' />
+    <input placeholder="请输入短信验证码" type='number' maxlength="6" bindinput="codeInput" />
    </view>
-   <button class='sign_in'>登录</button>
+   <view class='sign_in'  style='background:{{background}};color:{{btnColor}};' bindtap='sign'>登录</view>
 
 
 

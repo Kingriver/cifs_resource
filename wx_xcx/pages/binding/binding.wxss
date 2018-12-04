@@ -1,12 +1,14 @@
 /* pages/binding/binding.wxss */
 .binding{
   padding: 40rpx 60rpx;
+
 }
 .binding .normal{
   display: flex;
   align-items: center;
   height: 100rpx;
-  border-bottom:1px solid rgba(190, 190, 190, 0.986);
+    color: #dddddd;
+  border-bottom:1px solid #dddddd;
 
 }
 .binding .phone input{
@@ -18,8 +20,15 @@
 }
 .binding .sign_in{
   margin-top: 40rpx;
-  background: rgba(190, 190, 190, 0.786)
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align:center;
+  border-radius:10rpx;
+  overflow:hidden;
+
+
 }
 .binding .protocol{
   margin-top: 80rpx;
+
 }

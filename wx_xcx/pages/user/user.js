@@ -12,22 +12,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    var userInfo = wx.getStorageSync('userInfo');
 
-    if (userInfo){
-      that.setData({
-        state:false,
-        userInfo: userInfo
-      })
-    }
   },
 
 
 
   toLogin(){
     if(this.data.state){
-      console.log('kk')
       wx.navigateTo({
         url: '../../pages/login/login',
       })
@@ -46,7 +37,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    var userInfo = wx.getStorageSync('userInfo');
+    console.log(userInfo)
+    if (userInfo.isLogin) {
+      that.setData({
+        state: false,
+        userInfo: userInfo
+      })
+    }
   },
 
   /**
