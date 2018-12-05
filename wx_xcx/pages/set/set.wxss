@@ -1,0 +1,21 @@
+/* pages/set/set.wxss */
+.set{
+  font-size: 28rpx;
+}
+.change_phone{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80rpx;
+  padding: 0 30rpx;
+  margin: 20rpx 0;
+  background: #ffffff;
+}
+.logout{
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 20rpx;
+  text-align: center;
+  background: #ffffff;
+  border: 2rpx solid #ece9e9
+}

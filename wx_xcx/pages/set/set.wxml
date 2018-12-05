@@ -1,0 +1,10 @@
+<!--pages/set/set.wxml-->
+<view class='set'>
+ <navigator hover-class="none" url='../../pages/change_phone/change_phone'>
+  <view class='change_phone'>
+    <text>更换手机</text>
+    <text> > </text>
+  </view>
+ </navigator>
+ <view class='logout' bindtap='logout'>退出</view>
+</view>

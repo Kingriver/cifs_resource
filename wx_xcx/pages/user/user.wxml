@@ -1,14 +1,39 @@
 <!--pages/user/user.wxml-->
 <view class='user'>
    <view class='user_header'>
-    <image class='avator' src="{{state?'../../images/index-1.png':userInfo.avatarUrl}}"></image>
+    <image class='avator' src="{{state?'../../images/avatar.png':userInfo.avatarUrl}}"></image>
     <view class='title' bindtap='toLogin'>{{state?'请点击登录':userInfo.nickName}}</view>
    </view>
-   <!-- <view class='user_body'>
 
-    <view class='user_info' wx:else>
-      <view><navigator url='../../pages/infor/infor'>个人信息 -></navigator></view>
+
+    <view class='user_list'>
+      
+        <view class='list_item'>
+          <navigator class='item_link' hover-class="none" url="{{state?'../../pages/login/login':'../../pages/infor/infor'}}">
+            <view class='item_left'>
+              <image class='icon' src='../../images/info.png'></image>
+              <text>我的信息</text>
+            </view>
+            <view class='item_left'>
+              <text> > </text>
+            </view>
+          </navigator>
+        </view>
+   
+      
+        <view class='list_item'>
+          <navigator class='item_link' hover-class="none" url="{{state?'../../pages/login/login':'../../pages/set/set'}}">
+            <view class='item_left'>
+              <image class='icon' src='../../images/set.png'></image>
+              <text>设置</text>
+            </view>
+            <view class='item_left'>
+              <text> > </text>
+            </view>
+          </navigator>
+        </view>
+   
     </view>
-   </view> -->
+
   
 </view>

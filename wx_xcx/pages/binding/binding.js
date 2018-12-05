@@ -7,6 +7,10 @@ Page({
   data: {
       phone:'',
       code:'',
+      time:10,
+      stop:true,
+      count:null,
+      text:'获取验证码',
       textColor:'#dddddd',
       btnColor: '#dddddd',
       state:false,
@@ -23,7 +27,7 @@ Page({
     var phone=data.detail.value;
     if (phone.length===11){
       this.setData({
-        textColor:'green',
+        textColor: 'rgb(92, 201, 146)',
         phone: phone
       })
     }else{
@@ -34,19 +38,43 @@ Page({
     }
   },
   getCode(){
-   var phone=this.data.phone;
+    var that=this;
+    var phone=this.data.phone;
+    var time = this.data.time;  
+    var stop=this.data.stop;
     var phoneReg = /^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/;
     if(!phone){return;}
     if (phoneReg.test(phone)) {
-      this.setData({
-        phone: phone,
-        state: true
-      })
+      if (!stop){return;}
       wx.showToast({
         title: '验证码已发送',
         icon: 'success',
         duration: 3000
       })
+      this.setData({
+        phone: phone,
+        state: true
+      });
+      this.data.count=setInterval(function () {
+        time--;
+        if (time === 0) {
+          clearInterval(that.data.count)
+          that.setData({
+            text: '重新获取',
+            textColor: 'rgb(92, 201, 146)',
+            time: 10,
+            stop:true
+          });
+          return;
+        }
+        that.setData({
+          stop:false,
+          textColor: '#dddddd',
+          time: time,
+          text: time + ' s'
+        });
+      }, 1000)
+
     }else{
       wx.showModal({
         title: '提示',
@@ -60,7 +88,7 @@ Page({
        if(this.data.state){
          if (code.length===6){
            this.setData({
-             background: 'green',
+             background: 'rgb(92, 201, 146)',
              btnColor: '#ffffff',
              code:code
            })
@@ -92,6 +120,8 @@ Page({
       }
     })
   },
+  
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -107,19 +137,18 @@ Page({
 
   },
 
-
-
-
-
-
-
-  
-
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    var that=this;
+    clearInterval(that.data.count)
+    that.setData({
+      text: '重新获取',
+      textColor: 'green',
+      time: 10,
+      stop: true
+    });
   },
 
   /**

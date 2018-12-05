@@ -12,7 +12,8 @@
     "pages/protocol/protocol",
     "pages/login/login",
     "pages/infor/infor",
-    "pages/binding/binding"
+    "pages/binding/binding",
+    "pages/set/set"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,8 +22,8 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#00b6d4",
-    "selectedColor": "#ef3143",
+    "color": "#87CEFA",
+    "selectedColor": "#1E90FF",
     "borderStyle": "#ef3143",
     "list": [
       {

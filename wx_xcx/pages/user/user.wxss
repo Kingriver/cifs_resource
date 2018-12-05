@@ -13,6 +13,35 @@
   border-radius: 50%;
   display: block;
 }
-.user_body{
-  padding: 20rpx;
+.user_list{
+   margin-top:20rpx;
+   padding: 0 40rpx;
+   font-size: 28rpx;
+   background: #ffffff;
+}
+
+.user_list .list_item{
+  height: 89rpx;
+  border-bottom:2rpx solid #e6e6e6;
+
+}
+.user_list .list_item:last-child{
+  border: none;
+}
+.list_item .item_link{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 89rpx;
+}
+.list_item .item_left{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.list_item .item_left .icon{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+  display: block;
 }
