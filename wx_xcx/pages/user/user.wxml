@@ -32,6 +32,47 @@
             </view>
           </navigator>
         </view>
+
+       <view class='list_item'>
+          <navigator class='item_link' hover-class="none" url="{{state?'../../pages/login/login':'../../pages/opinion/opinion'}}">
+            <view class='item_left'>
+              <image class='icon' src='../../images/opinion.png'></image>
+              <text>意见反馈</text>
+            </view>
+            <view class='item_left'>
+              <text> > </text>
+            </view>
+          </navigator>
+        </view>
+
+        <view class='list_item'>
+          <view class='item_link' >
+            <view class='item_left'>
+              <image class='icon' src='../../images/service.png'></image>
+              <text>联系客服 </text>
+            </view>
+            <view class='item_left'>
+              <text> > </text>
+            </view>
+          </view>
+        </view>
+
+
+
+
+       <view class='list_item'>
+          <view class='item_link' bindtap='callPhone'>
+            <view class='item_left'>
+              <image class='icon' src='../../images/phone.png'></image>
+              <text>客服电话：{{servicePhone}} </text>
+              <text class='time'> {{ serviceTime}} </text>
+            </view>
+            <view class='item_left'>
+              <text> > </text>
+            </view>
+          </view>
+        </view>
+
    
     </view>
 

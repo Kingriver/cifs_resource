@@ -13,7 +13,8 @@
     "pages/login/login",
     "pages/infor/infor",
     "pages/binding/binding",
-    "pages/set/set"
+    "pages/set/set",
+    "pages/opinion/opinion"
   ],
   "window": {
     "backgroundTextStyle": "light",

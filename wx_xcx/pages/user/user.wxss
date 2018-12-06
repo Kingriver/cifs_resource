@@ -36,7 +36,6 @@
 }
 .list_item .item_left{
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 .list_item .item_left .icon{
@@ -44,4 +43,9 @@
   height: 32rpx;
   margin-right: 20rpx;
   display: block;
+}
+.list_item .item_left .time{
+  font-size: 24rpx;
+  margin-left: 12rpx;
+  color: #e6e6e6;
 }

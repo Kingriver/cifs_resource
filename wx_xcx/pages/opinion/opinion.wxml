@@ -1,0 +1,22 @@
+<!--pages/opinion/opinion.wxml-->
+<view class='opinion'>
+  <view class='problem'>
+    <view class='title'><text class='must'>*</text> 请描述你遇到的问题</view>
+    <view class='list'>
+      <view class='item'>我的问题</view>
+      <view class='item'>你的问题</view>
+      <view class='item'>他的问题</view>
+      <view class='item'>支付问题</view>
+      <view class='item'>其他问题</view>
+    </view>
+    <textarea class='desc' placeholder='描述你的问题' maxlength="20" bindinput='descCount' ></textarea>
+    <view class='desc_count'>{{count}}/20</view>
+  </view>
+  <view class='voucher'>
+  <view class='title'>上传凭证(不超过3张)</view>
+  <view class='imgs'>
+  <image  class='img_item' wx:if='{{imgsPaths.length}}' wx:for='{{imgsPaths}}' wx:item='item' wx:index='index' src='{{item}}' bindtap='previewImage' data-current='{{item}}'></image>
+  <view class='upload_btn' bindtap='uploadImg'>+</view>
+  </view>
+  </view>
+</view>

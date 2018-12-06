@@ -1,50 +1,50 @@
-// pages/user/user.js
+// pages/opinion/opinion.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    state: true,
-    servicePhone:'18382441605',
-    serviceTime:'(服务时间: 9:00  - 23:00)'
+    count:0,
+    desc:'',
+    imgsPaths:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    var userInfo = wx.getStorageSync('userInfo');
-    if (userInfo.isLogin) {
-      that.setData({
-        state: false,
-        userInfo: userInfo
-      });
-    } else {
-      wx.navigateTo({
-        url: '../../pages/login/login',
-      })
-    }
 
   },
-
-  callPhone(){
-    wx.makePhoneCall({
-      phoneNumber: this.data.servicePhone 
+  descCount(e){
+    this.setData({
+      desc: e.detail.value,
+      count: e.detail.cursor
     })
   },
-
-
-  //跳转登录授权页
-  toLogin(){
-    if(this.data.state){
-      wx.navigateTo({
-        url: '../../pages/login/login',
-      })
-    }
+  uploadImg(){
+    var that=this;
+    wx.chooseImage({
+      count: 3,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success(res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        //const tempFilePaths = res.tempFilePaths
+        that.setData({
+          imgsPaths: res.tempFilePaths
+        })
+      }
+    })
   },
-  
+  previewImage(e){
+    var imgsPaths = this.data.imgsPaths;
+    var currentImg = e.currentTarget.dataset.current;
+    wx.previewImage({
+      current: currentImg, // 当前显示图片的http链接
+      urls: imgsPaths // 需要预览的图片http链接列表
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -57,17 +57,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this;
-    var userInfo = wx.getStorageSync('userInfo');
-    if (userInfo.isLogin) {
-      that.setData({
-        state: false,
-        userInfo: userInfo
-      });
-    }
+
   },
-
-
 
   /**
    * 生命周期函数--监听页面隐藏
