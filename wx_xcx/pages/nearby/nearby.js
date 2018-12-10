@@ -1,4 +1,8 @@
 // pages/nearby/nearby.js
+var QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
+var qqmapsdk = new QQMapWX({
+  key: 'SFLBZ-GZ5H6-7RLS6-EI7M2-EVVWK-LMBAU'
+});
 Page({
 
   /**
@@ -22,6 +26,13 @@ Page({
    */
   onReady: function () {
 
+  },
+
+  searchText(e){
+
+    // this.setData({
+    //   searchVal: e.detail.value
+    // })
   },
 
   goMap(){

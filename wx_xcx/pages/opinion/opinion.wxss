@@ -1,6 +1,6 @@
 /* pages/opinion/opinion.wxss */
 .opinion{
- padding: 20rpx 0
+ /* padding: 20rpx 0 */
 }
 .opinion .problem {
   padding:  10rpx 20rpx;
@@ -25,11 +25,15 @@
   padding: 8rpx 12rpx;
   text-align: center;
   border: 2rpx solid #e6e6e6;
-  border-radius: 12%;
+  border-radius: 12rpx;
+}
+.problem .list .item.active{
+  color: #eccd65;
+  border: 2rpx solid #eccd65;
 }
 .problem .desc{
   width: 100%;
-  height: 200rpx;
+  height: 180rpx;
 }
 .problem .desc_count{
  text-align: right;
@@ -50,17 +54,58 @@
   padding: 20rpx 0;
 }
 .voucher .imgs .img_item{
-  width: 100rpx;
-  height: 100rpx;
+  width: 120rpx;
+  height: 120rpx;
   margin:0 20rpx 20rpx 0;
   display: block;
 }
 .voucher .imgs .upload_btn{
-  width: 100rpx;
-  height: 100rpx;
-  line-height: 100rpx;
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
   text-align: center;
   font-size: 60rpx;
   color: #e6e6e6;
   border: 2rpx dashed #e6e6e6;
+}
+
+.opinion .userInfo{
+  padding:  10rpx 20rpx;
+  margin-bottom: 20rpx;
+  border-top: 2rpx solid #e6e6e6;
+  border-bottom: 2rpx solid #e6e6e6;
+  background: #ffffff;
+}
+.userInfo .item{
+  display: flex;
+  align-items: center;
+  padding: 12rpx 0
+}
+.userInfo .contacts{
+  border-bottom: 2rpx solid #e6e6e6;
+}
+.userInfo .item .name{
+  width: 180rpx;
+}
+.userInfo .item .name .must{
+  margin-right: 8rpx;
+  color: red;
+}
+.userInfo .item input{
+  flex: 1
+}
+.opinion .submit{
+  padding:  20rpx;
+  border-top: 2rpx solid #e6e6e6;
+  border-bottom: 2rpx solid #e6e6e6;
+  background: #ffffff;
+}
+.submitBtn{
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: rgb(219, 136, 80);
+  color: #ffffff;
+  border-radius: 8rpx;
+  letter-spacing: 4rpx;
 }

@@ -1,51 +1,87 @@
 /* pages/user/user.wxss */
-.user_header{
+
+.user_header {
   display: flex;
   align-items: center;
   height: 200rpx;
   padding: 0 40rpx;
-  background: #ffffff;
+  background: #fff;
 }
-.user_header .avator{
+
+.user_header .avator {
   width: 120rpx;
   height: 120rpx;
   margin-right: 40rpx;
   border-radius: 50%;
   display: block;
 }
-.user_list{
-   margin-top:20rpx;
-   padding: 0 40rpx;
-   font-size: 28rpx;
-   background: #ffffff;
+
+.user_list {
+  margin-top: 20rpx;
+  padding: 0 40rpx;
+  font-size: 28rpx;
+  background: #fff;
 }
 
-.user_list .list_item{
+.user_list .list_item {
   height: 89rpx;
-  border-bottom:2rpx solid #e6e6e6;
-
+  border-bottom: 2rpx solid #e6e6e6;
 }
-.user_list .list_item:last-child{
+
+.user_list .list_item:last-child {
   border: none;
 }
-.list_item .item_link{
+
+.list_item .item_link {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 89rpx;
 }
-.list_item .item_left{
+
+.list_item .item_left {
   display: flex;
   align-items: center;
 }
-.list_item .item_left .icon{
+
+.list_item .item_left .icon {
   width: 32rpx;
   height: 32rpx;
   margin-right: 20rpx;
   display: block;
 }
-.list_item .item_left .time{
+
+.list_item .item_left .time {
   font-size: 24rpx;
   margin-left: 12rpx;
   color: #e6e6e6;
+}
+
+.list_item .contactBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  height: 89rpx;
+  line-height: 0;
+  font-size: 28rpx;
+  border-radius: 0;
+  background: #fff;
+}
+
+.list_item .contactBtn::after {
+  border: none;
+}
+
+.list_item .contactBtn .btnLeft {
+  display: flex;
+  align-items: center;
+}
+
+.list_item .contactBtn .btnLeft .icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+  display: block;
 }

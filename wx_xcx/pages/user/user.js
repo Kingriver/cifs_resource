@@ -35,7 +35,9 @@ Page({
     })
   },
 
-
+  handleContact(e){
+    console.log(e)
+  },
   //跳转登录授权页
   toLogin(){
     if(this.data.state){

@@ -2,6 +2,60 @@
 .map{
   position: relative;
 }
+
+.search{
+  display: flex;
+  align-items: center;
+  padding:  20rpx;
+  background: #ffffff;
+}
+.search .input{
+  flex: 1;
+  height:58rpx;
+  line-height: 58rpx;
+  padding: 0 20rpx;
+  border:2rpx solid #e6e6e6;
+  background:#e6e6e6;
+  border-radius:29rpx;
+}
+.search .btn{
+  width: 100rpx;
+  padding: 6rpx 0;
+  margin-left: 12rpx;
+  text-align: center;
+  font-size: 30rpx;
+  border-radius:8rpx;
+  border:2rpx solid #e6e6e6;
+}
+.list{
+  padding: 0 20rpx;
+  background: #ffffff;
+}
+.list .item{
+  padding: 12rpx 0;
+  font-size: 28rpx;
+  border-bottom: 2rpx solid #e6e6e6;
+}
+.list .item:last-child{
+  border-bottom: none
+}
+.list .item .title{
+  font-size: 30rpx;
+}
+
+
+
+
+
+
+
+
+
+.mapBox{
+  width: 100%; 
+  height: 600rpx;
+  z-index:1;
+}
 .handle{
   position: absolute;
   left: 0;
@@ -13,3 +67,4 @@
   background: rgba(10, 10, 10, 0.1);
   z-index: 11111;
 }
+

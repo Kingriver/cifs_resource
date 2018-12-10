@@ -3,20 +3,39 @@
   <view class='problem'>
     <view class='title'><text class='must'>*</text> 请描述你遇到的问题</view>
     <view class='list'>
-      <view class='item'>我的问题</view>
-      <view class='item'>你的问题</view>
-      <view class='item'>他的问题</view>
-      <view class='item'>支付问题</view>
-      <view class='item'>其他问题</view>
+      <view class="item {{targetId ==1?'active':''}}" data-id='1' bindtap='selectPro'>我的问题</view>
+      <view class="item {{targetId ==2?'active':''}}" data-id='2' bindtap='selectPro'>你的问题</view> 
+      <view class="item {{targetId ==3?'active':''}}" data-id='3' bindtap='selectPro'>他的问题</view>
+      <view class="item {{targetId ==4?'active':''}}" data-id='4' bindtap='selectPro'>支付问题</view>
+      <view class="item {{targetId ==5?'active':''}}" data-id='5' bindtap='selectPro'>其他问题</view> 
     </view>
     <textarea class='desc' placeholder='描述你的问题' maxlength="20" bindinput='descCount' ></textarea>
     <view class='desc_count'>{{count}}/20</view>
   </view>
   <view class='voucher'>
-  <view class='title'>上传凭证(不超过3张)</view>
-  <view class='imgs'>
-  <image  class='img_item' wx:if='{{imgsPaths.length}}' wx:for='{{imgsPaths}}' wx:item='item' wx:index='index' src='{{item}}' bindtap='previewImage' data-current='{{item}}'></image>
-  <view class='upload_btn' bindtap='uploadImg'>+</view>
+    <view class='title'>上传凭证(不超过3张)</view>
+    <view class='imgs'>
+      <image  class='img_item' wx:if='{{imgsPaths.length}}' wx:for='{{imgsPaths}}' wx:item='item' wx:index='index' src='{{item}}' bindtap='previewImage' data-current='{{item}}'></image>
+      <view class='upload_btn' bindtap='uploadImg'>+</view>
+    </view>
   </view>
+  <view class='userInfo'>
+    <view class='contacts item'>
+      <view class='name'>
+        <text class='must'>*</text>
+        <text>联系人</text>
+      </view>
+      <input value='{{userName}}' bindinput='changeName'></input>
+    </view>
+     <view class='contactPhone item'>
+      <view class='name'>
+        <text class='must'>*</text>
+        <text>联系方式</text>
+      </view>
+      <input value='{{userPhone}}' bindinput='changePhone'></input>
+    </view>
+  </view>
+  <view class='submit'>
+    <view class='submitBtn' bindtap='submitBtn'>提交反馈</view>
   </view>
 </view>

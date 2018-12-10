@@ -15,9 +15,17 @@ Page({
 
   },
   logout(){
-    wx.clearStorageSync('userInfo');
-    wx.reLaunch({
-      url: '../../pages/user/user',
+    wx.showModal({
+      title: '提示',
+      content: '你确定要退出吗',
+      success:function(res){
+        if (res.confirm){//点击确定
+          wx.clearStorageSync('userInfo');
+          wx.reLaunch({
+            url: '../../pages/user/user',
+          })
+        }
+      }
     })
   },
 

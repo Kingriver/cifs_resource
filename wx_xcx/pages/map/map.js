@@ -11,28 +11,13 @@ Page({
   data: {
     latitude:'',
     longitude:'',
+    selectedVal:'',
     markers: [
       {
         iconPath: '/images/location.png',
         id: 0,
         latitude: 39.9219,
         longitude: 116.44355,
-        width: 50,
-        height: 50
-      },
-      {
-        iconPath: '/images/location.png',
-        id: 1, 
-        latitude: 40.0065796678,
-        longitude: 116.4842176437,
-        width: 50,
-        height: 50
-      },
-      {
-        iconPath: '/images/location.png',
-        id: 2,
-        latitude: 40.0026678005, 
-        longitude: 116.4870500565,
         width: 50,
         height: 50
       }
@@ -72,6 +57,80 @@ Page({
     })
     this.getLocal(options.latitude, options.longitude)
   },
+  changeSearchVal(e){
+    var that = this;
+    var targetVal = e.detail.value;
+    if (!targetVal) { return }
+    that.setData({
+      selectedVal: targetVal
+    })
+  },
+  searchVal:function(e){
+    var that=this;
+    var targetVal = e.detail.value;
+    if (!targetVal){return}
+    // 调用接口
+    qqmapsdk.getSuggestion({
+      keyword: targetVal,
+      success: function (res) {
+        that.setData({
+          valList: res.data
+        })
+      }
+    });
+
+  },
+  btnSearchVal(){
+    var that = this;
+    var targetVal = this.data.selectedVal;
+    if (!targetVal) { return }
+    // 调用接口
+    qqmapsdk.getSuggestion({
+      keyword: targetVal,
+      success: function (res) {
+        that.setData({
+          valList: res.data
+        })
+      }
+    });
+  },
+
+  selectVal(e){
+    var markers= [
+      {
+        iconPath: '/images/location.png',
+        id: 0,
+        title: e.currentTarget.dataset.title,
+        latitude: e.currentTarget.dataset.latitude,
+        longitude: e.currentTarget.dataset.longitude,
+        width: 50,
+        height: 50
+      }
+    ];
+    var polyline= [{
+      points: [
+        {
+          longitude: this.data.longitude,
+          latitude: this.data.latitude
+        },
+       {
+         longitude: e.currentTarget.dataset.longitude,
+         latitude: e.currentTarget.dataset.latitude,
+      }],
+      color: "#FF0000DD",
+      width: 2,
+      dottedLine: true
+    }];
+   //   markers[0]
+    console.log(markers)
+    this.setData({
+      valList: [],
+      markers: markers,
+      polyline: polyline,
+      selectedVal: e.currentTarget.dataset.title,
+    })
+    //this.getLocal(e.currentTarget.dataset.latitude, e.currentTarget.dataset.longitude)
+  },
 
   getLocal: function (latitude, longitude){
     var that=this;
@@ -81,9 +140,7 @@ Page({
         longitude: longitude
       },
       success: function (res) {
-        console.log(res)
         var address = res.result.address;
-
         that.setData({
           current_address: address
         });
@@ -102,19 +159,20 @@ Page({
   },
 
   markertap(e) {
-    var targetId = e.markerId;
-    var markers = this.data.markers;
-    var targetInfo={};
-    for (var i = 0; i < markers.length;i++){
-      if (targetId === markers[i].id){
-        targetInfo = markers[i];
-      }
-    }
-    this.setData({
-      longitude: targetInfo.longitude,
-      latitude: targetInfo.latitude
-    })
-    this.getLocal(targetInfo.latitude, targetInfo.longitude)
+    console.log(e)
+    // var targetId = e.markerId;
+    // var markers = this.data.markers;
+    // var targetInfo={};
+    // for (var i = 0; i < markers.length;i++){
+    //   if (targetId === markers[i].id){
+    //     targetInfo = markers[i];
+    //   }
+    // }
+    // this.setData({
+    //   longitude: targetInfo.longitude,
+    //   latitude: targetInfo.latitude
+    // })
+    // this.getLocal(targetInfo.latitude, targetInfo.longitude)
 
   },
 

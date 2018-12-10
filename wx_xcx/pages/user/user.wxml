@@ -46,15 +46,15 @@
         </view>
 
         <view class='list_item'>
-          <view class='item_link' >
-            <view class='item_left'>
-              <image class='icon' src='../../images/service.png'></image>
-              <text>联系客服 </text>
-            </view>
-            <view class='item_left'>
-              <text> > </text>
-            </view>
-          </view>
+              <button class='contactBtn' open-type="contact" bindcontact="handleContact">
+               <view class='btnLeft'>
+                 <image class='icon' src='../../images/service.png'></image>
+                  <text>联系客服</text>  
+               </view>
+               <view>
+               <text> > </text> 
+               </view>
+              </button> 
         </view>
 
 
