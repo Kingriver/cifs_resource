@@ -4,8 +4,6 @@
     "pages/logs/logs",
     "pages/effect/effect",
     "pages/map/map",
-    "pages/factoring/factoring",
-    "pages/financing/financing",
     "pages/user/user",
     "pages/link/link",
     "pages/introduce/introduce",
@@ -14,17 +12,18 @@
     "pages/infor/infor",
     "pages/binding/binding",
     "pages/set/set",
-    "pages/opinion/opinion"
+    "pages/opinion/opinion",
+    "pages/nearby/nearby"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "福惠保理",
+    "navigationBarTitleText": "花桥King",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#87CEFA",
-    "selectedColor": "#1E90FF",
+    "color": "#bfbfbf",
+    "selectedColor": "#1296db",
     "borderStyle": "#ef3143",
     "list": [
       {
@@ -34,16 +33,10 @@
         "text": "首页"
       },
       {
-        "selectedIconPath": "images/factoring-2.png",
-        "iconPath": "images/factoring-1.png",
-        "pagePath": "pages/factoring/factoring",
-        "text": "福惠保理"
-      },
-      {
-        "selectedIconPath": "images/financing-2.png",
-        "iconPath": "images/financing-1.png",
-        "pagePath": "pages/financing/financing",
-        "text": "医药融资"
+        "selectedIconPath": "images/nearby-2.png",
+        "iconPath": "images/nearby-1.png",
+        "pagePath": "pages/nearby/nearby",
+        "text": "附近"
       },
       {
         "selectedIconPath": "images/my-2.png",

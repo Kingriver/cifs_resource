@@ -1,0 +1,46 @@
+/* pages/nearby/nearby.wxss */
+.search{
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  font-size: 28rpx;
+  background: #ffffff;
+}
+.search .input{
+  display: flex;
+  align-items: center;
+  padding: 0 10rpx;
+  height: 58rpx;
+  border: 2rpx solid #e6e6e6;
+  background: #e6e6e6;
+  border-radius:  29rpx;
+}
+.input .icon{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 12rpx;
+  display: block;
+}
+.input input{
+  width: 480rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+}
+.search .btn{
+  flex: 1;
+  margin-left: 20rpx;
+  font-size: 32rpx;
+  text-align: center;
+  color: #e6e6e6;
+}
+.search .current{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.search .current image{
+  width: 54rpx;
+  height: 54rpx;
+  display: block;
+}

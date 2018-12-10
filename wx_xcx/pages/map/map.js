@@ -20,7 +20,6 @@ Page({
         width: 50,
         height: 50
       },
-
       {
         iconPath: '/images/location.png',
         id: 1, 
@@ -67,34 +66,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    // 实例化API核心类
-
-    wx.getLocation({
-      altitude: false,
-      success: function (res) {
-        console.log(res)
-        var latitude = res.latitude;
-        var longitude = res.longitude;
-        that.setData({
-          latitude: res.latitude,
-          longitude: res.longitude
-        })
-        that.getLocal(latitude,longitude)
-      
-   
-
-      }
-    });
-
-
+    this.setData({
+      latitude:options.latitude,
+      longitude:options.longitude
+    })
+    this.getLocal(options.latitude, options.longitude)
   },
 
   getLocal: function (latitude, longitude){
     var that=this;
-    console.log(latitude, longitude)
     qqmapsdk.reverseGeocoder({       //qqmapsdk.reverseGeocoder
-
       location: {
         latitude: latitude,
         longitude: longitude
@@ -104,9 +85,7 @@ Page({
         var address = res.result.address;
 
         that.setData({
-
           current_address: address
-
         });
 
       },
@@ -117,7 +96,6 @@ Page({
         //   icon: 'loading',
         //   duration: 1000
         // });
-
       },
 
     })
