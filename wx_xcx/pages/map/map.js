@@ -44,19 +44,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    // this.setData({
-    //   latitude:options.latitude,
-    //   longitude:options.longitude
-    // })
-    // this.getLocal(options.latitude, options.longitude)
+  onLoad: function () {
   },
 
   // 监听input值变化
   changeSearchVal(e){
     var that = this;
     var targetVal = e.detail.value;
-    if (!targetVal) { return }
     that.setData({
       selectedVal: targetVal
     })
@@ -64,6 +58,13 @@ Page({
 
   // input框搜索
   searchVal:function(e){
+    if (!e.detail.value){
+      wx.showToast({
+        title: '请输入搜索内容',
+        image: '../../images/error.png',
+      });
+      return;
+    }
     var obj = {
       keyWords: e.detail.value,
       latitude: this.data.latitude,
@@ -77,6 +78,13 @@ Page({
 
   // 搜索按钮
   btnSearchVal(){
+    if (!this.data.selectedVal) {
+      wx.showToast({
+        title: '请输入搜索内容',
+        image: '../../images/error.png',
+      });
+      return;
+    }
     var obj={
       keyWords: this.data.selectedVal,
       latitude: this.data.latitude,
@@ -138,7 +146,7 @@ Page({
 
       },
       fail: function (res) {
-        console.log(res)
+       // console.log(res)
         // wx.showToast({
         //   title: '解析地址错误',
         //   icon: 'loading',
@@ -164,14 +172,28 @@ Page({
       }
     }
   },
+  // 当前位置附近
+  currentNearby(e){
+    var latitude = e.currentTarget.dataset.latitude;
+    var longitude = e.currentTarget.dataset.longitude;
+    var title = e.currentTarget.dataset.title;
+    wx.navigateTo({
+      url: '../nearby/nearby?longitude=' + longitude + '&latitude=' + latitude + latitude + '&title=' + title
+    })
+  },
 
   // 点击当前选中标记点事件
   selectVal(e) {
-    console.log(e)
+    var latitude = e.currentTarget.dataset.latitude;
+    var longitude = e.currentTarget.dataset.longitude;
+    var title = e.currentTarget.dataset.title;
+    wx.navigateTo({
+      url: '../nearby/nearby?longitude=' + longitude + '&latitude=' + latitude + '&title=' + title
+    })
   },
 
   //重新授权地理
-  rest(){
+  reset(){
     wx.showModal({
       title: '提示',
       content: '您未授权地理位置，请重新授权！',

@@ -71,12 +71,34 @@
   padding: 10rpx 0;
 }
 .markItem .title{
-
   font-size: 30rpx;
   border-bottom: 2rpx solid #e6e6e6;
 }
+.notFound{
+  padding: 20rpx;
+  font-size: 28rpx;
+  text-align: center;
+  /* color: #e6e6e6; */
+  background: #ffffff;
+}
 
+.unAuthorized{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.unAuthorized .reset{
+  width: 75%;
+  height:80rpx;
+  line-height:80rpx;
+  border-radius:10rpx;
+  font-size:28rpx;
+  color:#ffffff;
+  text-align: center;
+  background:rgb(92, 201, 146);
 
+}
 
 
 

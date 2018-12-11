@@ -9,8 +9,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    latitude: '',//纬度
-    longitude: ''//经度
+    keyWords:'',
+    notFound:false,
+    latitude: '',   //纬度
+    longitude: '',   //经度
+    nearList:[]
   },
 
   /**
@@ -18,7 +21,12 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
-   // this.getLocation();
+    this.setData({
+      latitude: options.latitude,
+      longitude: options.longitude,
+      keyWords: options.title
+    });
+    this.searchNearby()
   },
 
   /**
@@ -28,93 +36,69 @@ Page({
 
   },
 
-  searchText(e){
-
-    // this.setData({
-    //   searchVal: e.detail.value
-    // })
-  },
-
-  goMap(){
-    var latitude = this.data.latitude;
-    var longitude = this.data.longitude;
-    if (!latitude || !longitude){
-      wx.showModal({
-        title: '提示',
-        content: '您未授权地理位置，请重新授权！',
-        confirmText:'重新授权',
-        success:function(res){
-          if(res.confirm){
-            //重新授权
-            wx.openSetting({
-              success(res) {
-                if (res.authSetting['scope.userLocation']){
-                  wx.showToast({
-                    title: '授权成功',
-                  })
-                }
-              }
-            })
-          }
-        },
-      });
-      return;
-    }
-    wx.navigateTo({
-      url: "../map/map?latitude="+latitude+"&longitude="+longitude,
+  changeInput(e){
+    this.setData({
+      keyWords:e.detail.value
     })
   },
 
-  getLocation(){
-    var that = this;
-    var latitude = this.data.latitude;
-    var longitude = this.data.longitude;
-      wx.getLocation({
-        type: 'gcj02',
-        altitude: true,
-        success: function (res) {
-          that.setData({
-            latitude: res.latitude,
-            longitude: res.longitude
-          })
-        },
-        fail: function (res) {
-          //console.log('jj')
-        }
-      })
+  inputSearchNearby(){
+    var keyWords = this.data.keyWords;
+
+    if (!keyWords) {
+      wx.showToast({
+        title: '请输入搜索内容',
+        image: '../../images/error.png',
+      });
+      return;
+    }
+    console.log(keyWords)
+    this.searchNearby()
   },
 
+  btnSearchNearby(){
+    var keyWords = this.data.keyWords;
+    if (!keyWords) {
+      wx.showToast({
+        title: '请输入搜索内容',
+        image: '../../images/error.png',
+      });
+      return;
+    }
+    console.log(keyWords)
+    this.searchNearby()
+  },
 
-  searchNearby(res){
-    console.log(res)
+  searchNearby(){
+    console.log(this.data.latitude)
+    console.log(this.data.longitude)
     // 事件触发，调用接口
       var _this = this;
       // 调用接口
       qqmapsdk.search({
-        keyword: res.detail.value,  //搜索关键词
-        location: this.data.latitude + ',' + this.data.longitude,  //设置周边搜索中心点
+        keyword: this.data.keyWords,  //搜索关键词
+        location:{
+          latitude: this.data.latitude,
+          longitude: this.data.longitude
+        },
+       // location: this.data.latitude + ',' + this.data.longitude,  //设置周边搜索中心点
         success: function (res) { //搜索成功后的回调
-          var mks = []
-          for (var i = 0; i < res.data.length; i++) {
-            mks.push({ // 获取返回结果，放到mks数组中
-              title: res.data[i].title,
-              id: res.data[i].id,
-              latitude: res.data[i].location.lat,
-              longitude: res.data[i].location.lng,
-              iconPath: "/images/location.png", //图标路径
-              width: 50,
-              height: 50
+        console.log(res)
+          _this.setData({ //设置markers属性，将搜索结果显示在地图中
+            notFound: false,
+            nearList: res.data
+          })
+          if (!res.data.length) {
+            _this.setData({ //设置markers属性，将搜索结果显示在地图中
+              notFound: true
             })
           }
-          _this.setData({ //设置markers属性，将搜索结果显示在地图中
-            markers: mks
-          })
         },
         fail: function (res) {
           console.log(res);
         },
         complete: function (res) {
-          console.log(res);
+          //console.log(res);
         }
       });
   },
@@ -123,11 +107,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var latitude = this.data.latitude;
-    var longitude = this.data.longitude;
-    if (!latitude || !longitude) {
-      this.getLocation()
-    }
+
   },
 
   /**
