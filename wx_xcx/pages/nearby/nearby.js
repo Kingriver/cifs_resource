@@ -84,6 +84,41 @@ Page({
       })
   },
 
+
+  searchNearby(res){
+    console.log(res)
+    // 事件触发，调用接口
+      var _this = this;
+      // 调用接口
+      qqmapsdk.search({
+        keyword: res.detail.value,  //搜索关键词
+        location: this.data.latitude + ',' + this.data.longitude,  //设置周边搜索中心点
+        success: function (res) { //搜索成功后的回调
+          var mks = []
+          for (var i = 0; i < res.data.length; i++) {
+            mks.push({ // 获取返回结果，放到mks数组中
+              title: res.data[i].title,
+              id: res.data[i].id,
+              latitude: res.data[i].location.lat,
+              longitude: res.data[i].location.lng,
+              iconPath: "/images/location.png", //图标路径
+              width: 50,
+              height: 50
+            })
+          }
+          _this.setData({ //设置markers属性，将搜索结果显示在地图中
+            markers: mks
+          })
+        },
+        fail: function (res) {
+          console.log(res);
+        },
+        complete: function (res) {
+          console.log(res);
+        }
+      });
+  },
+
   /**
    * 生命周期函数--监听页面显示
    */

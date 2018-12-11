@@ -35,7 +35,7 @@
       {
         "selectedIconPath": "images/nearby-2.png",
         "iconPath": "images/nearby-1.png",
-        "pagePath": "pages/nearby/nearby",
+        "pagePath": "pages/map/map",
         "text": "附近"
       },
       {
