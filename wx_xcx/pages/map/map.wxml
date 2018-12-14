@@ -9,11 +9,11 @@
   <map id="map" class='mapBox' longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}"  bindmarkertap="markertap" polyline="{{polyline}}"  scale="13" show-location subkey="SFLBZ-GZ5H6-7RLS6-EI7M2-EVVWK-LMBAU"></map>
  
   
-  <view class='markItem'wx:if='{{currentItem}}' data-latitude='{{currentItem.location.lat}}' data-longitude='{{currentItem.location.lng}}' data-title='{{item.title}}' bindtap='selectVal'>
+  <view class='markItem'wx:if='{{currentItem}}' data-latitude='{{currentItem.location.lat}}' data-longitude='{{currentItem.location.lng}}' data-title='{{currentItem.title}}' bindtap='selectVal'>
     <view class='title'>名称: {{currentItem.title}}</view>
     <view>地址: {{currentItem.address}}</view>
   </view>
-  <view wx:if="{{!nearList.length}}" class='notFound'>额，抱歉，没有查到您要搜索的内容~~~</view>
+  <view wx:if="{{notFound}}" class='notFound'>额，抱歉，没有查到您要搜索的内容~~~</view>
  
 
   <!-- <scroll-view wx:if='{{nearList.length}}' scroll-y style="height: 400rpx;">
@@ -25,7 +25,7 @@
     </view>
   </scroll-view> -->
 </view>
-<view wx:else class='unAuthorized'>
+<view wx:if='{{reset}}' class='unAuthorized'>
   <view class='reset' bindtap='reset'>重新授权</view>
 </view>
                                                                                    

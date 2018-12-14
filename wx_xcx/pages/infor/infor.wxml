@@ -1,2 +1,10 @@
 <!--pages/infor/infor.wxml-->
+<view class='share'>
+<view class='con'>
+<!-- <image class='baseImg'></image>
+<image class='targetImg'></image> -->
+<view>{{qrCode}}</view>
+<image wx:if='{{qrCode}}' src='{{qrCode}}'></image>
+</view>
+</view>
 

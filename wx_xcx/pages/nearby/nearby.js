@@ -11,6 +11,7 @@ Page({
   data: {
     keyWords:'',
     notFound:false,
+    btnColor:'#e6e6e6',
     latitude: '',   //纬度
     longitude: '',   //经度
     nearList:[]
@@ -26,6 +27,15 @@ Page({
       longitude: options.longitude,
       keyWords: options.title
     });
+    if (this.data.keyWords) {
+      this.setData({
+        btnColor: '#181717'
+      })
+    } else {
+      this.setData({
+        btnColor: '#e6e6e6'
+      })
+    }
     this.searchNearby()
   },
 
@@ -37,6 +47,17 @@ Page({
   },
 
   changeInput(e){
+    console.log(e.detail.value)
+    if (e.detail.value){
+      this.setData({
+        btnColor: '#181717'
+      })
+    }else{
+      this.setData({
+        btnColor: '#e6e6e6'
+      })
+
+    }
     this.setData({
       keyWords:e.detail.value
     })

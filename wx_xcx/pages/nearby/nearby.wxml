@@ -1,14 +1,17 @@
 <!--pages/nearby/nearby.wxml-->
-<view class='search'>
-  <view class='input'>
-    <image class='icon' src='../../images/search.png'></image>
-    <input placeholder='请输入您要搜索的内容' bindconfirm='inputSearchNearby' bindinput='changeInput' value='{{keyWords}}'></input>
+<view class='header'>
+  <view class='search'>
+    <view class='input'>
+      <image class='icon' src='../../images/search.png'></image>
+      <input placeholder='请输入您要搜索的内容' bindconfirm='inputSearchNearby' bindinput='changeInput' value='{{keyWords}}'></input>
+    </view>
+    <view class='btn' bindtap='btnSearchNearby' style='color:{{btnColor}}'>搜索</view>
   </view>
-  <view class='btn' bindtap='btnSearchNearby'>搜索</view>
 </view>
 
-<scroll-view scroll-y style="height: 100vh-51px;" wx:if='{{nearList.length}}'>
-  <view class='list' >
+
+
+  <view class='list' wx:if='{{nearList.length}}' >
     <view class='item' wx:for='{{nearList}}' wx:for-item='item' wx:for-index='index'>
       <view class='left'>
         <image src='../../images/notImg.png'></image>
@@ -20,7 +23,7 @@
       </view>
     </view>
   </view>
-</scroll-view>
+
 <view wx:if="{{notFound}}" class='notFound'>额，抱歉，没有查到您要搜索的内容~~~</view>
 
 

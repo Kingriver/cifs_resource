@@ -10,9 +10,11 @@ Page({
    */
   data: {
     state:false,
+    reset:false,
     latitude:'',
     longitude:'',
     nearList:[],
+    notFound:false,
     currentItem:'',
     selectedVal:'',
     markers: [],
@@ -118,8 +120,14 @@ Page({
         }
         _this.setData({ //设置markers属性，将搜索结果显示在地图中
           markers: mks,
+          notFound:false,
           nearList:res.data
         })
+        if(!res.data.length){
+          _this.setData({
+            notFound:true
+          })
+        }
       },
       fail: function (res) {
         //console.log(res);
@@ -178,7 +186,7 @@ Page({
     var longitude = e.currentTarget.dataset.longitude;
     var title = e.currentTarget.dataset.title;
     wx.navigateTo({
-      url: '../nearby/nearby?longitude=' + longitude + '&latitude=' + latitude + latitude + '&title=' + title
+      url: '../nearby/nearby?longitude=' + longitude + '&latitude=' + latitude + '&title=' + title
     })
   },
 
@@ -234,6 +242,7 @@ Page({
       success: function (res) {
         that.setData({
           state:true,
+          reset: false,
           latitude: res.latitude,
           longitude: res.longitude
         })
@@ -241,6 +250,7 @@ Page({
       },
       fail: function (res) {
         that.setData({
+          reset:true,
           state: false
         })
       }
