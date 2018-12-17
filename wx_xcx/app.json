@@ -13,7 +13,9 @@
     "pages/binding/binding",
     "pages/set/set",
     "pages/opinion/opinion",
-    "pages/nearby/nearby"
+    "pages/nearby/nearby",
+    "pages/decoration/decoration",
+    "pages/design_list/design_list"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -37,6 +39,12 @@
         "iconPath": "images/nearby-1.png",
         "pagePath": "pages/map/map",
         "text": "附近"
+      },
+      {
+        "selectedIconPath": "images/nearby-2.png",
+        "iconPath": "images/nearby-1.png",
+        "pagePath": "pages/decoration/decoration",
+        "text": "装修"
       },
       {
         "selectedIconPath": "images/my-2.png",

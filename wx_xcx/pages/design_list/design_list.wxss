@@ -1,0 +1,28 @@
+/* pages/design_list/design_list.wxss */
+ .type{
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  background: #ffffff;
+  border-top: 2rpx solid #e6e6e6;
+  border-bottom: 2rpx solid #e6e6e6;
+}
+.type .item{
+  flex: 1;
+}
+.type .item .navbar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2rpx solid #e6e6e6;
+}
+.type .item  .navbar:last-child{
+  border-right: none;
+}
+.type .item .navbar.active{
+  color: #3bf077;
+}
+.type .item  .navbar .arrow{
+  margin-left: 8rpx;
+  transform: rotate(90deg);
+}

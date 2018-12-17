@@ -1,0 +1,57 @@
+/* pages/decoration/decoration.wxss */
+.m{
+color: #3bf077
+}
+.design{
+  margin-top: 20rpx;
+  background: #ffffff;
+}
+.design .title{
+  padding: 20rpx;
+}
+.title .chart{
+  padding-bottom: 20rpx;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.title .number{
+  color: #e6e6e6;
+}
+.design .type{
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-top: 2rpx solid #e6e6e6;
+  border-bottom: 2rpx solid #e6e6e6;
+}
+.type .navbar{
+  flex: 1;
+  text-align: center;
+  border-right: 2rpx solid #e6e6e6;
+}
+.type .navbar:last-child{
+  border-right: 2rpx solid #e6e6e6;
+}
+.type .navbar.active{
+  color: #3bf077;
+}
+.design .list {
+  padding: 20rpx 0;
+}
+.list .scroll {
+  width: 100%;
+  white-space: nowrap;
+}
+.list .scroll .item{
+  display: inline-block;
+  margin-left: 20rpx;
+  width: 260rpx;
+  height: 300rpx;
+  line-height: 300rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  background: #3bf077;
+}
+.list .scroll .item:last-child{
+    margin-right: 20rpx;
+}

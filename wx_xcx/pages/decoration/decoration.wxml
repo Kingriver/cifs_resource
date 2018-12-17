@@ -1,0 +1,27 @@
+<!--pages/decoration/decoration.wxml-->
+<view class='decoration'>
+  <swiper indicator-dots='true' indicator-color='#ffffff' indicator-active-color='#3bf077' autoplay='false' circular='true' style='width:100%;height:400rpx;'>
+    <block wx:for='{{banner}}' wx:for-item='item' wx:for-index='index'>
+    <swiper-item>
+    <image src='{{item.imgUrl}}' style='width:100%;height:400rpx;display:block;' ></image>
+    </swiper-item>
+    </block>
+  </swiper>
+  <view class='design'>
+    <view class='title'>
+      <view class='chart'>看设计找灵感</view>
+      <view class='number'>300,000+效果图</view>
+    </view>
+    <view class='type'>
+      <view class="navbar {{currentNav==0?'active':''}}" data-type='0' bindtap='selectNav'>风格</view>
+      <view class="navbar {{currentNav==1?'active':''}}" data-type='1' bindtap='selectNav'>空间</view>
+      <view class="navbar {{currentNav==2?'active':''}}" data-type='2' bindtap='selectNav'>局部</view>
+    </view>
+    <view class='list'>
+      <scroll-view class='scroll' scroll-x>
+        <view class='item' wx:for='{{typeList}}'>{{item.con}}</view>
+        <navigator url='../design_list/design_list' class='item' hover-class='false'>更多 -></navigator>
+      </scroll-view>
+    </view>
+  </view>
+</view>
