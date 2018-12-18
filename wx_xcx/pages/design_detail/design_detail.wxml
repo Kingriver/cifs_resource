@@ -1,0 +1,20 @@
+<!--pages/design_detail/design_detail.wxml-->
+<view class='detail'>
+  <swiper class='swiper' circular='true'>
+    <swiper-item class='item'>
+      <view class='content'>
+        <image src='{{src}}'></image>
+        <view class='desc single-ellipsis'><text>{{title}}</text></view>
+      </view>
+    </swiper-item>
+  </swiper>
+  <view class='handle'>
+    <view class='con'>
+      <view class='offer'><text>装修成这样要花多少钱？</text></view>
+      <view class='share'>
+        <image src='../../images/share.png'></image>
+        <text>分享</text>
+      </view>
+    </view>
+  </view>
+</view>

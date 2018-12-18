@@ -1,0 +1,72 @@
+/* pages/design_detail/design_detail.wxss */
+.detail .swiper{
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+}
+.detail .swiper .item{
+  display: flex;
+  align-items: center;
+}
+.detail .swiper .item .content{
+  width: 100%;
+  position: relative;
+}
+.detail .swiper .item .content image{
+  width: 100%;
+  display: block;
+}
+.detail .swiper .item .content .desc{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: white;
+  background: rgba(0, 0, 0, 0.2)
+}
+.detail .swiper .item .content .desc text{
+  padding: 0 20rpx;
+}  
+
+.detail .handle{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+}
+.detail .handle .con{
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+}
+.handle .con .offer{
+  width: 80%;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: white;
+  background: #2de09c;
+}
+.handle .con .offer text{
+  padding:  0 20rpx;
+}
+.handle .con .share{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 20%;
+  height: 100rpx;
+  color: #2de09c;
+  text-align: center;
+  font-size: 28rpx;
+  background: #ffffff;
+}
+.handle .con .share image{
+  width: 32rpx;
+  height: 32rpx;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 8rpx;
+}

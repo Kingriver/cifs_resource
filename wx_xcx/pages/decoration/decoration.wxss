@@ -39,19 +39,57 @@ color: #3bf077
   padding: 20rpx 0;
 }
 .list .scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
   width: 100%;
   white-space: nowrap;
+  /* width: 100%;
+  height: 300rpx;
+  white-space: nowrap; */
 }
 .list .scroll .item{
+  position: relative;
   display: inline-block;
   margin-left: 20rpx;
   width: 260rpx;
   height: 300rpx;
-  line-height: 300rpx;
-  text-align: center;
   border-radius: 8rpx;
   background: #3bf077;
 }
 .list .scroll .item:last-child{
-    margin-right: 20rpx;
+  margin-right: 20rpx;
+}
+
+.list .scroll .item image{
+  width: 100%;
+  height: 300rpx;
+  border-radius: 8rpx;
+  display: block;
+}
+.list .scroll .item .con {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 16rpx 0;
+  color: #ffffff;
+  border-radius: 8rpx;
+  background: rgba(0,0,0,0.2)
+}
+.list .scroll .item .con .name{
+  padding-left: 20rpx;
+}
+.list .scroll .item .con .num{
+  padding-left: 20rpx;
+  font-size: 28rpx;
+}
+.list .scroll .item .more{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  transform:translate(-50%,-50%);
 }

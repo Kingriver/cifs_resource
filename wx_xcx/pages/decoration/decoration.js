@@ -11,7 +11,7 @@ Page({
       { imgUrl: 'http://img2.imgtn.bdimg.com/it/u=4042059753,871837749&fm=26&gp=0.jpg' }
     ],
     currentNav: 0,
-    typeList: [],
+    typeList:[]
 
   },
 
@@ -35,6 +35,7 @@ Page({
   onShow: function () {
 
   },
+
   selectNav(e){
     var current=e.currentTarget.dataset.type;
     this.setData({
@@ -42,24 +43,131 @@ Page({
     });
     this.getTypeList(current)
   },
+
+
   getTypeList(type){
-    var con='';
+    var data={
+      style: [
+        {
+          name: '简约',
+          src: 'http://img1.imgtn.bdimg.com/it/u=1836352691,206686460&fm=26&gp=0.jpg',
+          count: 100,
+          id: 0
+        },
+        {
+          name: '简欧',
+          src: 'http://img5.imgtn.bdimg.com/it/u=3795187,1566404830&fm=26&gp=0.jpg',
+          count: 111,
+          id: 1
+        },
+        {
+          name: '中式',
+          src: 'http://img2.imgtn.bdimg.com/it/u=1539973776,2666718968&fm=26&gp=0.jpg',
+          count: 300,
+          id: 2
+        },
+        {
+          name: '田园',
+          src: 'http://img0.imgtn.bdimg.com/it/u=3545937745,487104179&fm=26&gp=0.jpg',
+          count: 86,
+          id: 3
+        },
+        {
+          name: '地中海',
+          src: 'http://img0.imgtn.bdimg.com/it/u=1772195352,3929023192&fm=26&gp=0.jpg',
+          count: 78,
+          id: 4
+        },
+      ],
+      space: [
+        {
+          name: '卧室',
+          src: 'http://img1.imgtn.bdimg.com/it/u=1836352691,206686460&fm=26&gp=0.jpg',
+          count: 111,
+          id: 0
+        },
+        {
+          name: '客厅',
+          src: 'http://img5.imgtn.bdimg.com/it/u=3795187,1566404830&fm=26&gp=0.jpg',
+          count: 111,
+          id: 1
+        },
+        {
+          name: '餐厅',
+          src: 'http://img2.imgtn.bdimg.com/it/u=1539973776,2666718968&fm=26&gp=0.jpg',
+          count: 300,
+          id: 2
+        },
+        {
+          name: '卫生间',
+          src: 'http://img0.imgtn.bdimg.com/it/u=3545937745,487104179&fm=26&gp=0.jpg',
+          count: 86,
+          id: 3
+        },
+        {
+          name: '厨房',
+          src: 'http://img0.imgtn.bdimg.com/it/u=1772195352,3929023192&fm=26&gp=0.jpg',
+          count: 78,
+          id: 4
+        },
+      ],
+      local: [
+        {
+          name: '背景墙',
+          src: 'http://img1.imgtn.bdimg.com/it/u=1836352691,206686460&fm=26&gp=0.jpg',
+          count: 100,
+          id: 0
+        },
+        {
+          name: '灯具',
+          src: 'http://img5.imgtn.bdimg.com/it/u=3795187,1566404830&fm=26&gp=0.jpg',
+          count: 111,
+          id: 1
+        },
+        {
+          name: '收纳',
+          src: 'http://img2.imgtn.bdimg.com/it/u=1539973776,2666718968&fm=26&gp=0.jpg',
+          count: 300,
+          id: 2
+        },
+        {
+          name: '窗帘',
+          src: 'http://img0.imgtn.bdimg.com/it/u=3545937745,487104179&fm=26&gp=0.jpg',
+          count: 86,
+          id: 3
+        },
+        {
+          name: '过道',
+          src: 'http://img0.imgtn.bdimg.com/it/u=1772195352,3929023192&fm=26&gp=0.jpg',
+          count: 78,
+          id: 4
+        },
+      ]
+    };
     if(type==0){
-      con='风格';
+      this.setData({
+        typeList: data.style
+      })
     }else if(type==1){
-      con ='空间' ;
+      this.setData({
+        typeList: data.space
+      })
     } else if (type == 2){
-      con = '局部';
+      this.setData({
+        typeList: data.local
+      })
     }
- 
-    var typeList=[];
-    for(var i=0; i<10; i++){
-      var obj = {};
-      obj['con']=con+(i+1);
-      typeList.push(obj)
-    }
-    this.setData({
-      typeList: typeList
+  },
+  designList(e){
+    var types = e.currentTarget.dataset.type;
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../design_list/design_list?type='+types+'&id='+id,
+    })
+  },
+  loadMaore(){
+    wx.navigateTo({
+      url: '../design_list/design_list',
     })
   },
 

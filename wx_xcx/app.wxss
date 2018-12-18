@@ -12,3 +12,8 @@ page{
 .navigator-hover{
   color:blue;
 }
+.single-ellipsis{
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}

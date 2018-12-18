@@ -15,7 +15,8 @@
     "pages/opinion/opinion",
     "pages/nearby/nearby",
     "pages/decoration/decoration",
-    "pages/design_list/design_list"
+    "pages/design_list/design_list",
+    "pages/design_detail/design_detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

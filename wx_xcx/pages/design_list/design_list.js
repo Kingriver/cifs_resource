@@ -14,17 +14,63 @@ Page({
     spaceIndex: null,
     localIndex: null,
     colorIndex: null,
-    styleList: ['风格1', '风格2', '风格3', '风格4', '风格5', '风格6'],
-    spaceList: ['空间1', '空间2', '空间3'],
-    localList: ['局部1', '局部2', '局部3', '局部4', '局部5'],
-    colorList: ['色系1', '色系2', '色系3', '色系4', '色系5', '色系6']
+    styleList: ['简约', '简欧', '中式', '田园', '地中海'],
+    spaceList: ['卧室', '客厅', '餐厅', '卫生间','厨房'],
+    localList: ['背景墙', '灯具', '收纳', '窗帘', '过道'],
+    colorList: ['春色', '白色', '原木色', '绿色', '紫色', '蓝色', '黑白', '红色', '粉色','黄色'],
+    designList:[
+      {
+        src:'http://img1.imgtn.bdimg.com/it/u=956300828,4130373363&fm=26&gp=0.jpg',
+        browse:5,
+        share:10,
+        id:0,
+        title:'啦啦啦啦啦，呵呵哈哈哈'
+      },
+      {
+        src: 'http://img1.imgtn.bdimg.com/it/u=956300828,4130373363&fm=26&gp=0.jpg',
+        browse: 25,
+        share: 19,
+        id: 1,
+        title: '滚滚广告，呵呵哈哈哈'
+      },
+      {
+        src: 'http://img1.imgtn.bdimg.com/it/u=956300828,4130373363&fm=26&gp=0.jpg',
+        browse: 5,
+        share: 10,
+        id: 2,
+        title: '灌灌灌灌灌，呵呵哈哈哈'
+      },
+      {
+        src: 'http://img1.imgtn.bdimg.com/it/u=956300828,4130373363&fm=26&gp=0.jpg',
+        browse: 95,
+        share: 6,
+        id: 3,
+        title: '嗨嗨嗨哈哈哈，呵呵哈哈哈'
+      }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (options.type==0){
+      this.setData({
+        style: this.data.styleList[options.id],
+        styleIndex: options.id
+      })
+    } else if (options.type == 1){
+      this.setData({
+        space: this.data.spaceList[options.id],
+        spaceIndex: options.id
+      })
+    } else if (options.type == 2) {
+      this.setData({
+        local: this.data.localList[options.id],
+        localIndex: options.id
+      })
+    }
+    this.getDesignList()
   },
 
   styleNavbarChange(e){
@@ -69,6 +115,15 @@ Page({
     var localIndex = this.data.localIndex;
     var colorIndex = this.data.colorIndex;
     console.log(styleIndex, spaceIndex, localIndex, colorIndex)
+  },
+
+  designDetail(e){
+    var id=e.currentTarget.dataset.id;
+    var src = encodeURIComponent(e.currentTarget.dataset.src);
+    var title = e.currentTarget.dataset.title;
+    wx.navigateTo({
+      url: '../design_detail/design_detail?id='+id+'&src='+src+'&title='+title,
+    })
   },
 
   /**

@@ -12,9 +12,21 @@
       <picker bindchange="colorNavbarChange" value="{{index}}" range="{{colorList}}"  class="item" >
         <view class="navbar">{{color}} <text class='arrow'>></text></view>
       </picker>
- 
-  
+    </view>
+    <view class='list' wx:if='{{designList.length}}'>
+      <view class='item' wx:for='{{designList}}' wx:key='index' data-id='{{item.id}}' data-src='{{item.src}}' data-title='{{item.title}}' bindtap='designDetail'>
+        <image class='img' src='{{item.src}}'></image>
+        <view class='bottom'>
+         <view class='browse'>
+          <image src='../../images/browse.png'></image>
+          <text>{{item.browse}}</text>
+         </view>
+         <view class='share'>
+          <image src='../../images/share.png'></image>
+          <text>{{item.share}}</text>
+         </view>
+        </view>
+      </view>
 
-   
     </view>
 
