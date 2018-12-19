@@ -54,6 +54,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that=this;
+  wx.request({
+    url: 'http://www.wx.com/xcx/design_list.php',
+    success:function(res){
+      console.log(res)
+      that.setData({
+        dbData: res.data
+      })
+    }
+  })
+
+
+
     if (options.type==0){
       this.setData({
         style: this.data.styleList[options.id],
@@ -115,6 +128,13 @@ Page({
     var localIndex = this.data.localIndex;
     var colorIndex = this.data.colorIndex;
     console.log(styleIndex, spaceIndex, localIndex, colorIndex)
+  },
+
+  goDetail(e){
+    var id = Number(e.currentTarget.dataset.id);
+    wx.navigateTo({
+      url: '../design_detail/design_detail?id='+id,
+    })
   },
 
   designDetail(e){

@@ -12,6 +12,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+var that=this;
+    wx.request({
+      url: 'http://www.wx.com/xcx/design_detail.php?id=' + options.id,
+      success: function (res) {
+        
+      }
+    })
+return;
     console.log(options)
     if (options.current){
       this.setData({

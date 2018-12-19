@@ -27,6 +27,20 @@
          </view>
         </view>
       </view>
-
+    </view>
+    <view class='list' wx:if='{{dbData.length}}'>
+      <view class='item' wx:for='{{dbData}}' wx:key='index' >
+        <image class='img'  src='{{item.design_imgs}}' data-id='{{item.design_id}}' bindtap='goDetail'></image>
+        <view class='bottom'>
+         <view class='browse'>
+          <image src='../../images/browse.png'></image>
+          <text>{{item.design_browse}}</text>
+         </view>
+         <view class='share'>
+          <image src='../../images/share.png'></image>
+          <text>{{item.design_share}}</text>
+         </view>
+        </view>
+      </view>
     </view>
 
