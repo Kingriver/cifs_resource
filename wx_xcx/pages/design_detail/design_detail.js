@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    current:0,
   },
 
   /**
@@ -13,13 +13,36 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    if (options.current){
+      this.setData({
+        current:options.current
+      })
+    }
+
+     var obj = JSON.parse(options.obj);
     this.setData({
-      id:options.id,
-      title:options.title,
-      src:decodeURIComponent(options.src)
+      needParams: obj
+    });
+     var imgs=obj.src;
+     for(var i=0;i<imgs.length;i++){
+       imgs[i].src=decodeURIComponent(imgs[i].src)
+     }
+    this.setData({
+      id: obj.id,
+      title: obj.title,
+      src: imgs
     });
   },
-
+  currentChange(e){
+    this.setData({
+      current: e.detail.current
+    })
+  },
+  shareDesign(){
+    wx.navigateTo({
+      url: '../share/share?current=' + this.data.current+ '&obj=' + JSON.stringify(this.data.needParams),
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -66,6 +89,19 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    var that=this;
+    var current=that.data.current;
+    //var imgs=this.data.src[current].src;
+    return{
+      title:that.data.title,
+      imageUrl: '../../images/avatar.png', //'../../images/avatar.png'
+      path: '/pages/design_detail/design_detail?current=' + current + '&obj=' + JSON.stringify(this.data.needParams),
+      success:function(res){
+        console.log(res)
+      },
+      fail: function (res) {
+        console.log(res)
+      }
+    }
   }
 })

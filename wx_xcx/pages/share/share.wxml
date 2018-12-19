@@ -1,0 +1,17 @@
+<!--pages/share/share.wxml-->
+<view class='share'>
+  <view class='con'>
+    <image class='img' src=''></image>
+    <view class='desc'></view>
+    <view class='handle'>
+      <view class='share-btn'>
+        <image src='../../images/wx-icon.png' class='wx-icon'></image>
+        <view>分享微信好友</view>
+      </view>
+      <view class='down-btn'>
+        <image src='../../images/down-icon.png' class='down-icon'></image>
+        <view>下载分享图片</view>
+      </view>
+  </view>
+  </view>
+</view>

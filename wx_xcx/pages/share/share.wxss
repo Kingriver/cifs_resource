@@ -1,0 +1,51 @@
+/* pages/share/share.wxss */
+.share{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: #1a1919;
+}
+.share .con{
+  position: absolute;
+  top: 80rpx;
+  left: 60rpx;
+  width: 570rpx;
+  height: 80%;
+  padding: 30rpx;
+  background: #ffffff;
+}
+.share .con .img{
+  width: 100%;
+  height: 400rpx;
+  display: block;
+}
+.share .con .desc{
+
+}
+.share .con .handle{
+  display: flex;
+  align-items: center;
+}
+.share .con .handle .share-btn{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+.share .con .handle .down-btn{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.handle .share-btn .wx-icon{
+  width: 96rpx;
+  height: 96rpx;
+  display: block;
+}
+.handle .down-btn .down-icon{
+  width: 96rpx;
+  height: 96rpx;
+  display: block;
+}

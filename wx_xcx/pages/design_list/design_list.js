@@ -20,28 +20,28 @@ Page({
     colorList: ['春色', '白色', '原木色', '绿色', '紫色', '蓝色', '黑白', '红色', '粉色','黄色'],
     designList:[
       {
-        src:'http://img1.imgtn.bdimg.com/it/u=956300828,4130373363&fm=26&gp=0.jpg',
+       imgs: [{ src: 'http://img3.imgtn.bdimg.com/it/u=2372779370,4017404039&fm=26&gp=0.jpg' }, { src:'http://img1.imgtn.bdimg.com/it/u=956300828,4130373363&fm=26&gp=0.jpg'}],
         browse:5,
         share:10,
         id:0,
         title:'啦啦啦啦啦，呵呵哈哈哈'
       },
       {
-        src: 'http://img1.imgtn.bdimg.com/it/u=956300828,4130373363&fm=26&gp=0.jpg',
+        imgs: [{ src: 'http://img3.imgtn.bdimg.com/it/u=2431567762,3256663665&fm=11&gp=0.jpg'},{ src:'http://img1.imgtn.bdimg.com/it/u=956300828,4130373363&fm=26&gp=0.jpg'}],
         browse: 25,
         share: 19,
         id: 1,
         title: '滚滚广告，呵呵哈哈哈'
       },
       {
-        src: 'http://img1.imgtn.bdimg.com/it/u=956300828,4130373363&fm=26&gp=0.jpg',
+        imgs: [{ src:'http://img1.imgtn.bdimg.com/it/u=956300828,4130373363&fm=26&gp=0.jpg'}],
         browse: 5,
         share: 10,
         id: 2,
         title: '灌灌灌灌灌，呵呵哈哈哈'
       },
       {
-        src: 'http://img1.imgtn.bdimg.com/it/u=956300828,4130373363&fm=26&gp=0.jpg',
+        imgs: [{ src: 'http://img5.imgtn.bdimg.com/it/u=799245537,1784413118&fm=11&gp=0.jpg'},{ src:'http://img1.imgtn.bdimg.com/it/u=956300828,4130373363&fm=26&gp=0.jpg'}] ,
         browse: 95,
         share: 6,
         id: 3,
@@ -118,11 +118,17 @@ Page({
   },
 
   designDetail(e){
-    var id=e.currentTarget.dataset.id;
-    var src = encodeURIComponent(e.currentTarget.dataset.src);
-    var title = e.currentTarget.dataset.title;
+    var obj={};
+    obj['id'] =e.currentTarget.dataset.id;
+    obj['src'] = e.currentTarget.dataset.src;//e.currentTarget.dataset.src
+    obj['title']  = e.currentTarget.dataset.title;
+    var imgs = obj['src'];
+    for (var i = 0; i < imgs.length;i++ ){
+      imgs[i].src = encodeURIComponent(imgs[i].src)
+    }
+    obj = JSON.stringify(obj)
     wx.navigateTo({
-      url: '../design_detail/design_detail?id='+id+'&src='+src+'&title='+title,
+      url: '../design_detail/design_detail?obj='+obj
     })
   },
 

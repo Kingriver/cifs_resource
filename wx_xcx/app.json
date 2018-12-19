@@ -16,7 +16,8 @@
     "pages/nearby/nearby",
     "pages/decoration/decoration",
     "pages/design_list/design_list",
-    "pages/design_detail/design_detail"
+    "pages/design_detail/design_detail",
+    "pages/share/share"
   ],
   "window": {
     "backgroundTextStyle": "light",

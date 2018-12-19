@@ -14,8 +14,8 @@
       </picker>
     </view>
     <view class='list' wx:if='{{designList.length}}'>
-      <view class='item' wx:for='{{designList}}' wx:key='index' data-id='{{item.id}}' data-src='{{item.src}}' data-title='{{item.title}}' bindtap='designDetail'>
-        <image class='img' src='{{item.src}}'></image>
+      <view class='item' wx:for='{{designList}}' wx:key='index' data-id='{{item.id}}' data-src='{{item.imgs}}' data-title='{{item.title}}' bindtap='designDetail'>
+        <image class='img'  src='{{item.imgs[0].src}}'></image>
         <view class='bottom'>
          <view class='browse'>
           <image src='../../images/browse.png'></image>
