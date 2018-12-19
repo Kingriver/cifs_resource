@@ -1,4 +1,5 @@
 <?php
+include('image.php');
 // $mysqli = new mysqli("localhost", "root", "", "test");
 
 // /* check connection */
@@ -65,20 +66,36 @@ Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0 FirePHP
 }
 
 
-    include('user_token.php');
-    var_dump($data);
-    echo $data;
-    // $content = _requestPost('https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode?access_token='.$token, $params);
-    // $img= "code.png";
-    // $file = fopen($img,"w+");
-    // fwrite($file,$content);
-    // fclose($file);
-    // $rs = ['path' => 'http://www.test.com/xcx'.$img];
-    // echo json_encode($rs);
-    // $path =$_POST['path'];
-    // // var_dump($_POST)
-    // $params = json_encode($path);
-    // $ss=new QrCode($token,$params);
+    // include('user_token.php');
+    // var_dump($data);
+    // echo $data;
+
+    $path =$_POST['path'];
+    $token = $_POST['token'];
+    $imgSrc = $_POST['imgSrc'];
+    $title = $_POST['title'];
+    $width=280;
+    $params = json_encode(['path'=>$path,'width'=>$width]);
+    $content = _requestPost('https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode?access_token='.$token, $params);
+
+    $img= "code.jpg";
+    $file = fopen($img,"w+");
+    fwrite($file,$content);
+    fclose($file);
+
+    $target= "target.jpg";
+    $ff = fopen($target,"w+");
+    fwrite($ff,file_get_contents($imgSrc));
+    fclose($ff);
+
+    $codeImg=image($target,$img,$title,'长按扫码，查看原图');
+
+    $rs = ['codeImg' => 'http://www.wx.com/xcx/'.$codeImg,'success'=>true];
+    echo json_encode($rs);
+
+  
+
+ 
 
 
 
