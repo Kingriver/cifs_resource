@@ -16,36 +16,58 @@
 }
 .share .con .img{
   width: 100%;
-  height: 400rpx;
+  height: 480rpx;
   display: block;
 }
 .share .con .desc{
-
+  height: 80rpx;
+  line-height: 80rpx;
 }
 .share .con .handle{
   display: flex;
   align-items: center;
+  margin-top: 160rpx;
+  height: 150rpx;
+  font-size: 30rpx;
 }
 .share .con .handle .share-btn{
   flex: 1;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
+  height: 150rpx;
+  text-align: center;
+}
+.share .con .handle .share-btn button{
+  display:inherit;
+  height: 150rpx;
+  margin: 0;
+  padding: 0;
+  font-size: 30rpx;
+  line-height: 0;
+  border-radius:0; 
+  background-color:#ffffff;
+}
+.share .con .handle .share-btn button view{
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.share .con .handle .share-btn button::after {
+  border: none;
 }
 .share .con .handle .down-btn{
   flex: 1;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  height: 150rpx;
+  text-align: center;
 }
 .handle .share-btn .wx-icon{
   width: 96rpx;
   height: 96rpx;
+  margin: 0 auto;
+  margin-bottom: 8rpx;
   display: block;
 }
 .handle .down-btn .down-icon{
   width: 96rpx;
   height: 96rpx;
+  margin: 0 auto;
+  margin-bottom: 8rpx;
   display: block;
 }

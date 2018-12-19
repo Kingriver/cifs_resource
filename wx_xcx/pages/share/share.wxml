@@ -1,14 +1,16 @@
 <!--pages/share/share.wxml-->
 <view class='share'>
   <view class='con'>
-    <image class='img' src=''></image>
-    <view class='desc'></view>
+    <image class='img' src='{{src}}' bindtap='previewImage'></image>
+    <view class='desc single-ellipsis'>{{title}}</view>
     <view class='handle'>
       <view class='share-btn'>
-        <image src='../../images/wx-icon.png' class='wx-icon'></image>
-        <view>分享微信好友</view>
+        <button open-type='share'>
+          <image src='../../images/wx-icon.png' class='wx-icon'></image>
+          <view>分享微信好友</view>
+        </button>
       </view>
-      <view class='down-btn'>
+      <view class='down-btn' bindtap='downImg'>
         <image src='../../images/down-icon.png' class='down-icon'></image>
         <view>下载分享图片</view>
       </view>

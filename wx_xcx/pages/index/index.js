@@ -27,29 +27,6 @@ Page({
     })
   },
 
-  getQrCode(token){
-    var that = this;
-    var pagePaths = getCurrentPages();
-    var currentPath = (pagePaths[pagePaths.length - 1]).route;
-    wx.request({
-      url: 'http://www.wx.com/xcx/qr_code.php',
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' // 默认值 application/json
-      },
-      data: {
-        path: currentPath,
-        style:'check'
-      },
-      success: function (res) {
-        console.log(res)
-      },
-      fail: function (err) {
-        console.log(err)
-      }
-    })
-  },
-
   /**
  * 生命周期函数--监听页面显示                                                                    
  */

@@ -3,7 +3,7 @@
   <swiper class='swiper' circular='true' bindchange='currentChange' current='{{current}}'>
     <swiper-item class='item' wx:for='{{src}}' wx:key='index'>
       <view class='content'>
-        <image src='{{item.src}}'></image>
+        <image src='{{item.src}}' mode='widthFix'></image>
         <view class='desc single-ellipsis'><text>{{title}}</text></view>
       </view>
     </swiper-item>

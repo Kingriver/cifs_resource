@@ -19,7 +19,7 @@ Page({
       })
     }
 
-     var obj = JSON.parse(options.obj);
+    var obj = JSON.parse(options.obj);
     this.setData({
       needParams: obj
     });
@@ -97,10 +97,14 @@ Page({
       imageUrl: '../../images/avatar.png', //'../../images/avatar.png'
       path: '/pages/design_detail/design_detail?current=' + current + '&obj=' + JSON.stringify(this.data.needParams),
       success:function(res){
-        console.log(res)
+        wx.showToast({
+          title: '分享成功',
+          image: '../../images/success.png',
+          duration: 3000
+        })
       },
       fail: function (res) {
-        console.log(res)
+        //console.log(res)
       }
     }
   }
