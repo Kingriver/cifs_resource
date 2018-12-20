@@ -1,10 +1,10 @@
 <!--pages/design_detail/design_detail.wxml-->
 <view class='detail'>
-  <swiper class='swiper' circular='true' bindchange='currentChange' current='{{current}}'>
-    <swiper-item class='item' wx:for='{{src}}' wx:key='index'>
+  <swiper class='swiper' circular='true' wx:if='{{detailItem.design_imgs.length}}' bindchange='currentChange' current='{{current}}'>
+    <swiper-item class='item' wx:for='{{detailItem.design_imgs}}' wx:key='index'>
       <view class='content'>
-        <image src='{{item.src}}' mode='widthFix'></image>
-        <view class='desc single-ellipsis'><text>{{title}}</text></view>
+        <image src='{{item}}' mode='widthFix'></image>
+        <view class='desc single-ellipsis'><text>{{detailItem.design_desc}}</text></view>
       </view>
     </swiper-item>
   </swiper>

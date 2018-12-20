@@ -55,35 +55,45 @@ Page({
    */
   onLoad: function (options) {
     var that=this;
-  wx.request({
-    url: 'http://www.wx.com/xcx/design_list.php',
-    success:function(res){
-      console.log(res)
-      that.setData({
-        dbData: res.data
-      })
+    var  
+    if(options.id){
+
     }
-  })
+    wx.request({
+      url: 'http://www.wx.com/xcx/design_list.php',
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          designList: res.data
+        })
+      }
+    })
 
 
 
-    if (options.type==0){
+
+
+
+
+
+
+    if (options.type==1){
       this.setData({
         style: this.data.styleList[options.id],
         styleIndex: options.id
       })
-    } else if (options.type == 1){
+    } else if (options.type == 2){
       this.setData({
         space: this.data.spaceList[options.id],
         spaceIndex: options.id
       })
-    } else if (options.type == 2) {
+    } else if (options.type == 3) {
       this.setData({
         local: this.data.localList[options.id],
         localIndex: options.id
       })
     }
-    this.getDesignList()
+   // this.getDesignList()
   },
 
   styleNavbarChange(e){
@@ -127,28 +137,14 @@ Page({
     var spaceIndex = this.data.spaceIndex;
     var localIndex = this.data.localIndex;
     var colorIndex = this.data.colorIndex;
+
     console.log(styleIndex, spaceIndex, localIndex, colorIndex)
   },
 
-  goDetail(e){
+  designDetail(e){
     var id = Number(e.currentTarget.dataset.id);
     wx.navigateTo({
-      url: '../design_detail/design_detail?id='+id,
-    })
-  },
-
-  designDetail(e){
-    var obj={};
-    obj['id'] =e.currentTarget.dataset.id;
-    obj['src'] = e.currentTarget.dataset.src;//e.currentTarget.dataset.src
-    obj['title']  = e.currentTarget.dataset.title;
-    var imgs = obj['src'];
-    for (var i = 0; i < imgs.length;i++ ){
-      imgs[i].src = encodeURIComponent(imgs[i].src)
-    }
-    obj = JSON.stringify(obj)
-    wx.navigateTo({
-      url: '../design_detail/design_detail?obj='+obj
+      url: '../design_detail/design_detail?id=' + id,
     })
   },
 

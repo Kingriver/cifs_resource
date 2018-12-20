@@ -1,38 +1,6 @@
 <?php
 include('image.php');
-// $mysqli = new mysqli("localhost", "root", "", "test");
 
-// /* check connection */
-// if (mysqli_connect_errno()) {
-//     printf("Connect failed: %s\n", mysqli_connect_error());
-//     exit();
-// }
-
-// $query = "SELECT id,a FROM test ORDER by id DESC LIMIT 0,5";
-// $data = [];
-// if ($stmt = $mysqli->prepare($query)) {
-
-//     /* execute statement */
-//     $stmt->execute();
-
-//     /* bind result variables */
-//     $stmt->bind_result($name, $code);
-
-//     /* fetch values */
-//     while ($stmt->fetch()) {
-//         $data[] = [$name, $code];
-//        // printf ("%s (%s)\n", $name, $code);
-//     }
-
-//     /* close statement */
-//     $stmt->close();
-// }
-
-// /* close connection */
-// $mysqli->close();
-// echo json_encode($data);
-
-//echo file_put_contents("path","Runoob");
 function _requestPost($url, $data, $ssl=true) {
     //curl完成
     $curl = curl_init();

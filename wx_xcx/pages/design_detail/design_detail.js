@@ -12,43 +12,40 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-var that=this;
+    var that=this;
+    this.setData({
+      detailId:options.id
+    });
+    if (options.current){
+      this.setData({
+        current: options.current
+      })
+    };
     wx.request({
       url: 'http://www.wx.com/xcx/design_detail.php?id=' + options.id,
       success: function (res) {
-        
+        that.setData({
+          detailItem: res.data
+        })
       }
     })
-return;
-    console.log(options)
-    if (options.current){
-      this.setData({
-        current:options.current
-      })
-    }
-
-    var obj = JSON.parse(options.obj);
-    this.setData({
-      needParams: obj
-    });
-     var imgs=obj.src;
-     for(var i=0;i<imgs.length;i++){
-       imgs[i].src=decodeURIComponent(imgs[i].src)
-     }
-    this.setData({
-      id: obj.id,
-      title: obj.title,
-      src: imgs
-    });
   },
+
+
   currentChange(e){
     this.setData({
       current: e.detail.current
     })
   },
+
+
   shareDesign(){
+    var id = this.data.detailId;
+    var current = Number(this.data.current);
+    var title = this.data.detailItem.design_desc;
+    var imgSrc = this.data.detailItem.design_imgs[current];
     wx.navigateTo({
-      url: '../share/share?current=' + this.data.current+ '&obj=' + JSON.stringify(this.data.needParams),
+      url: '../share/share?current=' + current + '&id=' + id + '&src=' + imgSrc + '&title=' + title
     })
   },
   /**
@@ -99,11 +96,12 @@ return;
   onShareAppMessage: function () {
     var that=this;
     var current=that.data.current;
-    //var imgs=this.data.src[current].src;
+    var imgs = this.data.detailItem.design_imgs[current];
+    var title = this.data.detailItem.design_desc
     return{
-      title:that.data.title,
-      imageUrl: '../../images/avatar.png', //'../../images/avatar.png'
-      path: '/pages/design_detail/design_detail?current=' + current + '&obj=' + JSON.stringify(this.data.needParams),
+      title: title,
+      imageUrl: imgs, //'../../images/avatar.png'
+      path: '/pages/design_detail/design_detail?current=' + current + '&id=' + this.data.detailId,
       success:function(res){
         wx.showToast({
           title: '分享成功',

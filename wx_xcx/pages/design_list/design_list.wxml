@@ -14,23 +14,8 @@
       </picker>
     </view>
     <view class='list' wx:if='{{designList.length}}'>
-      <view class='item' wx:for='{{designList}}' wx:key='index' data-id='{{item.id}}' data-src='{{item.imgs}}' data-title='{{item.title}}' bindtap='designDetail'>
-        <image class='img'  src='{{item.imgs[0].src}}'></image>
-        <view class='bottom'>
-         <view class='browse'>
-          <image src='../../images/browse.png'></image>
-          <text>{{item.browse}}</text>
-         </view>
-         <view class='share'>
-          <image src='../../images/share.png'></image>
-          <text>{{item.share}}</text>
-         </view>
-        </view>
-      </view>
-    </view>
-    <view class='list' wx:if='{{dbData.length}}'>
-      <view class='item' wx:for='{{dbData}}' wx:key='index' >
-        <image class='img'  src='{{item.design_imgs}}' data-id='{{item.design_id}}' bindtap='goDetail'></image>
+      <view class='item' wx:for='{{designList}}' wx:key='index' data-id='{{item.design_id}}' bindtap='designDetail'>
+        <image class='img'  src='{{item.design_imgs[0]}}'></image>
         <view class='bottom'>
          <view class='browse'>
           <image src='../../images/browse.png'></image>
@@ -43,4 +28,7 @@
         </view>
       </view>
     </view>
+
+
+
 

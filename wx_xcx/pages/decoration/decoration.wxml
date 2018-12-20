@@ -13,17 +13,17 @@
       <view class='number'>300,000+效果图</view>
     </view>
     <view class='type'>
-      <view class="navbar {{currentNav==0?'active':''}}" data-type='0' bindtap='selectNav'>风格</view>
-      <view class="navbar {{currentNav==1?'active':''}}" data-type='1' bindtap='selectNav'>空间</view>
-      <view class="navbar {{currentNav==2?'active':''}}" data-type='2' bindtap='selectNav'>局部</view>
+      <view  class="navbar {{currentNav==item.id?'active':''}}" wx:for='{{typeData}}' wx:if='{{typeData.length}}' wx:key='index' data-type='{{item.id}}' bindtap='selectNav'>{{item.name}}</view>
+      <!-- <view class="navbar {{currentNav==1?'active':''}}" data-type='1' bindtap='selectNav'>空间</view>
+      <view class="navbar {{currentNav==2?'active':''}}" data-type='2' bindtap='selectNav'>局部</view> -->
     </view>
     <view class='list'>
       <scroll-view class='scroll' scroll-x>
-        <view class='item' wx:if='{{typeList.length}}' wx:for='{{typeList}}' wx:key='index'  data-type='{{currentNav}}' data-id='{{item.id}}' bindtap='designList'>
-          <image src='{{item.src}}'></image>
+        <view class='item' wx:if='{{typeList.son.length}}' wx:for='{{typeList.son}}' wx:key='index'  data-type='{{currentNav}}' data-id='{{item.id}}' bindtap='designList'>
+          <image src='{{item.img}}'></image>
           <view class='con'>
             <view class='name'>{{item.name}}</view>
-            <view class='num'>{{item.count}} 套</view>
+            <view class='num'>{{item.num}} 套</view>
           </view>
         </view>
         <view class='item' bindtap='loadMaore'>

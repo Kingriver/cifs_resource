@@ -12,25 +12,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     if (options.current) {
       this.setData({
         current: options.current
       })
     }
-    var obj = JSON.parse(options.obj);
     this.setData({
-      needParams: obj
+      id: options.id,
+      src: options.src,
+      title:options.title
     });
-    var imgs = obj.src;
-    for (var i = 0; i < imgs.length; i++) {
-      imgs[i].src = decodeURIComponent(imgs[i].src)
-    }
-    this.setData({
-      id: obj.id,
-      title: obj.title,
-      src: imgs[options.current].src
-    });
-
     this.getQrCode();
   },
 
@@ -40,6 +32,7 @@ Page({
     //var pagePaths = getCurrentPages();
     //var currentPath = (pagePaths[pagePaths.length - 1]).route;
     var current=this.data.current;
+    var id = this.data.id;
     wx.showLoading({
       title: '图片生成中...',
     })
@@ -50,11 +43,11 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' // 默认值 application/json
       },
       data: {
-        imgSrc: 'http://winipo.cn/tpl/Public/images/home/yw_b04.jpg',//http://winipo.cn/tpl/Public/images/home/yw_b04.jpg
+        imgSrc: this.data.src,//http://winipo.cn/tpl/Public/images/home/yw_b04.jpg
         title:this.data.title,
         token:token,
         // path: 'pages/design_detail/design_detail?current=' + current + '&obj=' + JSON.stringify(this.data.needParams)
-        path: '/pages/design_detail/design_detail'
+        path: '/pages/design_detail/design_detail?current=' + current + '&id=' + id
       },
       success: function (res) {
         wx.hideLoading()
@@ -87,8 +80,7 @@ Page({
   },
 
   downImg(){
-    console.log('ee')
-    var img=this.data.src;
+    var img = this.data.codeImg;
     wx.getImageInfo({         //下载图片
       src: img,      //这里放你要下载图片的数组(多张) 或 字符串(一张)          下面代码不用改动
       success: function (ret) {
@@ -174,11 +166,12 @@ Page({
   onShareAppMessage: function (res) {
     var that = this;
     var current = that.data.current;
+    var id = that.data.id;
     //var imgs=this.data.src[current].src;
     return {
       title: that.data.title,
-      imageUrl: '../../images/avatar.png', //'../../images/avatar.png'
-      path: '/pages/design_detail/design_detail?current=' + current + '&obj=' + JSON.stringify(this.data.needParams),
+      imageUrl: that.data.src, //'../../images/avatar.png'
+      path: '/pages/design_detail/design_detail?current=' + current + '&id=' + id,
       success: function (res) {
         wx.showToast({
           title: '分享成功',

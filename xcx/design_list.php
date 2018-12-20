@@ -1,33 +1,21 @@
 <?php
-//连接数据库方式1
-$conn = new mysqli('localhost', 'root', '', 'wx_xcx_zx');
-
-//连接数据库方式2
-// $conn = new mysqli();
-// $conn -> connect('localhost', 'root', 'password', 'test');
-
-//check connection (检查PHP是否连接上MYSQL)
-if ($conn -> connect_errno) {
-    printf("Connect failed: %s\n", $conn->connect_error);
-    exit();
+include('zx_db.php');
+$type=empty($_GET['type']) ? '' : $_GET['type'];
+$sql = 'SELECT * FROM  design where 1=1';
+$wh = '';
+if($type){
+    $wh .= " and design_type=$type";
 }
-
-//查询代码
-$sql = 'SELECT * FROM  design';
-$query = $conn->query($sql);
+$query = $zxdb->query($sql.$wh);
 $result=[];
-while($row = $query->fetch_array()){
+while($row = $query->fetch_array(MYSQL_ASSOC)){
+    $row['design_imgs'] = explode(',',$row['design_imgs']);
     $result[]=$row;
 }
 //查询代码
-
 //释放结果集+关闭MySQL连接
 $query -> free_result();
-$conn -> close();
+$zxdb -> close();
 echo json_encode($result) 
-
-
-
-
 
 ?>
