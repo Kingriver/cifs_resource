@@ -1,0 +1,33 @@
+<!--pages/nearby/nearby.wxml-->
+<view class='nearby' wx:if="{{state}}">
+  <view class='search'>
+    <input class='input' placeholder='请输入您要搜索的内容' value='{{selectedVal}}' bindconfirm="searchVal" bindinput='changeSearchVal'></input>
+    <view bindtap='btnSearchVal' class='btn'>搜索</view>
+  </view>
+
+  <view class="current" data-longitude="{{longitude}}" data-latitude='{{latitude}}' data-title='{{current_address}}' bindtap='currentNearby'>当前位置: {{current_address}}</view>
+  <map id="map" class='mapBox' longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" scale="13" show-location subkey="SFLBZ-GZ5H6-7RLS6-EI7M2-EVVWK-LMBAU"></map>
+
+  <view class='dataNum'>
+    <view class='num'>附近有5555个</view>
+    <view class='handle'>
+      <view class='map'>
+        <image src='../../images/maps.png'></image>
+        <text>地图</text>
+      </view>
+      <view class='list' bindtap='goBuildingList'>
+        <image src='../../images/list.png'></image>
+        <text>列表</text>
+      </view>
+    </view>
+  </view>
+  <view class='markItem' wx:if='{{currentItem}}' data-latitude='{{currentItem.location.lat}}' data-longitude='{{currentItem.location.lng}}' data-title='{{currentItem.title}}' bindtap='selectVal'>
+    <view class='title'>名称: {{currentItem.title}}</view>
+    <view>地址: {{currentItem.address}}</view>
+  </view>
+  <view wx:if="{{notFound}}" class='notFound'>额，抱歉，没有查到您要搜索的内容~~~</view>
+
+</view>
+<view wx:if='{{reset}}' class='unAuthorized'>
+  <view class='reset' bindtap='reset'>重新授权</view>
+</view>

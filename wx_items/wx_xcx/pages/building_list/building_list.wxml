@@ -1,0 +1,29 @@
+<!--pages/building_list/building_list.wxml-->
+  <view class='building_list' wx:if='true' >
+    <view class='item' wx:for='{{lists}}' wx:for-item='item' wx:for-index='index' wx:key='index' bindtap='buildingItem'>
+      <view class='left'>
+        <image src='../../images/notImg.png'></image>
+      </view>
+      <view class='right'>
+        <view class='title'>{{item.title}}</view>
+        <view class='type'>{{item.category}}</view>
+        <view class='address'>{{item.address}}</view>
+      </view>
+    </view>
+  </view>
+<view class='fixed'>
+  <view class='dataNum'>
+    <view class='num'>附近有5555个</view>
+    <view class='handle'>
+      <view class='map' bindtap='goBuildingMap'>
+        <image src='../../images/map.png'></image>
+        <text>地图</text>
+      </view>
+      <view class='list'>
+        <image src='../../images/lists.png'></image>
+        <text>列表</text>
+      </view>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,225 @@
+/* pages/decoration/decoration.wxss */
+.m{
+color: #3bf077
+}
+.design{
+  margin-top: 20rpx;
+  background: #ffffff;
+}
+.design .title{
+  padding: 20rpx;
+}
+.title .chart{
+  padding-bottom: 20rpx;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.title .number{
+  color: #e6e6e6;
+}
+.title .number text{
+    color: #3bf077;
+}
+.design .type{
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-top: 2rpx solid #e6e6e6;
+  border-bottom: 2rpx solid #e6e6e6;
+}
+.type .navbar{
+  flex: 1;
+  text-align: center;
+  border-right: 2rpx solid #e6e6e6;
+}
+.type .navbar:last-child{
+  border-right: 2rpx solid #e6e6e6;
+}
+.type .navbar.active{
+  color: #3bf077;
+}
+.design .list {
+  padding: 20rpx 0;
+}
+.design .list .scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  width: 100%;
+  white-space: nowrap;
+  /* width: 100%;
+  height: 300rpx;
+  white-space: nowrap; */
+}
+.design .list  .scroll .item{
+  position: relative;
+  display: inline-block;
+  margin-left: 20rpx;
+  width: 260rpx;
+  height: 300rpx;
+  border-radius: 8rpx;
+  background: #3bf077;
+}
+.design .list  .scroll .item:last-child{
+  margin-right: 20rpx;
+}
+
+.design .list  .scroll .item image{
+  width: 100%;
+  height: 300rpx;
+  border-radius: 8rpx;
+  display: block;
+}
+.design .list  .scroll .item .mask {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-radius: 8rpx;
+  background: rgba(0,0,0,0.2)
+}
+.design .list  .scroll .item .mask .con{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  color: #ffffff;
+}
+.design .list  .scroll .item .mask .con .name{
+  font-size: 30rpx;
+}
+.design .list  .scroll .item .mask .con .num{
+  font-size: 28rpx;
+}
+.design .list  .scroll .item .more{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  transform:translate(-50%,-50%);
+}
+
+.step{
+  margin-top: 20rpx;
+  background: #ffffff;
+}
+.step .title{
+  padding: 20rpx;
+}
+.step .title .chart{
+  padding-bottom: 20rpx;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.step .title .number{
+  color: #e6e6e6;
+}
+.step .title .number text{
+    color: #3bf077;
+}
+.step .list {
+  padding: 20rpx 0;
+  background: url('http://winipo.cn/tpl/Public/images/home/yw_b04.jpg') no-repeat;
+  background-size: 100% 100%;
+}
+.step .list  .scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  width: 100%;
+  white-space: nowrap;
+    vertical-align: top;
+  /* width: 100%;
+  height: 300rpx;
+  white-space: nowrap; */
+}
+.step .list  .scroll .item{
+  position: relative;
+  display: inline-block;
+  margin-left: 20rpx;
+  padding: 20rpx;
+  width: 540rpx;
+  border-radius: 8rpx;
+   vertical-align: top;
+  background: #ffffff;
+}
+.step .list  .scroll .item:last-child{
+  margin-right: 20rpx;
+}
+.step .list .scroll .item .buildImg{
+  display: flex;
+  width: 540rpx;
+}
+.step .list .scroll .item .buildImg image{
+  width: 168rpx;
+  height: 168rpx;
+  display: block;
+}
+.step .list .scroll .item .buildImg image:nth-child(2){
+  margin: 0 16rpx;
+}
+.step .list .scroll .item .address{
+  padding: 20rpx 0;
+  font-size: 30rpx;
+}
+.step .list .scroll .item .address .type{
+  font-size: 28rpx;
+  color: #e6e6e6;
+}
+.step .list .scroll .item .worker{
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+.step .list .scroll .item .worker .avatar{
+  width: 70rpx;
+  height: 70rpx;
+  display: block;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+.step .list .scroll .item .message{
+  padding: 20rpx 0;
+  min-height: 114rpx;
+  white-space: normal;
+  font-size: 28rpx;
+  color: #e6e6e6;
+}
+.step .list .scroll .item .stage{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #e6e6e6;
+}
+.step .list .scroll .item .stage .icon{
+  padding: 4rpx 20rpx;
+  border-radius: 8rpx;
+  color: white;
+  background: #3bf077;
+}
+.step .list  .scroll .more{
+  vertical-align: top;
+  width: 580rpx;
+  height: 590rpx;
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  border-radius: 8rpx;
+  background: #ffffff;
+}
+.step .list  .scroll .more image {
+  width: 580rpx;
+  height: 590rpx;
+  display: block;
+}
+.step .list  .scroll .more .btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #ffffff;
+  text-align: center;
+  transform:translate(-50%,-50%);
+}

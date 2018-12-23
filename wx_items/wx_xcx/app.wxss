@@ -1,0 +1,26 @@
+/**app.wxss**/
+page{
+  width: auto;
+  background: #f6f8fc;
+  font-family: '微软雅黑';
+  font-size: 32rpx;
+}
+.center{
+  text-align: center;
+}
+.navigator-hover{
+  color:blue;
+}
+.single-ellipsis{
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.three-ellipsis{
+    display: -webkit-box; 
+    word-break: break-all;
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp:3; 
+    overflow: hidden; 
+    text-overflow:ellipsis; 
+}

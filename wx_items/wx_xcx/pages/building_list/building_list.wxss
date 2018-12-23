@@ -1,0 +1,131 @@
+/* pages/building_list/building_list.wxss */
+
+.building_list{
+  padding: 0 20rpx;
+  /* margin-top: 104rpx; */
+  margin-bottom: 120rpx;
+  background: #ffffff;
+}
+.building_list .item{
+  display: flex;
+  align-items: flex-start;
+  padding: 10rpx 0;
+  border-bottom: 2rpx solid #e6e6e6;
+}
+.building_list .item:last-child{
+  border-bottom: none;
+}
+.building_list .item .left{
+  width: 200rpx;
+  height: 200rpx;
+}
+.building_list .item .left image{
+  width: 200rpx;
+  height: 200rpx;
+  display: block;
+}
+.building_list .item .right{
+  flex: 1;
+  padding:16rpx 0;
+  margin-left:20rpx;
+  font-size: 28rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.building_list .item .right .title{
+  font-size: 32rpx;
+  padding-bottom: 16rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.building_list .item .right .type{
+  padding-bottom: 10rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.building_list .item .right .address{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fixed{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 11;
+}
+.dataNum{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+.dataNum .num{
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-right: 40rpx;
+  color: rgb(92, 201, 146);
+  border-radius:60rpx;
+  text-align: center; 
+  overflow: hidden;
+  background: #ffffff;
+}
+.dataNum  .handle{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  margin-left: 40rpx;
+  border-radius:80rpx;
+  background: #ffffff;
+}
+.dataNum  .handle .map{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+  border-radius:80rpx; 
+}
+.dataNum  .handle .map image{
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  margin-right: 8rpx;
+}
+.dataNum  .handle .list{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  height: 80rpx;
+  border-radius:80rpx; 
+   color: #ffffff;
+  background: #181717;
+}
+.dataNum  .handle .list image{
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  margin-right: 8rpx;
+}
