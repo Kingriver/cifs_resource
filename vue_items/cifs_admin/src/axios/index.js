@@ -1,7 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
 axios.defaults.timeout = 5000;
-axios.defaults.baseURL = 'http://www.wx.com';
+axios.defaults.baseURL = 'http://47.92.245.128/php/wx';
 
 
 

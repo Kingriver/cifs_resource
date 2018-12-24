@@ -122,7 +122,7 @@ export default {
                 content:'你确定要删除此项吗?',
                 onOk:()=>{   
                     console.log(id);
-                    that.$http.post('/xcx/design_delete.php',{id:id}).then(res=>{
+                    that.$http.post('design_delete.php',{id:id}).then(res=>{
                         console.log(res);
                         that.designList=res;
                     });
@@ -142,7 +142,7 @@ export default {
    created(){},
    mounted(){
        var that=this;
-       this.$http.get('/xcx/design_list.php',{}).then(res=>{
+       this.$http.get('design_list.php',{}).then(res=>{
            that.designList=res;
        })
    }

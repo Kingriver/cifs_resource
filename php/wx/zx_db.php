@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 }
 
 //连接数据库方式1
-$zxdb = new mysqli('localhost', 'root', '', 'wx_xcx_zx');
+$zxdb = new mysqli('localhost', 'root', 'root', 'wx_xcx_zx');
 $zxdb->query("set names utf8");
 
 //连接数据库方式2

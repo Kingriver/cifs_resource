@@ -58,7 +58,7 @@ export default {
    methods:{
        handleSubmit(name){
            var that=this;
-           this.$http.post('/xcx/user_login.php',{
+           this.$http.post('user_login.php',{
                 name:this.formInfo.user,
                 password:this.formInfo.password
                }

@@ -26,7 +26,7 @@ export default {
    mounted(){
        var that=this;
        var id=this.$route.query.id;
-       this.$http.get('/xcx/design_detail.php',{id:id}).then(res=>{
+       this.$http.get('design_detail.php',{id:id}).then(res=>{
              that.itemData=res;
        })
    }
