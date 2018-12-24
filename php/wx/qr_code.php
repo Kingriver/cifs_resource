@@ -57,7 +57,7 @@ Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0 FirePHP
 
     $codeImg=image($target,$img,$title,'长按扫码，查看原图');
 
-    $rs = ['codeImg' => 'http://www.wx.com/xcx/'.$codeImg,'success'=>true];
+    $rs = ['codeImg' => 'http://47.92.245.128/php/wx/'.$codeImg,'success'=>true];
     echo json_encode($rs);
 
   

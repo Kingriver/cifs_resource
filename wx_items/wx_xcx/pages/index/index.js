@@ -14,7 +14,7 @@ Page({
   getToken(){
     var that=this;
     wx.request({
-      url: 'http://www.wx.com/xcx/user_token.php',
+      url: 'http://47.92.245.128/php/wx/user_token.php',
       success: function (res) {
         if(res.data.success){
           wx.setStorageSync('token', res.data.access_token);

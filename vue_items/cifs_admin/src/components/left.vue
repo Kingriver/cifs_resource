@@ -22,7 +22,7 @@
                         <Icon type="ios-navigate"></Icon>
                         装修
                     </template>
-                    <MenuItem name="1-1" to="/design">设计图</MenuItem>
+                    <MenuItem name="1-1" to="/design_list">设计图</MenuItem>
                     <MenuItem name="1-2">文章 2</MenuItem>
                     <MenuItem name="1-3">文章 3</MenuItem>
                 </Submenu>

@@ -1,10 +1,13 @@
 <?php
 include('zx_db.php');
-$type=empty($_GET['type']) ? '' : $_GET['type'];
+$type=empty($_REQUEST['types']) ? '' : $_REQUEST['types'];
+$item=empty($_REQUEST['items']) ? '' : $_REQUEST['items'];
 $sql = 'SELECT * FROM  design where 1=1';
 $wh = '';
-if($type){
-    $wh .= " and design_type=$type";
+if($type && !$item){
+    // $wh .= " and design_type=$item";
+}elseif($type && $item){
+    $wh .= " and design_type=$item";
 }
 $query = $zxdb->query($sql.$wh);
 $result=[];

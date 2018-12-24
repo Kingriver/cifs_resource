@@ -6,8 +6,9 @@ import Errors from '../components/404.vue'
 import Home from '../pages/home.vue'
 import UserList from '../pages/user_list.vue'
 import Echarts from '../pages/echarts.vue'
-import Design from '../pages/design.vue'
+import DesignList from '../pages/design_list.vue'
 import DesignDetail from '../pages/design_detail.vue'
+import DesignHandle from '../pages/design_handle.vue'
 Vue.use(Router)
 
 const routes = [{
@@ -47,12 +48,12 @@ const routes = [{
         name: 'decoration',
         component: Main,
         children: [{
-                path: '/design',
+                path: '/design_list',
                 name: 'design',
                 meta: {
                     title: '设计图'
                 },
-                component: Design
+                component: DesignList
             },
             {
                 path: '/design_detail',
@@ -62,6 +63,14 @@ const routes = [{
                 },
                 component: DesignDetail
             },
+            {
+                path: '/design_handle',
+                name: 'DesignDetail',
+                meta: {
+                    title: '设计图'
+                },
+                component: DesignHandle
+            }
         ]
     },
     {

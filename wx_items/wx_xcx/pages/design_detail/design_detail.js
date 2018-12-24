@@ -22,7 +22,7 @@ Page({
       })
     };
     wx.request({
-      url: 'http://www.wx.com/xcx/design_detail.php?id=' + options.id,
+      url: 'http://47.92.245.128/php/wx/design_detail.php?id=' + options.id,
       success: function (res) {
         console.log(res)
         that.setData({

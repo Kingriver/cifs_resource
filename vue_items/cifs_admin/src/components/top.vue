@@ -4,7 +4,7 @@
             <Row>
                 <Col span="12">
                     <router-link class="logo" to="/404">
-                    <!-- <img  src="../images/logo.png" alt="" /> -->
+                    <img  src="../images/logo.jpg" alt="" />
                     </router-link> 
                 </Col>
                 <Col span="12" class="header-right">

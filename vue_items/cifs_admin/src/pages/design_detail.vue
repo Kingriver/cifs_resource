@@ -1,5 +1,7 @@
 <template>
   <div class="design-detail">
+            <div>设计图类型：风格</div>
+            <div>风格类型：风格</div>
       <div>描述：{{itemData.design_desc}}</div>
             <div>浏览数量：{{itemData.design_browse}}</div>
                   <div>分享数量：{{itemData.design_share}}</div>
@@ -26,9 +28,9 @@ export default {
    mounted(){
        var that=this;
        var id=this.$route.query.id;
-       this.$http.get('design_detail.php',{id:id}).then(res=>{
-             that.itemData=res;
-       })
+    //    this.$http.get('design_detail.php',{id:id}).then(res=>{
+    //          that.itemData=res;
+    //    })
    }
 }
 </script>

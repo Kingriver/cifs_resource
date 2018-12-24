@@ -23,7 +23,7 @@ Page({
   onLoad: function (options) {
     var that=this;
     wx.request({
-      url: 'http://www.wx.com/xcx/design_type.php',
+      url: 'http://47.92.245.128/php/wx/design_type.php',
       success: function (res) {
         var resData=res.data;
         var num=0;
@@ -48,7 +48,7 @@ Page({
       }
     })
     wx.request({
-      url: 'http://www.wx.com/xcx/building.php',
+      url: 'http://47.92.245.128/php/wx/building.php',
       success: function (res) {
         var resData = res.data;
         that.setData({

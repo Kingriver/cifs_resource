@@ -1,5 +1,22 @@
 <template>
   <div class="design">
+      <div class="searchBox">
+
+        <Row>
+           <Col span="4" style="padding-right:10px">
+                <Select v-model="selectType" filterable @on-change='typesChange'>
+                    <Option v-for="item in typeList" :value="item.id" :key="item.value">{{ item.name }}</Option>
+                </Select>
+            </Col>
+             <Col span="4">
+                <Select v-model="selectItem" filterable @on-change='itemsChange'>
+                    <Option v-for="item in itemList" :value="item.id" :key="item.value">{{ item.name }}</Option>
+                </Select>
+            </Col>
+            <Col span="8" class="handle"><Button class="searchBtn" type="primary" icon="ios-search" @click='searchDesign'>搜索</Button><Button type="primary" icon="ios-add" @click='addDesign'>添加</Button></Col>
+        </Row>
+
+      </div>
     <Table width="850" height="400" border :columns="designCol" :data="designList"></Table>
     <Page :total="totalPage" show-total show-sizer show-elevator @on-change="pageChange" @on-page-size-change="pageSizeChange" />
   </div>
@@ -12,6 +29,13 @@ export default {
    props:{},
    data(){
      return {
+
+                typeList: [],
+                itemList: [],
+                selectType: '',
+                selectItem: '',
+           
+
         totalPage:40,
         designCol: [
                 {
@@ -105,9 +129,45 @@ export default {
         modal:false
      }
    },
-   watch:{},
-   computed:{},
+   watch:{
+       selectType:function(val,old){
+           this.itemList=[];
+            this.typeList.forEach(item=>{
+               if(val==item.id){
+                    this.itemList=item.son;
+               }
+           })
+       }
+   },
+   computed:{
+
+   },
    methods:{
+       typesChange(val){
+           this.itemList=[];
+            this.typeList.forEach(item=>{
+               if(val==item.id){
+                    this.itemList=item.son;
+               }
+           })
+       },
+       itemsChange(val){
+          // console.log(val)
+       },
+        addDesign(){
+            this.$router.push({path:'/design_handle'})
+            console.log('kk')
+        },
+       searchDesign(){
+           if(this.selectType==''){return}
+           if(this.selectItem==''){
+                 this.getDesignList(this.selectType)
+           }else{
+                this.getDesignList(this.selectType,this.selectItem)
+           }
+           console.log(this.selectType);
+           console.log(this.selectItem);
+       },
         show(index){
            this.$Modal.info({
                title:'User info',
@@ -133,18 +193,37 @@ export default {
             })
         },
         pageChange(data){
-          console.log(data)
+         // console.log(data)
         },
         pageSizeChange(num){
-            console.log(num)
+           // console.log(num)
+        },
+        getDesignList(typeId,itemId){
+            console.log(typeId)
+            var that=this;
+            var obj={};
+            if(typeId==undefined&& itemId==undefined){
+                obj={};
+            }else{
+                if(typeId!==undefined&& itemId==undefined){
+                     obj={types:typeId};
+                }else{
+                     obj={types:typeId,items:itemId};
+                }
+            }
+            this.$http.get('design_list.php',obj).then(res=>{
+                that.designList=res;
+            });
         }
+
    },
    created(){},
    mounted(){
-       var that=this;
-       this.$http.get('design_list.php',{}).then(res=>{
-           that.designList=res;
+        var that=this;
+        this.$http.get('design_type.php',{}).then(res=>{
+           that.typeList=res;
        })
+        this.getDesignList();
    }
 }
 </script>
@@ -154,5 +233,16 @@ export default {
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%)
+    }
+    .searchBox{
+        height: 50px;
+        line-height: 50px;
+    }
+    .handle{
+        padding: 0 10px;
+        white-space: nowrap;
+    }
+    .handle .searchBtn{
+        margin-right: 10px;;
     }
 </style>

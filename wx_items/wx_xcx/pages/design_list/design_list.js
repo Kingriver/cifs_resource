@@ -29,7 +29,7 @@ Page({
     var that=this;
     if (options.id && options.type){
       wx.request({
-        url: 'http://www.wx.com/xcx/design_list.php?type=' + Number(options.id),
+        url: 'http://47.92.245.128/php/wx/design_list.php?type=' + Number(options.id),
         success: function (res) {
           console.log(res)
           that.setData({
@@ -39,7 +39,7 @@ Page({
       })
     }else{
       wx.request({
-        url: 'http://www.wx.com/xcx/design_list.php',
+        url: 'http://47.92.245.128/php/wx/design_list.php',
         success: function (res) {
           console.log(res)
           that.setData({

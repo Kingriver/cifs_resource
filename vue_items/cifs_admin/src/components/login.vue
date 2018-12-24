@@ -70,7 +70,7 @@ export default {
                     that.formInfo.user='';
                     that.formInfo.password='';
                 }else{
-                    that.$Message.success('登录失败,请重试')
+                    that.$Message.success('用户名或密码错误,请重试')
                 }
             })
         //    this.$refs[name].validate((valid)=>{
@@ -100,13 +100,15 @@ export default {
     justify-content: center;
     align-items: center;
     height: 100%;
-    background: url(http://www.jiouai.com/static/img/bg9.639dc7b.jpg) no-repeat;
+    color: #ffffff;
+    // background: url('../images/login.jpg') no-repeat;
+    background: url('http://47.92.245.128/img/system/login.jpg') no-repeat;
     background-size: 100% 100%;
     .content{
         width: 300px;
         padding: 20px;
         border-radius: 8px; 
-        background: #ffffff;
+        background: rgba(0,0,0,0.8);
         .title{
             text-align: center;
             margin-bottom: 24px;

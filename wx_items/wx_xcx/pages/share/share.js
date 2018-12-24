@@ -38,7 +38,7 @@ Page({
       title: '图片生成中...',
     })
     wx.request({
-      url: 'http://www.wx.com/xcx/qr_code.php',
+      url: 'http://47.92.245.128/php/wx/qr_code.php',
       method: 'POST',
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值 application/json
@@ -75,6 +75,11 @@ Page({
       wx.previewImage({
         current: codeImg, // 当前显示图片的http链接
         urls: [codeImg] // 需要预览的图片http链接列表
+      })
+      wx.scanCode({
+        success:(res)=>{
+          console.log(res)
+        }
       })
     }
 

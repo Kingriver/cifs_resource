@@ -10,8 +10,8 @@ function image($path1,$path2,$text1='',$text2=''){
     imagecopyresized($im, $image_1, 20, 20, 0, 0, 335, 300,$img1_w,$img1_h);
     //imagecopy($im, $image_2, 47, 360, 0, 0, 280, 280);
     imagecopyresized($im, $image_2, 77.5, 400, 0, 0, 200, 200,275,275);
-    $time=time();
-    $merge = $time.'merge.jpg';
+    // $time=time();
+    $merge = 'merge.jpg';
     imagejpeg($im,$merge,100);
     $dst = imagecreatefromstring(file_get_contents($merge));
     $font = 'simsun.ttc';//字体
