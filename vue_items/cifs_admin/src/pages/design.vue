@@ -92,7 +92,7 @@ export default {
                                 on:{
                                     click:()=>{
                                         var id=params.row.design_id;
-                                        this.remove(params.index)
+                                        this.remove(id)
                                     }
                                 }
                             }, '删除')
@@ -114,13 +114,18 @@ export default {
                content:`name: ${this.data5[index].name}<br>age:${this.data5[index].age}<br>address:${this.designList[index].address}`
             })
         },
-        remove(index){
+        remove(id){
+            var that=this;
             this.$Modal.confirm({
                 title:'提示',
                 maskClosable:false,
                 content:'你确定要删除此项吗?',
-                onOk:()=>{
-                    this.designList.splice(index,1)
+                onOk:()=>{   
+                    console.log(id);
+                    that.$http.post('/xcx/design_delete.php',{id:id}).then(res=>{
+                        console.log(res);
+                        that.designList=res;
+                    });
                 },
                 onCancel:()=>{
                    // this.$Modal.remove();
